@@ -12,6 +12,7 @@ import {
 	TableNoResultsTitle,
 	FlexDiv,
 	Tooltip,
+	StatsSection,
 	FlexDivCentered,
 } from 'styles/common';
 import media from 'styles/media';
@@ -34,7 +35,7 @@ import { DesktopOrTabletView, MobileOnlyView } from 'components/Media';
 
 import Info from 'assets/svg/app/info.svg';
 import { CryptoBalance } from 'hooks/useCryptoBalances';
-import { SynthsTotalSupplyData } from '@synthetixio/queries';
+import { SynthsTotalSupplyData } from 'demaa-queries';
 
 const SHOW_HEDGING_INDICATOR_THRESHOLD = wei(0.1);
 
@@ -49,14 +50,14 @@ type DebtPoolTableProps = {
 
 const DebtPoolTable: React.FC<DebtPoolTableProps> = (props) => {
 	return (
-		<>
+		<StatsSection>
 			<DesktopOrTabletView>
 				<ResponsiveDebtPoolTable {...props} />
 			</DesktopOrTabletView>
 			<MobileOnlyView>
 				<ResponsiveDebtPoolTable {...props} mobile />
 			</MobileOnlyView>
-		</>
+		</StatsSection>
 	);
 };
 
@@ -207,7 +208,7 @@ const ResponsiveDebtPoolTable: FC<ResponsiveDebtPoolTableProps> = ({
 				accessor: (originalRow: any) => originalRow.usdBalance.toNumber(),
 				sortType: 'basic',
 				Cell: (cellProps: CellProps<CryptoBalance>) => {
-					let variant: ProgressBarType = 'rainbow';
+					let variant: ProgressBarType = 'blue-pink';
 					if (synthsTotalSupply && synthsTotalSupply.supplyData && mergedTotalValue) {
 						const { currencyKey } = cellProps.row.original;
 						const poolCurrencyPercent = synthsTotalSupply.supplyData[currencyKey].poolProportion;

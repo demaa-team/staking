@@ -188,7 +188,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({
 								connectWallet();
 							}}
 						>
-							{walletIcon} {t('modals.wallet.change-wallet')}
+							 {t('modals.wallet.change-wallet')}
 						</StyledButton>
 						{isHardwareWallet() && (
 							<StyledButton
@@ -197,7 +197,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({
 									switchAccounts();
 								}}
 							>
-								{changeIcon} {t('modals.wallet.switch-account')}
+								{t('modals.wallet.switch-account')}
 							</StyledButton>
 						)}
 						<StyledButton
@@ -207,7 +207,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({
 							}}
 							data-testid="watch-wallet"
 						>
-							{searchIcon} {t('modals.wallet.watch-wallet.title')}
+							{t('modals.wallet.watch-wallet.title')}
 						</StyledButton>
 						{isMainnet && (
 							<StyledButton
@@ -216,7 +216,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({
 									setDelegateModalOpened(true);
 								}}
 							>
-								{delegateIcon} {t('modals.wallet.delegate-mode.menu-title')}
+								{t('modals.wallet.delegate-mode.menu-title')}
 							</StyledButton>
 						)}
 					</Buttons>
@@ -228,7 +228,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({
 								onDismiss();
 							}}
 						>
-							{exitIcon} {t('modals.wallet.stop-delegation')}
+							{t('modals.wallet.stop-delegation')}
 						</StyledTextButton>
 					)}
 					{walletWatched ? (
@@ -239,7 +239,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({
 								setWalletAddress(null);
 							}}
 						>
-							{exitIcon} {t('modals.wallet.stop-watching')}
+							{t('modals.wallet.stop-watching')}
 						</StyledTextButton>
 					) : (
 						<StyledTextButton
@@ -248,7 +248,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({
 								disconnectWallet();
 							}}
 						>
-							{exitIcon} {t('modals.wallet.disconnect-wallet')}
+							{t('modals.wallet.disconnect-wallet')}
 						</StyledTextButton>
 					)}
 				</>
@@ -264,7 +264,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({
 						>
 							{t('common.wallet.connect-wallet')}
 						</StyledGlowingButton>
-						<DividerText>{t('common.wallet.or')}</DividerText>
+						{/* <DividerText>{t('common.wallet.or')}</DividerText> */}
 						<StyledButton
 							onClick={() => {
 								onDismiss();
@@ -272,7 +272,7 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({
 							}}
 							data-testid="watch-wallet"
 						>
-							{searchIcon} {t('modals.wallet.watch-wallet.title')}
+							{t('modals.wallet.watch-wallet.title')}
 						</StyledButton>
 					</Buttons>
 				</WalletDetails>
@@ -281,30 +281,41 @@ const WalletOptionsModal: FC<WalletOptionsProps> = ({
 	);
 };
 
-export const StyledGlowingButton = styled(Button).attrs({
-	variant: 'secondary',
-	size: 'lg',
-})`
-	padding: 0 20px;
+export const StyledGlowingButton = styled.div`
+	padding: 0.7rem 1.25rem;
+	font-size:0.8rem;
+	background: #F86C29;
+	text-align: center;
+	cursor:pointer;
+	width:11rem;
+	border-radius: 1.25rem;
 	font-family: ${(props) => props.theme.fonts.condensedMedium};
 	text-transform: uppercase;
-	margin: 4px 0px;
+	margin-bottom:1.4rem;
+	// margin: 4px 0px;
+	&:hover{
+		background:#F39365
+	}
 `;
 
-const StyledButton = styled(Button).attrs({
-	variant: 'outline',
-	size: 'lg',
-})`
+const StyledButton = styled.div`
 	font-family: ${(props) => props.theme.fonts.condensedMedium};
-	padding: 0 20px;
-	display: inline-grid;
+	padding: 0.7rem 1.25rem;
+	font-size:0.8rem;
+	background: #3142A0;
+	text-align: center;
+	cursor:pointer;
+	border-radius: 1.25rem;
+	// display: inline-grid;
 	grid-template-columns: auto 1fr;
-	align-items: center;
-	justify-items: center;
+	// align-items: center;
+	// justify-items: center;
 	text-transform: uppercase;
 
 	margin: 6px 0px;
-
+	&:hover{
+		background:#1A2479
+	}
 	svg {
 		margin-right: 5px;
 		color: ${(props) => props.theme.colors.gray};
@@ -332,7 +343,7 @@ const StyledTextButton = styled(Button).attrs({
 `;
 
 const WalletDetails = styled.div`
-	padding: 8px 0px;
+	// padding: 8px 0px;
 `;
 
 const SelectedWallet = styled(FlexDivCentered)`
@@ -385,7 +396,7 @@ const LinkContainer = styled(FlexDiv)`
 `;
 
 const Buttons = styled(FlexDivCol)`
-	margin: 0px 8px;
+	// margin: 0px 8px;
 `;
 
 const StyledDivider = styled(Divider)`

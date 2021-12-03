@@ -34,13 +34,14 @@ import SettingsModal from 'sections/shared/modals/SettingsModal';
 import ConnectionDot from 'sections/shared/ConnectionDot';
 
 import CogIcon from 'assets/svg/app/cog.svg';
+import SetIcon from 'assets/svg/app/set.svg';
 import CaretUp from 'assets/svg/app/caret-up.svg';
 import CaretDown from 'assets/svg/app/caret-down.svg';
 import Warning from 'assets/svg/app/warning.svg';
 import DelegateIcon from 'assets/svg/app/delegate.svg';
 import WatchWalletModal from 'sections/shared/modals/WatchWalletModal';
 import DelegateModal from 'sections/shared/modals/DelegateModal';
-
+import useWindowSize from 'utils/useWindowSize'
 const caretUp = <Svg src={CaretUp} viewBox={`0 0 ${CaretUp.width} ${CaretUp.height}`} />;
 const caretDown = <Svg src={CaretDown} viewBox={`0 0 ${CaretDown.width} ${CaretDown.height}`} />;
 
@@ -61,7 +62,7 @@ const UserMenu: FC = () => {
 			return `0Ξ ${network?.name}`;
 		} else return network?.name;
 	};
-
+	const { width, height } = useWindowSize();
 	return (
 		<Container>
 			<FlexDivCentered>
@@ -77,6 +78,7 @@ const UserMenu: FC = () => {
 								{isWalletConnected ? (
 									<WalletButton
 										variant="solid"
+										isRounded={true}
 										onClick={() => {
 											setWalletOptionsModalOpened(!walletOptionsModalOpened);
 										}}
@@ -95,6 +97,7 @@ const UserMenu: FC = () => {
 								) : (
 									<WalletButton
 										variant="solid"
+										isRounded={true}
 										onClick={() => setWalletOptionsModalOpened(!walletOptionsModalOpened)}
 										data-testid="user-menu"
 										disabled={!!networkError}
@@ -127,6 +130,7 @@ const UserMenu: FC = () => {
 							)}
 							<WalletButton
 								variant="solid"
+								isRounded={true}
 								onClick={() => {
 									setWalletOptionsModalOpened(!walletOptionsModalOpened);
 								}}
@@ -163,7 +167,7 @@ const UserMenu: FC = () => {
 								setSettingsModalOpened(!settingsModalOpened);
 							}}
 						>
-							<Svg src={CogIcon} />
+							<Svg src={SetIcon} style={{transform:`scale(${width/1920},${width/1920})`}}/>
 						</MenuButton>
 					</Menu>
 				</DesktopOrTabletView>
@@ -233,13 +237,13 @@ const WalletButton = styled(Button)`
 	display: inline-flex;
 	align-items: center;
 	justify-content: space-between;
-	border: 1px solid ${(props) => props.theme.colors.mediumBlue};
+	// border: 1px solid ${(props) => props.theme.colors.mediumBlue};
 
 	svg {
 		margin-left: 5px;
 		width: 10px;
 		height: 10px;
-		color: ${(props) => props.theme.colors.gray};
+		color: #fff;
 		${(props) =>
 			props.isActive &&
 			css`
@@ -254,20 +258,20 @@ const WalletButton = styled(Button)`
 `;
 
 const MenuButton = styled(IconButton)`
-	border: 1px solid ${(props) => props.theme.colors.mediumBlue};
+	// border: 1px solid ${(props) => props.theme.colors.mediumBlue};
 	color: ${(props) => props.theme.colors.white};
-	padding: 7px;
+	// padding: 0 7px;
 	border-radius: 4px;
-	background: ${(props) => props.theme.colors.navy};
+	// background: ${(props) => props.theme.colors.navy};
 	&:hover {
 		color: ${(props) => props.theme.colors.white};
 	}
-	height: 32px;
+	height: 24px;
 `;
 
 const DropdownContainer = styled.div`
-	width: 185px;
-	height: 32px;
+	width: 13.5rem;
+	height: 2.3rem;
 	position: relative;
 
 	> div {

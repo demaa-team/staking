@@ -12,7 +12,7 @@ import { walletAddressState } from 'store/wallet';
 
 import ApproveModal from 'components/ApproveModal';
 import TabContent from './TabContent';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import Connector from 'containers/Connector';
 import Wei, { wei } from '@synthetixio/wei';
 

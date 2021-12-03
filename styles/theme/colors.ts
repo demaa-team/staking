@@ -8,7 +8,7 @@ export default {
 
 	// secondary
 	green: '#31D8A4',
-	orange: '#FC8738',
+	orange: '#F86C29',
 	yellow: '#FFD75C',
 	red: '#FF1E39',
 
@@ -31,9 +31,9 @@ export default {
 	mutedForestGreen: '#306332',
 
 	// ui
-	black: '#06061B',
+	black: '#1A2479',
 	blackHover: '#070725',
-	navy: '#09092F',
+	navy: '#1A2479',
 	mediumBlue: '#10104E',
 	mediumBlueHover: '#16166A',
 	grayBlue: '#161B44',

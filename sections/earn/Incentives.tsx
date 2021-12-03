@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useRecoilValue } from 'recoil';
 import Wei from '@synthetixio/wei';
-
+import styled from 'styled-components';
 import IncentivesMainnet from './IncentivesMainnet';
 import IncentivesDefault from './IncentivesDefault';
 
@@ -21,7 +21,14 @@ const Incentives: FC<IncentivesProps> = (props) => {
 	const delegateWallet = useRecoilValue(delegateWalletState);
 	const Incentives = isMainnet && !delegateWallet ? IncentivesMainnet : IncentivesDefault;
 
-	return <Incentives {...props} />;
+	return <ContainerT>
+			<Incentives {...props} />
+		</ContainerT>;
 };
 
+const ContainerT = styled.div`
+	background:#203298;
+	padding:1rem 5rem;
+	border-radius:1.1rem;
+`
 export default Incentives;

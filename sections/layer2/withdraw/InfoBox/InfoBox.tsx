@@ -18,7 +18,7 @@ import {
 } from 'sections/escrow/components/common';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState } from 'store/wallet';
-import useSynthetixQueries, { DepositRecord } from '@synthetixio/queries';
+import useSynthetixQueries, { DepositRecord } from 'demaa-queries';
 
 const InfoBox = () => {
 	const { t } = useTranslation();
@@ -66,8 +66,8 @@ const InfoBox = () => {
 								accessor: 'amount',
 								Cell: (cellProps: CellProps<DepositRecord, number>) => (
 									<Data>
-										{formatCurrency(CryptoCurrency.SNX, cellProps.value, {
-											currencyKey: CryptoCurrency.SNX,
+										{formatCurrency(CryptoCurrency.DEM, cellProps.value, {
+											currencyKey: CryptoCurrency.DEM,
 											minDecimals: 2,
 											maxDecimals: 2,
 										})}

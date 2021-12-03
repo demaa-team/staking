@@ -14,11 +14,11 @@ const ManageTab = () => {
 const ManageContainer = styled(FlexDivColCentered)`
 	height: 100%;
 	justify-content: center;
-	background: ${(props) => props.theme.colors.navy};
+	// background: ${(props) => props.theme.colors.navy};
 
 	font-family: ${(props) => props.theme.fonts.extended};
 	text-transform: uppercase;
-	color: ${(props) => props.theme.colors.mutedGray};
+	// color: ${(props) => props.theme.colors.mutedGray};
 `;
 
 const ManageSubtitle = styled.p`

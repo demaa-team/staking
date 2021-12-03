@@ -1,4 +1,4 @@
-import { NetworkId } from '@synthetixio/contracts-interface';
+import { NetworkId } from 'demaa-contracts-interface';
 import { WeiSource } from '@synthetixio/wei';
 import { SPACE_KEY } from 'constants/snapshot';
 import { Synths } from './currency';
@@ -134,7 +134,7 @@ export const QUERY_KEYS = {
 		],
 		yearnSNX: (walletAddress: string, networkId: NetworkId) => [
 			'liquidityPools',
-			'yearn-SNX',
+			'yearn-DEM',
 			walletAddress,
 			networkId,
 		],

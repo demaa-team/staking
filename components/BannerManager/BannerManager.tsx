@@ -9,7 +9,7 @@ import { ExternalLink } from 'styles/common';
 import { formatShortDateWithTime } from 'utils/formatters/date';
 import { wei } from '@synthetixio/wei';
 import { isL2State, walletAddressState } from 'store/wallet';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { snapshotEndpoint } from 'constants/snapshot';
 
 const BannerManager: FC = () => {

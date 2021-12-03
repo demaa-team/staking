@@ -10,7 +10,7 @@ import { GridDiv } from 'styles/common';
 import media from 'styles/media';
 
 import useStakingCalculations from 'sections/staking/hooks/useStakingCalculations';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 
 const Index: FC = () => {
 	const { t } = useTranslation();

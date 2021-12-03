@@ -6,7 +6,7 @@ import { TabContainer } from '../../components/common';
 import { walletAddressState } from 'store/wallet';
 
 import TabContent from './TabContent';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import Wei, { wei } from '@synthetixio/wei';
 
 const MigrateTab = () => {

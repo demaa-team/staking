@@ -18,18 +18,20 @@ const Index: FC = () => {
 			<Col>
 				<ActionBox currentTab={defaultTab} />
 			</Col>
-			<Col>
+			{/* <Col>
 				<InfoBox currentTab={defaultTab} />
-			</Col>
+			</Col> */}
 		</Container>
 	);
 };
 
 const Container = styled.div`
 	display: grid;
-	grid-template-columns: 2fr 1fr;
+	// grid-template-columns: 2fr 1fr;
 	grid-gap: 1rem;
-
+	background:#203298;
+	border-radius:1.1rem;
+	padding:0 3rem 1.35rem;
 	${media.lessThan('mdUp')`
 		display: flex;
 		flex-direction: column;

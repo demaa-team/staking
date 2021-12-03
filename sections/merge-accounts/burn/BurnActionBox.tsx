@@ -218,7 +218,7 @@ const BurnTabInner: FC = () => {
 												minDecimals: DEFAULT_FIAT_DECIMALS,
 												maxDecimals: DEFAULT_FIAT_DECIMALS,
 											}),
-											asset: CryptoCurrency.SNX,
+											asset: CryptoCurrency.DEM,
 										})}
 									</TxModalItemText>
 								</TxModalItem>

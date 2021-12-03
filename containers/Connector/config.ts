@@ -2,7 +2,7 @@ import onboard from 'bnc-onboard';
 
 import { Subscriptions, WalletType } from 'bnc-onboard/dist/src/interfaces';
 import { getInfuraRpcURL } from 'utils/infura';
-import { Network, SynthetixJS } from '@synthetixio/contracts-interface';
+import { Network, SynthetixJS } from 'demaa-contracts-interface';
 
 export const initOnboard = (
 	synthetixjs: SynthetixJS,
@@ -56,7 +56,7 @@ export const initOnboard = (
 				},
 				{
 					walletName: 'walletConnect',
-					rpc: { [network ? network.id : Network.Mainnet]: infuraRpc },
+					rpc: { [network ? network.id : Network.Mumbai]: infuraRpc },
 					preferred: true,
 				},
 				{ walletName: 'imToken', rpcUrl: infuraRpc, preferred: true },

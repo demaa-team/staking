@@ -15,7 +15,7 @@ import Table from 'components/Table';
 import Currency from 'components/Currency';
 
 import { formatFiatCurrency, formatPercent } from 'utils/formatters/number';
-import { SynthTotalSupply } from '@synthetixio/queries';
+import { SynthTotalSupply } from 'demaa-queries';
 import { CryptoBalance } from 'hooks/useCryptoBalances';
 import Wei, { wei } from '@synthetixio/wei';
 
@@ -84,6 +84,7 @@ const DebtPoolTable: FC<DebtPoolTableProps> = ({ synths, isLoading, isLoaded }) 
 
 	return (
 		<StyledTable
+			height="100%"
 			palette="primary"
 			columns={assetColumns}
 			data={synths && synths.length > 0 ? synths : []}

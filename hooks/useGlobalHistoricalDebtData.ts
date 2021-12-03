@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { orderBy } from 'lodash';
-import useSynthetixQueries from '@synthetixio/queries';
-import { StakingTransactionType } from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
+import { StakingTransactionType } from 'demaa-queries';
 
 type HistoricalGlobalDebtAndIssuanceData = {
 	issuance: number;

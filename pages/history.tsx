@@ -9,7 +9,7 @@ import TransactionsContainer from 'sections/history/TransactionsContainer';
 import StatsSection from 'components/StatsSection';
 
 import StatBox from 'components/StatBox';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState } from 'store/wallet';
 
@@ -42,9 +42,9 @@ const HistoryPage: FC = () => {
 				<title>{t('history.page-title')}</title>
 			</Head>
 			<StatsSection>
-				<div />
+				{/* <div /> */}
 				<TxCount title={t('common.stat-box.tx-count')} value={txCount} size="lg" />
-				<div />
+				{/* <div /> */}
 			</StatsSection>
 			<LineSpacer />
 			<TransactionsContainer history={feesClaimed} isLoaded={isLoaded} />
@@ -54,8 +54,8 @@ const HistoryPage: FC = () => {
 
 const TxCount = styled(StatBox)`
 	.value {
-		text-shadow: ${(props) => props.theme.colors.blueTextShadow};
-		color: ${(props) => props.theme.colors.black};
+		// text-shadow: ${(props) => props.theme.colors.blueTextShadow};
+		color: ${(props) => props.theme.colors.white};
 	}
 `;
 

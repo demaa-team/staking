@@ -43,9 +43,11 @@ const ProgressBarWrapper = styled(FlexDivRowCentered)<{
 		props.variant === 'rainbow' &&
 		css`
 			.filled-bar {
+				border-radius:0.35rem;
 				background: ${(props) => props.theme.colors.rainbowGradient};
 			}
 			.unfilled-bar {
+				border-radius: 0.35rem;
 				background: ${(props) => props.theme.colors.white};
 				opacity: 0.2;
 			}
@@ -55,16 +57,21 @@ const ProgressBarWrapper = styled(FlexDivRowCentered)<{
 		props.variant === 'blue-pink' &&
 		css`
 			.filled-bar {
-				background: ${(props) => props.theme.colors.blue};
-				border: 2px solid ${(props) => props.theme.colors.blue};
+				border-radius:0.35rem;
+				background: #F86C29;
+				border: 2px solid #F86C29;
 				box-shadow: 0px 0px 15px
-					${(props) => Color(props.theme.colors.blue).alpha(0.6).rgb().string()};
+					${(props) => Color('#F86C29').alpha(0.6).rgb().string()};
+				&:hover{
+					background:#F39365
+				}
 			}
 
 			.unfilled-bar {
-				border: 2px solid ${(props) => props.theme.colors.pink};
+				border: 1px solid #F86C29;
+				border-radius: 0.35rem;
 				box-shadow: 0px 0px 15px
-					${(props) => Color(props.theme.colors.pink).alpha(0.6).rgb().string()};
+					${(props) => Color('#F86C29').alpha(0.6).rgb().string()};
 			}
 		`}
 
@@ -72,6 +79,7 @@ const ProgressBarWrapper = styled(FlexDivRowCentered)<{
 		props.variant === 'green' &&
 		css`
 			.filled-bar {
+				border-radius:0.35rem;
 				background: ${(props) => props.theme.colors.green};
 				border: 2px solid ${(props) => props.theme.colors.green};
 				box-shadow: 0px 0px 15px
@@ -80,6 +88,7 @@ const ProgressBarWrapper = styled(FlexDivRowCentered)<{
 
 			.unfilled-bar {
 				border: 2px solid ${(props) => props.theme.colors.green};
+				border-radius: 0.35rem;
 				box-shadow: 0px 0px 15px
 					${(props) => Color(props.theme.colors.green).alpha(0.6).rgb().string()};
 			}
@@ -89,11 +98,13 @@ const ProgressBarWrapper = styled(FlexDivRowCentered)<{
 		props.variant === 'green-simple' &&
 		css`
 			.filled-bar {
+				border-radius:0.35rem;
 				background: ${(props) => props.theme.colors.green};
 			}
 
 			.unfilled-bar {
 				background: ${(props) => props.theme.colors.white};
+				border-radius: 0.35rem;
 				opacity: 0.2;
 			}
 		`}
@@ -102,14 +113,16 @@ const ProgressBarWrapper = styled(FlexDivRowCentered)<{
 		props.variant === 'blue' &&
 		css`
 			.filled-bar {
-				background: ${(props) => props.theme.colors.blue};
-				border: 2px solid ${(props) => props.theme.colors.blue};
+				border-radius:0.35rem;
+				background: #F86C29;
+				border: 2px solid #F86C29;
 				box-shadow: 0px 0px 15px
-					${(props) => Color(props.theme.colors.blue).alpha(0.6).rgb().string()};
+					${(props) => Color('#F86C29').alpha(0.6).rgb().string()};
 			}
 
 			.unfilled-bar {
-				border: 2px solid ${(props) => props.theme.colors.blue};
+				border: 2px solid #F86C29;
+				border-radius: 0.35rem;
 				box-shadow: 0px 0px 15px
 					${(props) => Color(props.theme.colors.blue).alpha(0.6).rgb().string()};
 			}
@@ -119,6 +132,7 @@ const ProgressBarWrapper = styled(FlexDivRowCentered)<{
 		props.variant === 'red' &&
 		css`
 			.filled-bar {
+				border-radius:0.35rem;
 				background: ${(props) => props.theme.colors.red};
 				border: 2px solid ${(props) => props.theme.colors.red};
 				box-shadow: 0px 0px 15px
@@ -127,6 +141,7 @@ const ProgressBarWrapper = styled(FlexDivRowCentered)<{
 
 			.unfilled-bar {
 				border: 2px solid ${(props) => props.theme.colors.red};
+				border-radius: 0.35rem;
 				box-shadow: 0px 0px 15px
 					${(props) => Color(props.theme.colors.red).alpha(0.6).rgb().string()};
 			}
@@ -136,11 +151,13 @@ const ProgressBarWrapper = styled(FlexDivRowCentered)<{
 		props.variant === 'red-simple' &&
 		css`
 			.filled-bar {
+				border-radius:0.35rem;
 				background: ${(props) => props.theme.colors.red};
 			}
 
 			.unfilled-bar {
 				background: ${(props) => props.theme.colors.white};
+				border-radius: 0.35rem;
 				opacity: 0.2;
 			}
 		`}

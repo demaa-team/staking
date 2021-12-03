@@ -6,5 +6,5 @@ export const StyledButton = styled(Button)`
 	width: 120px;
 `;
 
-export const StyledButtonBlue = styled(StyledButton).attrs({ variant: 'secondary' })``;
-export const StyledButtonPink = styled(StyledButton).attrs({ variant: 'tertiary' })``;
+export const StyledButtonBlue = styled(StyledButton).attrs({ variant: 'primary' })``;
+export const StyledButtonPink = styled(StyledButton).attrs({ variant: 'primary' })``;

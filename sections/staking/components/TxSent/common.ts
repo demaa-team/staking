@@ -7,7 +7,7 @@ export const Container = styled(FlexDivColCentered)`
 	margin: 0 auto;
 	text-align: center;
 	padding: 48px 24px;
-	background: ${(props) => props.theme.colors.black};
+	// background: ${(props) => props.theme.colors.black};
 	justify-content: space-evenly;
 `;
 

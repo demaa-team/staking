@@ -15,7 +15,7 @@ import IncentivesTable from './IncentivesTable';
 import ClaimTab from './ClaimTab';
 import { Tab } from './types';
 import { DesktopOrTabletView } from 'components/Media';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 
 type IncentivesProps = {
 	tradingRewards: Wei;
@@ -70,8 +70,8 @@ const Incentives: FC<IncentivesProps> = ({
 							tvl: globalStakingInfoQuery.data?.lockedValue ?? wei(0),
 							staked: {
 								balance: stakedAmount,
-								asset: CryptoCurrency.SNX,
-								ticker: CryptoCurrency.SNX,
+								asset: CryptoCurrency.DEM,
+								ticker: CryptoCurrency.DEM,
 							},
 							rewards: stakingRewards,
 							periodStarted: currentFeePeriodStarted.getTime(),
@@ -120,7 +120,7 @@ const Incentives: FC<IncentivesProps> = ({
 };
 
 const Container = styled.div`
-	background-color: ${(props) => props.theme.colors.navy};
+	background-color: #203298;
 	display: grid;
 	${media.greaterThan('md')`
 		display: grid;
@@ -129,7 +129,7 @@ const Container = styled.div`
 `;
 
 const TabContainer = styled.div`
-	background-color: ${(props) => props.theme.colors.navy};
+	background-color: #203298;
 	min-height: 380px;
 `;
 

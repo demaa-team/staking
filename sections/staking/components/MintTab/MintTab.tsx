@@ -1,5 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
-
+import React, {FC, useEffect, useMemo, useState } from 'react';
 import UIContainer from 'containers/UI';
 
 import useStakingCalculations from 'sections/staking/hooks/useStakingCalculations';
@@ -12,8 +11,10 @@ import { amountToMintState, MintActionType, mintTypeState } from 'store/staking'
 import { delegateWalletState } from 'store/wallet';
 import { parseSafeWei } from 'utils/parse';
 import Wei, { wei } from '@synthetixio/wei';
-import useSynthetixQueries from '@synthetixio/queries';
-
+import useSynthetixQueries from 'demaa-queries';
+import styled from 'styled-components';
+import { useTranslation } from 'react-i18next';
+import { MenuModal } from '../../../shared/modals/common';
 const MintTab: React.FC = () => {
 	const delegateWallet = useRecoilValue(delegateWalletState);
 
@@ -75,22 +76,24 @@ const MintTab: React.FC = () => {
 				return <MintTiles />;
 		}
 		return (
-			<StakingInput
-				onSubmit={onSubmit}
-				inputValue={inputValue}
-				isLocked={isLocked}
-				isMint={true}
-				onBack={onMintTypeChange}
-				error={error || txn.errorMessage}
-				txModalOpen={txModalOpen}
-				setTxModalOpen={setTxModalOpen}
-				gasLimitEstimate={txn.gasLimit}
-				setGasPrice={setGasPrice}
-				onInputChange={onMintChange}
-				txHash={txn.hash}
-				transactionState={txn.txnStatus}
-				resetTransaction={txn.refresh}
-			/>
+			<SettingsModal onDismiss={()=>{onMintTypeChange(null)}}>
+				<StakingInput
+					onSubmit={onSubmit}
+					inputValue={inputValue}
+					isLocked={isLocked}
+					isMint={true}
+					onBack={onMintTypeChange}
+					error={error || txn.errorMessage}
+					txModalOpen={txModalOpen}
+					setTxModalOpen={setTxModalOpen}
+					gasLimitEstimate={txn.gasLimit}
+					setGasPrice={setGasPrice}
+					onInputChange={onMintChange}
+					txHash={txn.hash}
+					transactionState={txn.txnStatus}
+					resetTransaction={txn.refresh}
+				/>
+			</SettingsModal>
 		);
 	}, [
 		mintType,
@@ -106,5 +109,22 @@ const MintTab: React.FC = () => {
 
 	return <TabContainer>{returnPanel}</TabContainer>;
 };
+type SettingsModalProps = {
+	onDismiss: ()=>void;
+};
 
+const SettingsModal: FC<SettingsModalProps> = ({ onDismiss,children }) => {
+	const { t } = useTranslation();
+	return (
+		<StyledMenuModal onDismiss={onDismiss} isOpen={true} title={t('modals.settings.title')}>
+			{children}
+		</StyledMenuModal>
+	);
+};
+const StyledMenuModal = styled(MenuModal)`
+	z-index:49;
+	[data-reach-dialog-content] {
+		width: 44rem;
+	}
+`;
 export default MintTab;

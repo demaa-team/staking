@@ -47,7 +47,7 @@ import {
 } from '../../common';
 import Color from 'color';
 import Wei, { wei } from '@synthetixio/wei';
-import { SynthetixJS } from '@synthetixio/contracts-interface';
+import { SynthetixJS } from 'demaa-contracts-interface';
 
 export const getApprovalContractData = (
 	synthetixjs: SynthetixJS,

@@ -15,16 +15,17 @@ export const BarStatBox = styled(FlexDivCol)`
 export const BarHeaderSection = styled(FlexDivRowCentered)``;
 
 export const BarTitle = styled(FlexDivCentered)`
-	font-size: 12px;
-	font-family: ${(props) => props.theme.fonts.interBold};
-	color: ${(props) => props.theme.colors.gray};
+	font-size: 0.7rem;
+	font-family:  Microsoft YaHei;
+	color: ${(props) => props.theme.colors.white};
 	text-transform: uppercase;
 `;
 
 export const BarValue = styled.span`
-	font-size: 12px;
+	font-size: 0.6rem;
 	color: ${(props) => props.theme.colors.white};
-	font-family: ${(props) => props.theme.fonts.mono};
+	font-family: Microsoft YaHei;
+	font-weight:500;
 `;
 
 export const StyledProgressBar = styled(ProgressBar)`

@@ -20,7 +20,7 @@ import ClaimTab from './ClaimTab';
 import { Tab, LP } from './types';
 import YearnVaultTab from './LPTab/YearnVaultTab';
 import { YearnVaultData } from 'queries/liquidityPools/useYearnSNXVaultQuery';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 
 enum View {
 	ACTIVE = 'active',
@@ -81,8 +81,8 @@ const Incentives: FC<IncentivesProps> = ({
 						tvl: globalStakingQuery.data?.lockedValue ?? wei(0),
 						staked: {
 							balance: stakedAmount,
-							asset: CryptoCurrency.SNX,
-							ticker: CryptoCurrency.SNX,
+							asset: CryptoCurrency.DEM,
+							ticker: CryptoCurrency.DEM,
 						},
 						rewards: stakingRewards,
 						periodStarted: currentFeePeriodStarted.getTime(),
@@ -99,8 +99,8 @@ const Incentives: FC<IncentivesProps> = ({
 						tvl: lpData[LP.YEARN_SNX_VAULT].TVL,
 						staked: {
 							balance: (lpData[LP.YEARN_SNX_VAULT].data as YearnVaultData)?.stakedSNX ?? wei(0),
-							asset: CryptoCurrency.SNX,
-							ticker: CryptoCurrency.SNX,
+							asset: CryptoCurrency.DEM,
+							ticker: CryptoCurrency.DEM,
 							type: CurrencyIconType.TOKEN,
 						},
 						rewards: lpData[LP.YEARN_SNX_VAULT].data?.rewards ?? wei(0),
@@ -162,37 +162,41 @@ const Incentives: FC<IncentivesProps> = ({
 	);
 
 	return activeTab == null ? (
-		<>
-			<TabList noOfTabs={2}>
-				<TabButton
-					isSingle={false}
-					tabHeight={50}
-					inverseTabColor={true}
-					blue={true}
-					key={`active-button`}
-					name={t('earn.tab.active')}
-					active={view === View.ACTIVE}
-					onClick={() => {
-						setView(View.ACTIVE);
-					}}
-				>
-					<TitleContainer>{t('earn.tab.active')}</TitleContainer>
-				</TabButton>
-				<TabButton
-					isSingle={false}
-					tabHeight={50}
-					inverseTabColor={true}
-					blue={false}
-					key={`inactive-button`}
-					name={t('earn.tab.inactive')}
-					active={view === View.INACTIVE}
-					onClick={() => {
-						setView(View.INACTIVE);
-					}}
-				>
-					<TitleContainer>{t('earn.tab.inactive')}</TitleContainer>
-				</TabButton>
-			</TabList>
+		<>	
+			<ContainerT>
+				<TabList noOfTabs={2} isFill={true}>
+					<TabButton
+						color={`#9BF990`}
+						isSingle={false}
+						tabHeight={50}
+						inverseTabColor={true}
+						blue={true}
+						key={`active-button`}
+						name={t('earn.tab.active')}
+						active={view === View.ACTIVE}
+						onClick={() => {
+							setView(View.ACTIVE);
+						}}
+					>
+						<TitleContainer>{t('earn.tab.active')}</TitleContainer>
+					</TabButton>
+					<TabButton
+						color={`#9BF990`}
+						isSingle={false}
+						tabHeight={50}
+						inverseTabColor={true}
+						blue={false}
+						key={`inactive-button`}
+						name={t('earn.tab.inactive')}
+						active={view === View.INACTIVE}
+						onClick={() => {
+							setView(View.INACTIVE);
+						}}
+					>
+						<TitleContainer>{t('earn.tab.inactive')}</TitleContainer>
+					</TabButton>
+				</TabList>
+			</ContainerT>
 			{incentivesTable}
 		</>
 	) : (
@@ -209,7 +213,7 @@ const Incentives: FC<IncentivesProps> = ({
 				{activeTab === Tab.yearn_SNX_VAULT && (
 					<YearnVaultTab
 						userBalance={lpData[LP.YEARN_SNX_VAULT].data?.userBalance ?? wei(0)}
-						stakedAsset={CryptoCurrency.SNX}
+						stakedAsset={CryptoCurrency.DEM}
 						allowance={lpData[LP.YEARN_SNX_VAULT].data?.allowance ?? null}
 						tokenRewards={lpData[LP.YEARN_SNX_VAULT].data?.rewards ?? wei(0)}
 						staked={lpData[LP.YEARN_SNX_VAULT].data?.staked ?? wei(0)}
@@ -222,7 +226,11 @@ const Incentives: FC<IncentivesProps> = ({
 		</Container>
 	);
 };
-
+const ContainerT = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`
 const Container = styled.div`
 	background-color: ${(props) => props.theme.colors.navy};
 	${media.greaterThan('md')`

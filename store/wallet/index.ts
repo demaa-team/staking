@@ -1,11 +1,11 @@
-import { NetworkId, Network as NetworkName } from '@synthetixio/contracts-interface';
-import { GasSpeed } from '@synthetixio/queries';
+import { NetworkId, Network as NetworkName } from 'demaa-contracts-interface';
+import { GasSpeed } from 'demaa-queries';
 import { atom, selector } from 'recoil';
 
 import { truncateAddress } from 'utils/formatters/string';
 import { getWalletKey } from '../utils';
 
-import { DelegationWallet } from '@synthetixio/queries';
+import { DelegationWallet } from 'demaa-queries';
 
 export type Network = {
 	id: NetworkId;
@@ -15,7 +15,7 @@ export type Network = {
 
 export const networkState = atom<Network | null>({
 	key: getWalletKey('network'),
-	default: { id: NetworkId.Mainnet, name: NetworkName.Mainnet, useOvm: false },
+	default: { id: NetworkId.Mumbai, name: NetworkName.Mumbai, useOvm: false },
 });
 
 export const isL2State = selector<boolean>({

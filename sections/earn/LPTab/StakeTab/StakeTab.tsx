@@ -52,7 +52,7 @@ import { appReadyState } from 'store/app';
 import curveSeuroRewards from 'contracts/curveSeuroRewards';
 import { LP } from 'sections/earn/types';
 import { CurrencyIconType } from 'components/Currency/CurrencyIcon/CurrencyIcon';
-import { SynthetixJS } from '@synthetixio/contracts-interface';
+import { SynthetixJS } from 'demaa-contracts-interface';
 
 export const getContract = (
 	synthetixjs: SynthetixJS,

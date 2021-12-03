@@ -207,16 +207,16 @@ export const StatsSection = styled(FlexDivRowCentered)`
 `;
 
 export const LineSpacer = styled.div`
-	height: 32px;
+	height: 0.75rem;
 	&:after {
-		background: ${(props) => props.theme.colors.grayBlue};
-		height: 1px;
-		position: absolute;
+		// background: ${(props) => props.theme.colors.grayBlue};
+		// height: 1px;
+		// position: absolute;
 		content: '';
 
 		${media.greaterThan('mdUp')`
-			width: calc(100% - ${DESKTOP_SIDE_NAV_WIDTH}px);
-			left: ${DESKTOP_SIDE_NAV_WIDTH}px;
+			width: calc(100% - ${DESKTOP_SIDE_NAV_WIDTH}rem);
+			left: ${DESKTOP_SIDE_NAV_WIDTH}rem;
 		`}
 
 		${media.lessThan('mdUp')`
@@ -274,9 +274,9 @@ export const ModalItemSeperator = styled.div`
 `;
 
 export const TableNoResults = styled.div`
-	padding: 50px 0;
+	padding: 8rem 0;
 	text-align: center;
-	background-color: ${(props) => props.theme.colors.navy};
+	// background-color: ${(props) => props.theme.colors.navy};
 `;
 
 export const TableNoResultsTitle = styled.div`
@@ -312,7 +312,7 @@ export const IconButton = styled.button`
 `;
 
 export const boxShadowBlue = css`
-	box-shadow: 0px 0px 15px ${(props) => props.theme.colors.blue};
+	// box-shadow: 0px 0px 15px ${(props) => props.theme.colors.blue};
 	border: 1px solid ${(props) => props.theme.colors.blue};
 `;
 
@@ -323,7 +323,7 @@ export const Divider = styled.div`
 `;
 
 export const GlowingCircle = styled(FlexDivCentered)<{
-	variant: 'blue' | 'green' | 'orange' | 'yellow';
+	variant: 'blue' | 'green' | 'orange' | 'yellow' | '';
 	size: 'sm' | 'md' | 'lg';
 }>`
 	border-radius: 50%;
@@ -399,6 +399,7 @@ export const Tooltip = styled(Tippy)`
 `;
 
 export const UpperCased = styled.span`
+	font-family: Microsoft YaHei;
 	text-transform: uppercase;
 `;
 

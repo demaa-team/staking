@@ -6,7 +6,7 @@ import { walletAddressState } from 'store/wallet';
 import { TabContainer } from '../common';
 import TabContent from './TabContent';
 import MigrateTabContent from './MigrateTabContent';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import Wei, { wei } from '@synthetixio/wei';
 
 const StakingRewardsTab: React.FC = () => {

@@ -42,7 +42,7 @@ const Container = styled(FlexDivColCentered)<{ isVisible: boolean }>`
 			transform: translateX(calc(${MOBILE_SIDE_NAV_WIDTH}px));
 
 			${media.greaterThan('mdUp')`
-				transform: translateX(calc(${DESKTOP_SIDE_NAV_WIDTH}px));
+				transform: translateX(calc(${DESKTOP_SIDE_NAV_WIDTH}rem));
 			`}
 		`}
 `;

@@ -31,7 +31,7 @@ const SynthHolding: FC<SynthHoldingProps> = ({
 				<>
 					<StyledProgressBar
 						percentage={percent.toNumber()}
-						variant={progressBarVariant || 'rainbow'}
+						variant={progressBarVariant || 'blue-pink'}
 					/>
 					<StyledPercentage>{formatPercent(percent)}</StyledPercentage>
 				</>

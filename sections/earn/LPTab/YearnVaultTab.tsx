@@ -131,7 +131,7 @@ const YearnVaultTab: FC<LPTabProps> = ({
 							<WhiteSubheader>
 								{t('earn.actions.claim.amount', {
 									amount: (tokenRewards as Wei).toString(DEFAULT_CRYPTO_DECIMALS),
-									asset: CryptoCurrency.SNX,
+									asset: CryptoCurrency.DEM,
 								})}
 							</WhiteSubheader>
 						</>
@@ -163,7 +163,7 @@ const YearnVaultTab: FC<LPTabProps> = ({
 							<WhiteSubheader>
 								{t('earn.actions.claim.amount', {
 									amount: (tokenRewards as Wei).toString(DEFAULT_CRYPTO_DECIMALS),
-									asset: CryptoCurrency.SNX,
+									asset: CryptoCurrency.DEM,
 								})}
 							</WhiteSubheader>
 						</>

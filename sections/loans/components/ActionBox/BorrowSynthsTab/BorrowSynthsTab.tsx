@@ -39,7 +39,7 @@ import TxConfirmationModal from 'sections/shared/modals/TxConfirmationModal';
 import FormButton from './FormButton';
 import AssetInput from './AssetInput';
 import Wei, { wei } from '@synthetixio/wei';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { parseSafeWei } from 'utils/parse';
 
 type BorrowSynthsTabProps = {};

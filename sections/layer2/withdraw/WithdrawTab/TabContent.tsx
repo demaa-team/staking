@@ -63,7 +63,7 @@ const TabContent: FC<TabContentProps> = ({
 }) => {
 	const { t } = useTranslation();
 	const isWalletConnected = useRecoilValue(isWalletConnectedState);
-	const currencyKey = CryptoCurrency['SNX'];
+	const currencyKey = CryptoCurrency['DEM'];
 
 	const inputValueWei = parseSafeWei(inputValue, wei(0));
 
@@ -134,7 +134,7 @@ const TabContent: FC<TabContentProps> = ({
 					</BalanceButton>
 				</HeaderRow>
 				<InputBox>
-					<Currency.Icon currencyKey={CryptoCurrency.SNX} width="50" height="50" />
+					<Currency.Icon currencyKey={CryptoCurrency.DEM} width="50" height="50" />
 					<StyledInput
 						type="number"
 						maxLength={12}

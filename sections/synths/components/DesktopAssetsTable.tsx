@@ -38,7 +38,7 @@ import { isSynth } from 'utils/currencies';
 
 import SynthPriceCol from './SynthPriceCol';
 import { StyledButtonBlue, StyledButtonPink } from './common';
-import { CurrencyKey } from '@synthetixio/contracts-interface';
+import { CurrencyKey } from 'demaa-contracts-interface';
 
 type AssetsTableProps = {
 	assets: CryptoBalance[];
@@ -87,7 +87,6 @@ const AssetsTable: FC<AssetsTableProps> = ({
 				accessor: 'currencyKey',
 				Cell: (cellProps: CellProps<CryptoBalance, CryptoBalance['currencyKey']>) => {
 					const synthDesc = synthsMap != null ? synthsMap[cellProps.value]?.description : '';
-
 					return (
 						<Currency.Name
 							currencyKey={cellProps.value}
@@ -165,7 +164,7 @@ const AssetsTable: FC<AssetsTableProps> = ({
 						original: { currencyKey },
 					},
 				}: CellProps<CryptoBalance>) => {
-					if (currencyKey === CryptoCurrency.SNX) {
+					if (currencyKey === CryptoCurrency.DEM) {
 						return (
 							<Link href={ROUTES.Staking.Home}>
 								<StyledButtonPink>{t('common.stake-snx')}</StyledButtonPink>
@@ -173,19 +172,20 @@ const AssetsTable: FC<AssetsTableProps> = ({
 						);
 					}
 					return (
-						<ExternalLink
-							href={EXTERNAL_LINKS.Trading.OneInchLink(currencyKey, CryptoCurrency.SNX)}
-						>
-							<StyledButtonPink>
-								<Trans
-									i18nKey="common.currency.buy-currency"
-									values={{
-										currencyKey: CryptoCurrency.SNX,
-									}}
-									components={[<NoTextTransform />]}
-								/>
-							</StyledButtonPink>
-						</ExternalLink>
+						<></>
+						// <ExternalLink
+						// 	href={EXTERNAL_LINKS.Trading.OneInchLink(currencyKey, CryptoCurrency.DEM)}
+						// >
+						// 	<StyledButtonPink>
+						// 		<Trans
+						// 			i18nKey="common.currency.buy-currency"
+						// 			values={{
+						// 				currencyKey: CryptoCurrency.DEM,
+						// 			}}
+						// 			components={[<NoTextTransform />]}
+						// 		/>
+						// 	</StyledButtonPink>
+						// </ExternalLink>
 					);
 				},
 				width: 180,
@@ -202,7 +202,7 @@ const AssetsTable: FC<AssetsTableProps> = ({
 						original: { currencyKey },
 					},
 				}: CellProps<CryptoBalance>) => {
-					return isSynth(currencyKey) || currencyKey === CryptoCurrency.SNX ? (
+					return isSynth(currencyKey) || currencyKey === CryptoCurrency.DEM ? (
 						<StyledButtonBlue onClick={() => onTransferClick(currencyKey)}>
 							{t('synths.assets.synths.table.transfer')}
 						</StyledButtonBlue>

@@ -48,7 +48,7 @@ import { SPACE_KEY } from 'constants/snapshot';
 import CouncilNominations from 'constants/nominations.json';
 import { isWalletConnectedState } from 'store/wallet';
 import { shuffle } from 'lodash';
-import { Proposal } from '@synthetixio/queries';
+import { Proposal } from 'demaa-queries';
 
 type ContentProps = {
 	proposal: Proposal;

@@ -1,4 +1,4 @@
-export const DESKTOP_SIDE_NAV_WIDTH = 160;
+export const DESKTOP_SIDE_NAV_WIDTH = 13.5;
 export const MOBILE_SIDE_NAV_WIDTH = 320;
 
 export const DESKTOP_BODY_PADDING = 40;

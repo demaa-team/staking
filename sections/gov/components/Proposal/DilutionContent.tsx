@@ -57,7 +57,7 @@ import TxConfirmationModal from 'sections/shared/modals/TxConfirmationModal';
 
 import TxState from 'sections/gov/components/TxState';
 import { expired, pending } from '../helper';
-import useSynthetixQueries, { Proposal } from '@synthetixio/queries';
+import useSynthetixQueries, { Proposal } from 'demaa-queries';
 import { snapshotEndpoint } from 'constants/snapshot';
 import { useMemo } from 'react';
 

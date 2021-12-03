@@ -37,7 +37,7 @@ import { isSynth } from 'utils/currencies';
 
 import SynthPriceCol from './SynthPriceCol';
 import { StyledButtonBlue, StyledButtonPink } from './common';
-import { CurrencyKey } from '@synthetixio/contracts-interface';
+import { CurrencyKey } from 'demaa-contracts-interface';
 
 type AssetsTableProps = {
 	assets: CryptoBalance[];
@@ -143,7 +143,7 @@ const AssetsTable: FC<AssetsTableProps> = ({
 								<ActionButtonsContainer>
 									{!showConvert ? null : (
 										<>
-											{asset.currencyKey === CryptoCurrency.SNX ? (
+											{asset.currencyKey === CryptoCurrency.DEM ? (
 												<Link href={ROUTES.Staking.Home}>
 													<StyledButtonPink>{t('common.stake-snx')}</StyledButtonPink>
 												</Link>
@@ -151,14 +151,14 @@ const AssetsTable: FC<AssetsTableProps> = ({
 												<ExternalLink
 													href={EXTERNAL_LINKS.Trading.OneInchLink(
 														asset.currencyKey,
-														CryptoCurrency.SNX
+														CryptoCurrency.DEM
 													)}
 												>
 													<StyledButtonPink>
 														<Trans
 															i18nKey="common.currency.buy-currency"
 															values={{
-																currencyKey: CryptoCurrency.SNX,
+																currencyKey: CryptoCurrency.DEM,
 															}}
 															components={[<NoTextTransform />]}
 														/>
@@ -171,7 +171,7 @@ const AssetsTable: FC<AssetsTableProps> = ({
 									{!(!isL2 && onTransferClick) ? null : (
 										<>
 											{!(
-												isSynth(asset.currencyKey) || asset.currencyKey === CryptoCurrency.SNX
+												isSynth(asset.currencyKey) || asset.currencyKey === CryptoCurrency.DEM
 											) ? null : (
 												<StyledButtonBlue onClick={() => onTransferClick(asset.currencyKey)}>
 													{t('synths.assets.synths.table.transfer')}

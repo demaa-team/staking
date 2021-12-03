@@ -70,11 +70,11 @@ const LoansPage: FC<LoansPageProps> = () => {
 
 const Earning = styled(StatBox)`
 	.title {
-		color: ${(props) => props.theme.colors.green};
+		color: ${(props) => props.theme.colors.white};
 	}
 	.value {
-		text-shadow: ${(props) => props.theme.colors.greenTextShadow};
-		color: #073124;
+		// text-shadow: ${(props) => props.theme.colors.greenTextShadow};
+		color: ${(props) => props.theme.colors.white};
 	}
 `;
 

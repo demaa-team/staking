@@ -8,7 +8,7 @@ export const FormLabel = styled.div`
 	font-size: 12px;
 	line-height: 120%;
 	text-transform: uppercase;
-	color: ${(props) => props.theme.colors.gray};
+	color: ${(props) => props.theme.colors.white};
 `;
 
 export const InputsDivider = styled.div`

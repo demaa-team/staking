@@ -79,10 +79,11 @@ const CRatio = styled(StatBox)`
 `;
 
 export const CRatioProgressBar = styled(ProgressBar)`
-	height: 6px;
+	height: 0.8rem;
 	width: 100%;
 	transform: translateY(12px);
-	max-width: 176px;
+	max-width: 19.1rem;
+	border-radius:0.35rem
 `;
 
 export default L2Page;

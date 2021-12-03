@@ -19,7 +19,7 @@ export enum Tab {
 	sBTC_SHORT = 'sBTC Short',
 	sETH_SHORT = 'sETH Short',
 	iBTC_LP = 'iBTC-LP',
-	yearn_SNX_VAULT = 'yearn-SNX',
+	yearn_SNX_VAULT = 'yearn-DEM',
 }
 
 export enum LP {

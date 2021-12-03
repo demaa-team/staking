@@ -25,6 +25,9 @@ const Index: React.FC = () => {
 };
 
 const Container = styled.div`
+	background:#203298;
+	padding:1rem;
+	border-radius:1rem;
 	${media.greaterThan('mdUp')`
 		display: grid;
 		grid-template-columns: 2fr 1fr;

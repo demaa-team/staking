@@ -1,7 +1,7 @@
 import detectEthereumProvider from '@metamask/detect-provider';
 
 import { DEFAULT_GAS_BUFFER, DEFAULT_NETWORK_ID } from 'constants/defaults';
-import { NetworkId } from '@synthetixio/contracts-interface';
+import { NetworkId } from 'demaa-contracts-interface';
 import { GasLimitEstimate } from 'constants/network';
 import Wei from '@synthetixio/wei';
 import { GWEI_UNIT } from './infura';

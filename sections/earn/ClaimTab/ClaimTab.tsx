@@ -75,7 +75,7 @@ import {
 	HeaderLabel,
 } from '../common';
 import { MobileOnlyView } from 'components/Media';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { snapshotEndpoint } from 'constants/snapshot';
 import Connector from 'containers/Connector';
 
@@ -177,7 +177,7 @@ const ClaimTab: React.FC<ClaimTabProps> = ({ tradingRewards, stakingRewards, tot
 					);
 
 					setGasLimitEstimate(gasEstimate);
-				} catch (error) {
+				} catch (error:any) {
 					if (isL2 && error.data) {
 						if (error.data.message.includes('below penalty threshold')) {
 							setLowCRatio(true);
@@ -248,7 +248,7 @@ const ClaimTab: React.FC<ClaimTabProps> = ({ tradingRewards, stakingRewards, tot
 						});
 						setTxModalOpen(false);
 					}
-				} catch (e) {
+				} catch (e:any) {
 					setTransactionState(Transaction.PRESUBMIT);
 					if (isL2) {
 						setError(e?.data?.message ?? e.message);
@@ -335,7 +335,7 @@ const ClaimTab: React.FC<ClaimTabProps> = ({ tradingRewards, stakingRewards, tot
 											minDecimals: DEFAULT_FIAT_DECIMALS,
 											maxDecimals: DEFAULT_FIAT_DECIMALS,
 										}),
-										asset: CryptoCurrency.SNX,
+										asset: CryptoCurrency.DEM,
 									})}
 								</WhiteSubheader>
 							</StyledFlexDivColCentered>
@@ -387,7 +387,7 @@ const ClaimTab: React.FC<ClaimTabProps> = ({ tradingRewards, stakingRewards, tot
 											minDecimals: DEFAULT_FIAT_DECIMALS,
 											maxDecimals: DEFAULT_FIAT_DECIMALS,
 										}),
-										asset: CryptoCurrency.SNX,
+										asset: CryptoCurrency.DEM,
 									})}
 								</WhiteSubheader>
 							</StyledFlexDivColCentered>
@@ -427,12 +427,12 @@ const ClaimTab: React.FC<ClaimTabProps> = ({ tradingRewards, stakingRewards, tot
 					</MobileOnlyView>
 				</GoToEarnButtonContainer>
 
-				<HeaderLabel>
+				{/* <HeaderLabel>
 					<Trans
 						i18nKey="earn.incentives.options.snx.description"
 						components={[<StyledLink href={EXTERNAL_LINKS.Synthetix.Incentives} />]}
 					/>
-				</HeaderLabel>
+				</HeaderLabel> */}
 				<InnerContainer>
 					<ValueBoxWrapper>
 						<ValueBox>
@@ -450,11 +450,11 @@ const ClaimTab: React.FC<ClaimTabProps> = ({ tradingRewards, stakingRewards, tot
 						</ValueBox>
 						<ValueBox>
 							<StyledGlowingCircle variant="green" size="md">
-								<Currency.Icon currencyKey={CryptoCurrency.SNX} width="36" height="36" />
+								<Currency.Icon currencyKey={CryptoCurrency.DEM} width="36" height="36" />
 							</StyledGlowingCircle>
 							<Value>
-								{formatCurrency(CryptoCurrency.SNX, stakingRewards, {
-									currencyKey: CryptoCurrency.SNX,
+								{formatCurrency(CryptoCurrency.DEM, stakingRewards, {
+									currencyKey: CryptoCurrency.DEM,
 								})}
 							</Value>
 							<Subtext>{t('earn.incentives.options.snx.staking-rewards')}</Subtext>
@@ -538,7 +538,7 @@ const ClaimTab: React.FC<ClaimTabProps> = ({ tradingRewards, stakingRewards, tot
 										<WhiteSubheader>
 											{t('earn.actions.claim.amount', {
 												amount: formatNumber(stakingRewards, {}),
-												asset: CryptoCurrency.SNX,
+												asset: CryptoCurrency.DEM,
 											})}
 										</WhiteSubheader>
 									</StyledFlexDivColCentered>
@@ -556,7 +556,8 @@ const InnerContainer = styled(FlexDivColCentered)`
 	padding: 20px;
 	border: 1px solid ${(props) => props.theme.colors.pink};
 	border-radius: 4px;
-	background-image: url(${largeWaveSVG.src});
+	// background-image: url(${largeWaveSVG.src});
+	// background:#1A2479;
 	background-size: cover;
 `;
 
@@ -603,6 +604,7 @@ const StyledGlowingCircle = styled(GlowingCircle)`
 
 const StyledTabContainer = styled(TabContainer)`
 	height: inherit;
+	padding: 0 24px;
 `;
 
 const StyledIconButton = styled(IconButton)`

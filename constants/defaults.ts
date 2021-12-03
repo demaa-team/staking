@@ -3,7 +3,7 @@ import { Language } from 'translations/constants';
 import localStore from 'utils/localStore';
 import { languageStateKey, priceCurrencyStateKey } from 'store/app/constants';
 
-import { CurrencyCategory, NetworkId, Synth } from '@synthetixio/contracts-interface';
+import { CurrencyCategory, NetworkId, Synth } from 'demaa-contracts-interface';
 
 // app defaults
 export const DEFAULT_LANGUAGE: Language = localStore.get(languageStateKey) ?? Language.EN;
@@ -16,7 +16,7 @@ export const DEFAULT_PRICE_CURRENCY: Synth = localStore.get(priceCurrencyStateKe
 };
 
 // network defaults
-export const DEFAULT_NETWORK_ID = NetworkId.Mainnet;
+export const DEFAULT_NETWORK_ID = NetworkId.Mumbai;
 
 export const DEFAULT_GAS_LIMIT = 500000;
 export const DEFAULT_GAS_BUFFER = 15000;

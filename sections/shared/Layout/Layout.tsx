@@ -5,7 +5,7 @@ import i18n from 'i18n';
 
 import { zIndex } from 'constants/ui';
 import media from 'styles/media';
-
+import 'cross-fetch/polyfill'
 import { languageState } from 'store/app';
 
 type LayoutProps = {
@@ -18,7 +18,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 	useEffect(() => {
 		i18n.changeLanguage(language);
 	}, [language]);
-
+	
 	return (
 		<>
 			<GlobalStyle />
@@ -49,7 +49,7 @@ const GlobalStyle = createGlobalStyle`
 			margin-top: 20px;
 		}
 		&&.bn-onboard-account-select {
-			background-color: ${(props) => props.theme.colors.navy};
+			background-color: #203298;
 		}
 		&&.bn-onboard-modal {
 			z-index: ${zIndex.DIALOG_OVERLAY};
@@ -62,11 +62,11 @@ const GlobalStyle = createGlobalStyle`
 			background: none;
 		}
 		&&.bn-onboard-selected-wallet {
-			background-color: ${(props) => props.theme.colors.grayBlue};
+			background-color: #1A2479;
 			color: ${(props) => props.theme.colors.white};
 		}
 		&&.bn-onboard-modal-content {
-			background-color: ${(props) => props.theme.colors.navy};
+			background-color: #203298;
 			${media.lessThan('sm')`
 				height: 100%;
 			`};
@@ -76,18 +76,18 @@ const GlobalStyle = createGlobalStyle`
 			color: ${(props) => props.theme.colors.white};
 		}
 		&&.bn-onboard-dark-mode-background.bn-onboard-prepare-error {
-			background-color: ${(props) => props.theme.colors.navy};
+			background-color: #203298;
 		}
 		&&.bn-onboard-dark-mode-background-hover {
 			&:hover {
-				background-color: ${(props) => props.theme.colors.grayBlue};
+				background-color: #1A2479;
 			}
 		}
 		&&.bn-onboard-prepare-button {
 			border-radius: 2px;
 			color: ${(props) => props.theme.colors.white} ;
-			background-color: ${(props) => props.theme.colors.navy} ;
-			border: 1px solid ${(props) => props.theme.colors.grayBlue} ;
+			background-color: #203298 ;
+			border: 1px solid #1A2479 ;
 		}
 		.bn-onboard-clickable {
 			color: ${(props) => props.theme.colors.white} !important;
@@ -109,19 +109,19 @@ const GlobalStyle = createGlobalStyle`
 	scrollbar-base-color: ${(props) => props.theme.colors.pink};
 	scrollbar-3dlight-color: ${(props) => props.theme.colors.pink};
 	scrollbar-highlight-color: ${(props) => props.theme.colors.pink};
-	scrollbar-track-color: ${(props) => props.theme.colors.grayBlue};
-	scrollbar-arrow-color: ${(props) => props.theme.colors.grayBlue};
+	scrollbar-track-color: #1A2479;
+	scrollbar-arrow-color: #1A2479;
 	scrollbar-shadow-color: ${(props) => props.theme.colors.pink};
 	scrollbar-dark-shadow-color: ${(props) => props.theme.colors.pink};
 
 	::-webkit-scrollbar-button {
-		background-color: ${(props) => props.theme.colors.grayBlue};
+		background-color: #1A2479;
 	}
 	::-webkit-scrollbar-track {
 		background-color: ${(props) => props.theme.colors.pink};
 	}
 	::-webkit-scrollbar-track-piece {
-		background-color: ${(props) => props.theme.colors.grayBlue};
+		background-color: #1A2479;
 	}
 	::-webkit-scrollbar-thumb {
 		background-color: ${(props) => props.theme.colors.blue};

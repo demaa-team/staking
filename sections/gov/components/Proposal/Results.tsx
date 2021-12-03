@@ -12,11 +12,11 @@ import CouncilNominations from 'constants/nominations.json';
 import { useRecoilValue } from 'recoil';
 import { numOfCouncilSeatsState } from 'store/gov';
 import { UseQueryResult } from 'react-query';
-import { ProposalResults } from '@synthetixio/queries';
+import { ProposalResults } from 'demaa-queries';
 import {
 	numOfGrantMembers,
 	numOfAmbassadorMembers,
-} from '@synthetixio/queries/build/node/src/queries/gov/constants';
+} from 'demaa-queries/build/node/src/queries/gov/constants';
 
 type ResultsProps = {
 	proposalResults: UseQueryResult<ProposalResults, unknown>;

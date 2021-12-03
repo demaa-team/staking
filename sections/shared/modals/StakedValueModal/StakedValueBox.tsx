@@ -28,7 +28,7 @@ export const StakedValueBox: FC<{ title: any; value: any; isGreen?: boolean }> =
 const StakedValue = styled(StatBox)<{ isGreen?: boolean }>`
 	cursor: pointer;
 	.title {
-		color: ${(props) => (props.isGreen ? props.theme.colors.green : props.theme.colors.blue)};
+		color: #fff};
 	}
 `;
 

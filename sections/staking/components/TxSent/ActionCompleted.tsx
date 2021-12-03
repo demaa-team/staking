@@ -251,8 +251,8 @@ const LeftButton = styled(BaseButton)`
 
 const RightButton = styled(BaseButton)`
 	${boxShadowBlue}
-	background-color: ${(props) => props.theme.colors.grayBlue};
-	color: ${(props) => props.theme.colors.blue};
+	// background-color: ${(props) => props.theme.colors.grayBlue};
+	// color: ${(props) => props.theme.colors.blue};
 	text-transform: uppercase;
 
 `;

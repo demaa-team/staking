@@ -42,8 +42,9 @@ const Pagination: FC<PaginationProps> = ({
 				</ArrowButton>
 			</span>
 			<PageInfo>
-				{t('common.pagination.page')}{' '}
-				{t('common.pagination.page-of-total-pages', { page: pageIndex + 1, totalPages: pageCount })}
+				{pageIndex + 1}
+				{/* {t('common.pagination.page')}{' '} */}
+				{/* {t('common.pagination.page-of-total-pages', { page: pageIndex + 1, totalPages: pageCount })} */}
 			</PageInfo>
 			<span>
 				<ArrowButton onClick={() => nextPage()} disabled={!canNextPage}>
@@ -58,12 +59,20 @@ const Pagination: FC<PaginationProps> = ({
 };
 
 const PageInfo = styled.span`
-	color: ${(props) => props.theme.colors.gray};
+	color: ${(props) => props.theme.colors.white};
+	display:inline-block;
+	border-radius:50%;
+	border:1px solid #F76C2A;
+	width:20px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
 `;
 
-const PaginationContainer = styled(GridDivCenteredCol)`
-	grid-template-columns: auto 1fr auto;
-	background-color: ${(props) => props.theme.colors.navy};
+const PaginationContainer = styled.div`
+	// grid-template-columns: auto 1fr auto;
+	// background-color: ${(props) => props.theme.colors.navy};
+	text-align:end;
 	padding: 13px 12px;
 	border-bottom-left-radius: 4px;
 	border-bottom-right-radius: 4px;
@@ -82,7 +91,7 @@ const ArrowButton = styled.button`
 	&[disabled] {
 		cursor: default;
 		svg {
-			color: ${(props) => props.theme.colors.gray};
+			color: ${(props) => props.theme.colors.white};
 		}
 	}
 `;

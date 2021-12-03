@@ -1,10 +1,10 @@
 import { renderHook } from '@testing-library/react-hooks';
-import useSynthetixQueries, { StakingTransactionType } from '@synthetixio/queries';
+import useSynthetixQueries, { StakingTransactionType } from 'demaa-queries';
 import useClaimedStatus from './useClaimedStatus';
 import { RecoilRoot } from 'recoil';
 import { Transaction } from 'constants/network';
 
-jest.mock('@synthetixio/queries');
+jest.mock('demaa-queries');
 const useSynthetixQueriesMock = useSynthetixQueries as jest.MockedFunction<
 	typeof useSynthetixQueries
 >;

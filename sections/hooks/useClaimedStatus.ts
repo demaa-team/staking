@@ -1,4 +1,4 @@
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { useEffect, useMemo } from 'react';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState } from 'store/wallet';

@@ -42,29 +42,30 @@ const Banner: FC<BannerProps> = ({ message, localStorageKey, type = BannerType.I
 
 	if (!isBannerVisible) return null;
 	return (
-		<Container>
-			<Inner>
-				<Bar type={type} />
-				<Message>{message}</Message>
+		<></>
+		// <Container>
+		// 	<Inner>
+		// 		<Bar type={type} />
+		// 		<Message>{message}</Message>
 
-				{type !== BannerType.WARNING && (
-					<ButtonClose onClick={handleHideBanner}>
-						<Svg src={CloseIcon} />
-					</ButtonClose>
-				)}
-			</Inner>
-		</Container>
+		// 		{type !== BannerType.WARNING && (
+		// 			<ButtonClose onClick={handleHideBanner}>
+		// 				<Svg src={CloseIcon} />
+		// 			</ButtonClose>
+		// 		)}
+		// 	</Inner>
+		// </Container>
 	);
 };
 
 const Container = styled(FlexDivCentered)`
 	width: 800px;
 	height: 44px;
-	background-color: ${(props) => props.theme.colors.mediumBlue};
+	background-color: #203298;
 	border-radius: 4px;
 	position: absolute;
-	left: 180px;
-	top: 24px;
+	left: 14rem;
+	top: 1rem;
 `;
 
 const Inner = styled(FlexDivCentered)`

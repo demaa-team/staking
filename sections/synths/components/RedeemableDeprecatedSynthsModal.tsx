@@ -1,9 +1,9 @@
 import { FC, useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import { useTranslation, Trans } from 'react-i18next';
-import { Synths } from '@synthetixio/contracts-interface';
+import { Synths } from 'demaa-contracts-interface';
 import Wei, { wei } from '@synthetixio/wei';
-import useSynthetixQueries, { Balances, DeprecatedSynthBalance } from '@synthetixio/queries';
+import useSynthetixQueries, { Balances, DeprecatedSynthBalance } from 'demaa-queries';
 import { Svg } from 'react-optimized-image';
 
 import BaseModal from 'components/BaseModal';
@@ -335,11 +335,11 @@ const ValueSelectLabelCurrenciesBlock = styled.div`
 
 const StyledModal = styled(BaseModal)`
 	.card-header {
-		border-top: 2px solid ${(props) => props.theme.colors.blue};
+		// border-top: 2px solid ${(props) => props.theme.colors.blue};
 		font-size: 12px;
 		font-family: ${(props) => props.theme.fonts.interBold};
-		background-color: ${(props) => props.theme.colors.navy};
-		border-bottom: 1px solid ${(props) => props.theme.colors.grayBlue};
+		// background-color: ${(props) => props.theme.colors.navy};
+		// border-bottom: 1px solid ${(props) => props.theme.colors.grayBlue};
 		text-transform: uppercase;
 	}
 `;

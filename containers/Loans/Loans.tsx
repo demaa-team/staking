@@ -58,7 +58,6 @@ function Container() {
 			exchangeRatesContract,
 		];
 	}, [isAppReady, signer, synthetixjs]);
-
 	useEffect(() => {
 		if (
 			!(
@@ -67,9 +66,7 @@ function Container() {
 				provider &&
 				exchangeRatesContract &&
 				ethLoanContract &&
-				erc20LoanContract &&
-				ethLoanStateContract &&
-				erc20LoanStateContract
+				erc20LoanContract
 			)
 		)
 			return;
@@ -80,13 +77,13 @@ function Container() {
 		};
 
 		const loanStateContracts: Record<string, typeof erc20LoanContract> = {
-			[LOAN_TYPE_ERC20]: erc20LoanStateContract,
-			[LOAN_TYPE_ETH]: ethLoanStateContract,
+			[LOAN_TYPE_ERC20]: erc20LoanContract,
+			[LOAN_TYPE_ETH]: ethLoanContract,
 		};
 
 		let isMounted = true;
 		const unsubs: Array<any> = [() => (isMounted = false)];
-
+		
 		const loadLoans = async () => {
 			setIsLoadingLoans(true);
 			const loanIndices = await Promise.all(Object.keys(loanStateContracts).map(getLoanIndices));
@@ -95,10 +92,9 @@ function Container() {
 					setMinCRatios((cratios) => cratios.set(type, minCRatio.mul(1e2)));
 				});
 			}
-
 			const loans: Array<any> = await Promise.all(loanIndices.map(getLoans));
 			let activeLoans: Array<any> = [];
-
+			debugger
 			loans.forEach((a) => {
 				a.forEach(({ type, minCRatio, loan }: any) => {
 					if (!loan.amount.eq(0)) {
@@ -123,7 +119,7 @@ function Container() {
 				setIsLoadingLoans(false);
 			}
 		};
-
+		
 		const getLoanIndices = async (type: string) => {
 			const loanContract = loanContracts[type];
 			const loanStateContract = loanStateContracts[type];
@@ -176,7 +172,7 @@ function Container() {
 						minCRatio: await loanContract.minCratio(),
 					});
 				};
-
+				debugger
 				const updateLoan = async (owner: string, id: string) => {
 					const loan = await fetchLoan(owner, id);
 					setLoans((originalLoans) => {
@@ -193,10 +189,12 @@ function Container() {
 
 				const onLoanCreated = async (owner: string, id: string) => {
 					const loan = await fetchLoan(owner, id);
+					debugger
 					setLoans((loans) => [loan, ...loans]);
 				};
 
 				const onLoanClosed = (owner: string, id: string) => {
+					debugger
 					setLoans((loans) => loans.filter((loan) => !loan.id.eq(id)));
 				};
 
@@ -205,6 +203,7 @@ function Container() {
 					id: string,
 					amount: ethers.BigNumber
 				) => {
+					debugger
 					setLoans((loans) =>
 						loans.map((loan) => {
 							if (loan.id.eq(id)) {
@@ -221,6 +220,7 @@ function Container() {
 					id: string,
 					amount: ethers.BigNumber
 				) => {
+					debugger
 					setLoans((loans) =>
 						loans.map((loan) => {
 							if (loan.id.eq(id)) {
@@ -238,6 +238,7 @@ function Container() {
 					id: string,
 					payment: ethers.BigNumber
 				) => {
+					debugger
 					setLoans((loans) =>
 						loans.map((loan) => {
 							if (loan.id.eq(id)) {
@@ -250,6 +251,7 @@ function Container() {
 				};
 
 				const onLoanDrawnDown = async (owner: string, id: string, amount: ethers.BigNumber) => {
+					debugger
 					setLoans((loans) =>
 						loans.map((loan) => {
 							if (loan.id.eq(id)) {

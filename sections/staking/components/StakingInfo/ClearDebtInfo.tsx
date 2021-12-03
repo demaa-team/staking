@@ -12,7 +12,7 @@ import { CryptoCurrency, Synths } from 'constants/currency';
 import { getStakingAmount, getTransferableAmountFromBurn, sanitiseValue } from '../helper';
 
 import InfoLayout from './InfoLayout';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { walletAddressState } from 'store/wallet';
 import { wei } from '@synthetixio/wei';
 import { parseSafeWei } from 'utils/parse';
@@ -81,7 +81,7 @@ const StakingInfo: FC = () => {
 					changedPercentage: collateral.eq(0)
 						? wei(0)
 						: sanitiseValue(changedStakedValue).div(collateral),
-					currencyKey: CryptoCurrency.SNX,
+					currencyKey: CryptoCurrency.DEM,
 				},
 				{
 					title: t('staking.info.table.transferable'),
@@ -93,7 +93,7 @@ const StakingInfo: FC = () => {
 					changedPercentage: collateral.eq(0)
 						? wei(0)
 						: sanitiseValue(changedTransferable).div(sanitiseValue(collateral)),
-					currencyKey: CryptoCurrency.SNX,
+					currencyKey: CryptoCurrency.DEM,
 				},
 			],
 			dataRows: [

@@ -3,12 +3,13 @@ import Img, { Svg } from 'react-optimized-image';
 import styled from 'styled-components';
 
 import ETHIcon from 'assets/svg/currencies/crypto/ETH.svg';
+
 import DeprecatedXIcon from 'assets/svg/app/deprecated-x.svg';
 
 import { CryptoCurrency, CurrencyKey } from 'constants/currency';
 
 import { FlexDivCentered } from 'styles/common';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { EXTERNAL_LINKS } from 'constants/links';
 
 export enum CurrencyIconType {
@@ -25,9 +26,9 @@ type CurrencyIconProps = {
 	height?: string;
 	isDeprecated?: boolean;
 };
+export const SNXIcon =require('../../../assets/wallet-icons/SNX.png');
 
-export const SNXIcon =
-	'https://raw.githubusercontent.com/Synthetixio/synthetix-assets/master/snx/SNX.svg';
+export const SCNIcon =require('../../../assets/svg/currencies/crypto/SCN2111.png');
 
 export const getSynthIcon = (currencyKey: CurrencyKey) =>
 	`https://raw.githubusercontent.com/Synthetixio/synthetix-assets/master/synths/${currencyKey}.svg`;
@@ -71,8 +72,8 @@ export const CurrencyIcon: FC<CurrencyIconProps> = ({
 		: null;
 
 	const props = {
-		width: '24px',
-		height: '24px',
+		width: '20px',
+		height: '20px',
 		alt: currencyKey,
 		...rest,
 	};
@@ -82,8 +83,11 @@ export const CurrencyIcon: FC<CurrencyIconProps> = ({
 			case CryptoCurrency.ETH: {
 				return <Img src={ETHIcon} {...props} />;
 			}
-			case CryptoCurrency.SNX: {
+			case CryptoCurrency.DEM: {
 				return <img src={SNXIcon} {...props} alt="snx-icon" />;
+			}
+			case CryptoCurrency.SCN: {
+				return <img src={SCNIcon} {...props} alt="scn-icon"/>;
 			}
 			default:
 				return (
@@ -156,7 +160,9 @@ const Placeholder = styled(FlexDivCentered)<{ isDeprecated?: boolean }>`
 
 const TokenIcon = styled.img<{ isDeprecated?: boolean }>`
 	border-radius: 100%;
-	border: 2px solid ${(props) => (props.isDeprecated ? props.theme.colors.red : 'transparent')};
+	width:24px;
+	height:24px;
+	// border: 2px solid ${(props) => (props.isDeprecated ? props.theme.colors.red : 'transparent')};
 `;
 
 export default CurrencyIconContainer;

@@ -56,9 +56,11 @@ export const MobileWalletOptionsModal: FC<WalletOptionsProps> = ({
 
 const DesktopStyledMenuModal = styled(FlexDivColCentered)`
 	margin-top: 12px;
-	background: ${(props) => props.theme.colors.navy};
-	border: 1px solid ${(props) => props.theme.colors.mediumBlue};
-	border-radius: 4px;
+	background: #203298;
+	// border: 1px solid ${(props) => props.theme.colors.mediumBlue};
+	border-radius: 1.5rem;
+	padding:2.5rem 0;
+	box-shadow:0 0px 5px 0 #333333
 `;
 
 const MobileStyledMenuModal = styled(MenuModal)`

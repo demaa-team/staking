@@ -18,17 +18,19 @@ const Index: React.FC = () => {
 			<Col>
 				<ActionBox currentTab={defaultTab} />
 			</Col>
-			<Col>
+			{/* <Col>
 				<EscrowTable />
-			</Col>
+			</Col> */}
 		</Container>
 	);
 };
 
 const Container = styled.div`
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 1rem;
+	// background:#203298;
+	padding:1rem;
+	// display: grid;
+	// grid-template-columns: 1fr 1fr;
+	// grid-gap: 1rem;
 
 	${media.lessThan('mdUp')`
 		display: flex;

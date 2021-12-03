@@ -36,7 +36,7 @@ const PeriodBarStats: FC = () => {
 					)}
 				</BarValue>
 			</BarHeaderSection>
-			<StyledProgressBar percentage={currentFeePeriodProgress} variant="green" />
+			<StyledProgressBar percentage={currentFeePeriodProgress} variant="blue-pink" />
 		</BarStatBox>
 	);
 };

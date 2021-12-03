@@ -61,8 +61,8 @@ const StyledBaseModal = styled(BaseModal)`
 	.card-header {
 		font-size: 12px;
 		font-family: ${(props) => props.theme.fonts.interBold};
-		background-color: ${(props) => props.theme.colors.navy};
-		border-bottom: 1px solid ${(props) => props.theme.colors.grayBlue};
+		// background-color: ${(props) => props.theme.colors.navy};
+		// border-bottom: 1px solid ${(props) => props.theme.colors.grayBlue};
 	}
 	.card-body {
 		padding: 24px;

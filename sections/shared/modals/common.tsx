@@ -31,6 +31,6 @@ export const MenuModal = styled(CenteredModal)`
 	justify-content: flex-start;
 	padding-top: 90px;
 	.card-body {
-		padding: 36px;
+		padding: 0 1.8rem;
 	}
 `;

@@ -34,7 +34,7 @@ import AccruedInterest from 'sections/loans/components/ActionBox/components/Accr
 import CRatio from 'sections/loans/components/ActionBox/components/LoanCRatio';
 import TxConfirmationModal from 'sections/shared/modals/TxConfirmationModal';
 import Wei, { wei } from '@synthetixio/wei';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 
 type WrapperProps = {
 	getTxData: (gas: Record<string, number>) => any[] | null;

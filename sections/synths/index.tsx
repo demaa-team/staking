@@ -4,7 +4,7 @@ import { useRecoilValue } from 'recoil';
 import { Svg } from 'react-optimized-image';
 import styled from 'styled-components';
 import { wei } from '@synthetixio/wei';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 
 import {
 	FlexDiv,
@@ -67,7 +67,7 @@ const Index: FC = () => {
 					currencyKey,
 					balance: transferrable || balance,
 				}))
-				.filter(({ currencyKey }) => isSynth(currencyKey) || currencyKey === CryptoCurrency.SNX),
+				.filter(({ currencyKey }) => isSynth(currencyKey) || currencyKey === CryptoCurrency.DEM),
 		[synthAssets, cryptoAssets]
 	);
 	const redeemableDeprecatedSynths = useMemo(() => redeemableDeprecatedSynthsQuery?.data, [
@@ -117,9 +117,9 @@ const Index: FC = () => {
 				onTransferClick={handleOnTransferClick}
 			/>
 
-			{!totalSynthValue.eq(0) ? <KwentaBanner /> : null}
+			{/* {!totalSynthValue.eq(0) ? <KwentaBanner /> : null} */}
 
-			<VerticalSpacer />
+			{/* <VerticalSpacer /> */}
 
 			{!(isWalletConnected && redeemAmount?.gt(0)) ? null : (
 				<AssetsTable
@@ -167,7 +167,7 @@ const Index: FC = () => {
 				/>
 			)}
 
-			<VerticalSpacer />
+			{/* <VerticalSpacer /> */}
 
 			{isWalletConnected && cryptoBalances.balances.length > 0 && (
 				<AssetsTable

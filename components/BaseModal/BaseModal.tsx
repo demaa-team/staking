@@ -13,7 +13,7 @@ import media from 'styles/media';
 type BaseModalProps = {
 	title: ReactNode;
 	isOpen?: boolean;
-	onDismiss: () => void;
+	onDismiss: ()=>void;
 	children: ReactNode;
 	showCross?: boolean;
 };
@@ -30,7 +30,7 @@ export const BaseModal: FC<BaseModalProps> = ({
 		<StyledDialogContent aria-label="modal">
 			<StyledCard className="card">
 				<StyledCardHeader className="card-header">
-					{title}
+					{/* {title} */}
 					{showCross && (
 						<DismissButton onClick={onDismiss}>
 							<Svg src={CrossIcon} />
@@ -60,7 +60,7 @@ const StyledDialogOverlay = styled(DialogOverlay)`
 const StyledDialogContent = styled(DialogContent)`
 	padding: 0;
 	border: 0;
-	background: ${(props) => props.theme.colors.navy};
+	background: transparent;
 	${media.lessThan('sm')`
 		&&& {		
 			width: 100%;
@@ -71,12 +71,14 @@ const StyledDialogContent = styled(DialogContent)`
 
 const StyledCard = styled(Card)`
 	height: 100%;
-	background: ${(props) => props.theme.colors.navy};
+	// background: ${(props) => props.theme.colors.navy};
 `;
 
 const StyledCardHeader = styled(Card.Header)`
 	justify-content: center;
 	height: 48px;
+	background-color:transparent;
+	border:none
 `;
 
 const StyledCardBody = styled(Card.Body)`
@@ -86,12 +88,14 @@ const StyledCardBody = styled(Card.Body)`
 			height: unset;
 		}
 	`}
+	background:#203298;
+	border-radius:1rem;
 `;
 
 const DismissButton = styled.button`
 	${resetButtonCSS};
 	position: absolute;
-	right: 20px;
+	right: 0px;
 	color: ${(props) => props.theme.colors.white};
 	&:hover {
 		color: ${(props) => props.theme.colors.blue};

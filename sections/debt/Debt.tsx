@@ -19,13 +19,13 @@ const DebtSection = () => {
 				blue: true,
 				key: DebtPanelType.OVERVIEW,
 			},
-			{
-				title: t('debt.actions.manage.title'),
-				tabChildren: <ManageTab />,
-				blue: true,
-				key: DebtPanelType.MANAGE,
-				width: 450,
-			},
+			// {
+			// 	title: t('debt.actions.manage.title'),
+			// 	tabChildren: <ManageTab />,
+			// 	blue: true,
+			// 	key: DebtPanelType.MANAGE,
+			// 	width: 450,
+			// },
 		],
 		[t]
 	);

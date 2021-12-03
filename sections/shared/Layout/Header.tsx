@@ -50,7 +50,8 @@ const HeaderWrapper = styled.div`
 `;
 
 const Container = styled(FlexDivCol)`
-	padding: 24px 30px 0 0;
+	padding: 15px 10px 11px 0;
+	border:1px solid #000D56;
 
 	${media.lessThan('mdUp')`
 		padding: 10px ${MOBILE_BODY_PADDING}px 0;

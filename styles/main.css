@@ -1,7 +1,9 @@
 * {
 	box-sizing: border-box;
 }
-
+html {
+	font-size:calc(100vw / 96)
+}
 body {
 	font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 	-webkit-font-smoothing: antialiased;
@@ -11,7 +13,7 @@ body {
 	min-height: 100vh;
 	position: relative;
 	scroll-behavior: smooth;
-	padding-bottom: 50px;
+	/* padding-bottom: 50px; */
 }
 
 ul {

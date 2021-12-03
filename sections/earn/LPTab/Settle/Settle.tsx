@@ -45,7 +45,7 @@ import {
 import Color from 'color';
 import { walletAddressState } from 'store/wallet';
 import Wei, { wei } from '@synthetixio/wei';
-import { SynthetixJS } from '@synthetixio/contracts-interface';
+import { SynthetixJS } from 'demaa-contracts-interface';
 
 export const getSettleSynthType = (synthetixjs: SynthetixJS, stakedAsset: CurrencyKey) => {
 	const { contracts, utils } = synthetixjs!;

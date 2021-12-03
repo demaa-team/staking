@@ -26,22 +26,23 @@ const BalanceItem: FC<BalanceItemProps> = ({ amount, currencyKey }) => {
 };
 
 const Container = styled(FlexDivCol)`
-	margin-bottom: 18px;
+	margin-bottom: 0.9rem;
 `;
 
 const Title = styled.h3`
-	font-family: ${(props) => props.theme.fonts.interBold};
-	color: ${(props) => props.theme.colors.gray};
+	font-family: Microsoft YaHei;
+	color: ${(props) => props.theme.colors.white};
 	text-transform: uppercase;
-	padding-bottom: 5px;
-	font-size: 12px;
+	padding-bottom: 0.25rem;
+	font-size: 0.6rem;
 	margin: 0;
+	font-weight:500;
 `;
 
 const Balance = styled.span`
-	font-family: ${(props) => props.theme.fonts.mono};
-	color: ${(props) => props.theme.colors.white};
-	font-size: 12px;
+	font-family: Microsoft YaHei;
+	color: #F86C29;
+	font-size: 0.6rem;
 `;
 
 export default BalanceItem;

@@ -19,7 +19,7 @@ import { ModalContent, ModalItem, ModalItemText, ModalItemTitle } from 'styles/c
 import CouncilDilution from 'contracts/councilDilution.js';
 import { truncateAddress } from 'utils/formatters/string';
 import { useTranslation } from 'react-i18next';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { AxiosResponse } from 'axios';
 
 type IndexProps = {

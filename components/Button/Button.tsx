@@ -4,17 +4,17 @@ import Color from 'color';
 
 type ButtonProps = {
 	size?: 'sm' | 'md' | 'lg' | 'xl';
-	variant: 'primary' | 'secondary' | 'tertiary' | 'solid' | 'outline' | 'text';
+	variant: 'primary' | 'orange' | 'secondary' | 'tertiary' | 'solid' | 'outline' | 'text' | 'green';
 	isActive?: boolean;
 	isRounded?: boolean;
 };
 
 const Button = styled.button<ButtonProps>`
 	font-family: ${(props) => props.theme.fonts.condensedMedium};
-	height: 32px;
-	line-height: 32px;
-	font-size: 12px;
-	padding: 0 12px;
+	height: 2.3rem;
+	line-height: 2.3rem;
+	font-size: 0.8rem;
+	padding: 0 0.6rem;
 	border: none;
 	border-radius: ${(props) => (props.isRounded ? '100px' : '4px')};
 	white-space: nowrap;
@@ -41,8 +41,8 @@ const Button = styled.button<ButtonProps>`
 	${(props) =>
 		props.size === 'md' &&
 		css`
-			height: 32px;
-			line-height: 32px;
+			height: 2.3rem;
+			line-height: 2.3rem;
 		`}
 
 	${(props) =>
@@ -64,19 +64,35 @@ const Button = styled.button<ButtonProps>`
 	${(props) =>
 		props.variant === 'primary' &&
 		css`
-			color: ${(props) => props.theme.colors.black};
-			background: ${(props) => props.theme.colors.blue};
-			box-shadow: 0px 0px 10px rgba(0, 209, 255, 0.6);
-			border: 1px solid transparent;
+			color: ${(props) => props.theme.colors.white};
+			background: #F86C29;
+			// box-shadow: 0px 0px 10px rgba(0, 209, 255, 0.6);
+			// border: 1px solid transparent;
 			&:hover {
+				background: #F39365;
 				&:not(:disabled) {
-					background: ${(props) => props.theme.colors.blueHover};
-					box-shadow: 0px 0px 10px rgba(0, 209, 255, 0.9);
-					border: 1px solid ${(props) => props.theme.colors.blue};
+					background: #F39365;
+					// box-shadow: 0px 0px 10px rgba(0, 209, 255, 0.9);
+					// border: 1px solid ${(props) => props.theme.colors.blue};
 				}
 			}
 		`}
-
+		${(props) =>
+			props.variant === 'orange' &&
+			css`
+				color:${(props) => props.theme.colors.white};
+				background: #F76C2A;
+				border-radius:50px;
+				height:3.3rem;
+				font-size:1rem;
+				padding:0 2.9rem;
+				font-family: Microsoft YaHei;
+				&:hover {
+					&:not(:disabled) {
+						background: #F76C2A;
+					}
+				}
+			`}
 		${(props) =>
 			props.variant === 'secondary' &&
 			css`
@@ -112,10 +128,10 @@ const Button = styled.button<ButtonProps>`
 			props.variant === 'solid' &&
 			css`
 				color: ${(props) => props.theme.colors.white};
-				background: ${(props) => props.theme.colors.navy};
+				background: #3f478f;
 				&:hover {
 					&:not(:disabled) {
-						background: ${(props) => props.theme.colors.mediumBlue};
+						background: #3f478f;
 					}
 				}
 				&:disabled {
@@ -132,7 +148,7 @@ const Button = styled.button<ButtonProps>`
 				border: 1px solid ${(props) => props.theme.colors.grayBlue};
 				&:hover {
 					&:not(:disabled) {
-						background: ${(props) => props.theme.colors.mediumBlue};
+						background:  #3f478f;
 					}
 				}
 				&:disabled {
@@ -150,6 +166,23 @@ const Button = styled.button<ButtonProps>`
 				&:hover {
 					&:not(:disabled) {
 						color: ${(props) => props.theme.colors.blue};
+					}
+				}
+			`}
+		${(props) =>
+			props.variant === 'green' &&
+			css`
+				color: #2A377E;
+				background: #9BF990;
+				border-radius:50px;
+				// height:3.7rem;
+				// box-shadow: 0px 0px 10px rgba(0, 209, 255, 0.6);
+				// border: 1px solid transparent;
+				&:hover {
+					&:not(:disabled) {
+						background: #9BF990;
+						// box-shadow: 0px 0px 10px rgba(0, 209, 255, 0.9);
+						// border: 1px solid ${(props) => props.theme.colors.blue};
 					}
 				}
 			`}

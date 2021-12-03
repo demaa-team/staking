@@ -1,8 +1,8 @@
 {
 	"name": "staking",
-	"version": "2.45.2",
+	"version": "1.5.0-mumbai",
 	"scripts": {
-		"dev": "next",
+		"dev": "next -p 3001",
 		"build": "next build && next export",
 		"start": "next start",
 		"tsc": "tsc --noEmit",
@@ -22,10 +22,10 @@
 		"@reach/dialog": "0.15.3",
 		"@snapshot-labs/snapshot.js": "0.1.10",
 		"@synthetixio/assets": "2.0.10",
-		"@synthetixio/contracts-interface": "^2.51.0-next",
+		"demaa-contracts-interface": "1.5.0-mumbai",
 		"@synthetixio/optimism-networks": "2.51.0-next",
 		"@synthetixio/providers": "2.51.0-next",
-		"@synthetixio/queries": "^2.51.0-next",
+		"demaa-queries": "1.5.1-mumbai",
 		"@synthetixio/transaction-notifier": "2.51.0-next",
 		"@synthetixio/wei": "2.51.0-next",
 		"@tippyjs/react": "4.1.0",

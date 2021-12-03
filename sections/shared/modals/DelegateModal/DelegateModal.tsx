@@ -6,7 +6,7 @@ import { Svg } from 'react-optimized-image';
 
 import { delegateWalletState, walletAddressState } from 'store/wallet';
 import { truncateAddress } from 'utils/formatters/string';
-import useSynthetixQueries, { DelegationWallet } from '@synthetixio/queries';
+import useSynthetixQueries, { DelegationWallet } from 'demaa-queries';
 
 import { MenuModal } from '../common';
 import Spinner from 'assets/svg/app/loader.svg';

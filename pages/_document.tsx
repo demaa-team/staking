@@ -1,7 +1,7 @@
+import { FC, ReactNode, useEffect } from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { mediaStyles } from 'styles/media';
-
 const PRELOADED_FONTS = [
 	'/fonts/Inter-Regular.woff2',
 	'/fonts/Inter-SemiBold.woff2',
@@ -11,12 +11,21 @@ const PRELOADED_FONTS = [
 	'/fonts/GT-America-Condensed-Medium.woff2',
 	'/fonts/GT-America-Condensed-Bold.woff2',
 ];
-
+type LayoutProps = {
+	children: ReactNode;
+};
+const Layout: FC<LayoutProps> = ({ children }) => {
+	return (
+		<Html  lang="en">
+			{children}
+		</Html>
+	);
+};
 export default class MyDocument extends Document {
 	static async getInitialProps(ctx: any) {
 		const styledComponentsSheet = new ServerStyleSheet();
 		const originalRenderPage = ctx.renderPage;
-
+		
 		try {
 			ctx.renderPage = () =>
 				originalRenderPage({
@@ -41,7 +50,7 @@ export default class MyDocument extends Document {
 
 	render() {
 		return (
-			<Html lang="en">
+			<Layout>
 				<Head>
 					<style type="text/css" dangerouslySetInnerHTML={{ __html: mediaStyles }} />
 					{PRELOADED_FONTS.map((fontPath) => (
@@ -59,7 +68,7 @@ export default class MyDocument extends Document {
 					<Main />
 					<NextScript />
 				</body>
-			</Html>
+			</Layout>
 		);
 	}
 }

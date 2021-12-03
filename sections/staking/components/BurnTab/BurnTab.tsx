@@ -1,15 +1,20 @@
-import { FC, useMemo, useEffect } from 'react';
+import { FC, useMemo, useEffect ,useState} from 'react';
 import Wei, { wei } from '@synthetixio/wei';
 import { CryptoCurrency, Synths } from 'constants/currency';
 import UIContainer from 'containers/UI';
-
+import { FlexDivCol } from 'styles/common';
+import styled from 'styled-components';
 import { formatCurrency } from 'utils/formatters/number';
 import { BurnActionType } from 'store/staking';
 import useBurnTx from 'sections/staking/hooks/useBurnTx';
 import BurnTiles from 'sections/staking/components/BurnTiles';
 import StakingInput from 'sections/staking/components/StakingInput';
-import { TabContainer } from 'sections/staking/components/common';
-
+import { TabContainer,TabRowContainer } from 'sections/staking/components/common';
+import InfoBox from '../InfoBox';
+import { StakingPanelType } from 'store/staking';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
+import { MenuModal } from '../../../shared/modals/common';
 const BurnTab: FC = () => {
 	const {
 		debtBalance,
@@ -33,7 +38,7 @@ const BurnTab: FC = () => {
 	} = useBurnTx();
 
 	const { setTitle } = UIContainer.useContainer();
-
+	const [settingsModalOpened, setSettingsModalOpened] = useState<boolean>(false);
 	// header title
 	useEffect(() => {
 		setTitle('staking', 'burn');
@@ -97,7 +102,7 @@ const BurnTab: FC = () => {
 				sUSDNeededToBuy = formatCurrency(Synths.sUSD, missingSUSDWithBuffer);
 				sUSDNeededToBurn = formatCurrency(Synths.sUSD, debtBalanceWithBuffer);
 				break;
-			default:
+			default: 
 				return (
 					<BurnTiles
 						percentageTargetCRatio={percentageTargetCRatio}
@@ -106,27 +111,29 @@ const BurnTab: FC = () => {
 				);
 		}
 		return (
-			<StakingInput
-				onSubmit={handleSubmit}
-				inputValue={inputValue}
-				isLocked={isLocked}
-				isMint={false}
-				onBack={onBurnTypeChange}
-				error={error || swapTxn.errorMessage || txn.errorMessage}
-				txModalOpen={txModalOpen}
-				setTxModalOpen={setTxModalOpen}
-				gasLimitEstimate={txn.gasLimit}
-				setGasPrice={setGasPrice}
-				onInputChange={onBurnChange}
-				txHash={txn.hash}
-				transactionState={txn.txnStatus}
-				resetTransaction={txn.refresh}
-				maxBurnAmount={maxBurnAmount}
-				burnAmountToFixCRatio={burnAmountToFixCRatio}
-				etherNeededToBuy={etherNeededToBuy}
-				sUSDNeededToBuy={sUSDNeededToBuy}
-				sUSDNeededToBurn={sUSDNeededToBurn}
-			/>
+			<SettingsModal onDismiss={()=>onBurnTypeChange(null)}>
+				<StakingInput
+					onSubmit={handleSubmit}
+					inputValue={inputValue}
+					isLocked={isLocked}
+					isMint={false}
+					onBack={onBurnTypeChange}
+					error={error || swapTxn.errorMessage || txn.errorMessage}
+					txModalOpen={txModalOpen}
+					setTxModalOpen={setTxModalOpen}
+					gasLimitEstimate={txn.gasLimit}
+					setGasPrice={setGasPrice}
+					onInputChange={onBurnChange}
+					txHash={txn.hash}
+					transactionState={txn.txnStatus}
+					resetTransaction={txn.refresh}
+					maxBurnAmount={maxBurnAmount}
+					burnAmountToFixCRatio={burnAmountToFixCRatio}
+					etherNeededToBuy={etherNeededToBuy}
+					sUSDNeededToBuy={sUSDNeededToBuy}
+					sUSDNeededToBurn={sUSDNeededToBurn}
+				/>
+			</SettingsModal>
 		);
 	}, [
 		burnType,
@@ -148,8 +155,34 @@ const BurnTab: FC = () => {
 		setGasPrice,
 		setTxModalOpen,
 	]);
-
-	return <TabContainer>{returnPanel}</TabContainer>;
+	const router = useRouter();
+	const defaultTab = (router.query.action && router.query.action[0]) || StakingPanelType.MINT;
+	return <TabRowContainer>
+			<Col>
+			{returnPanel}
+			</Col>
+			<Col>
+				<InfoBox currentTab={defaultTab} />
+			</Col>
+		</TabRowContainer>;
+};
+type SettingsModalProps = {
+	onDismiss: () => void;
 };
 
+const SettingsModal: FC<SettingsModalProps> = ({ onDismiss,children }) => {
+	const { t } = useTranslation();
+	return (
+		<StyledMenuModal onDismiss={onDismiss} isOpen={true} title={t('modals.settings.title')}>
+			{children}
+		</StyledMenuModal>
+	);
+};
+const StyledMenuModal = styled(MenuModal)`
+	z-index:49;
+	[data-reach-dialog-content] {
+		width: 44rem;
+	}
+`;
+const Col = styled(FlexDivCol)``;
 export default BurnTab;

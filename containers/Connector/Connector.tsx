@@ -13,7 +13,7 @@ import {
 	Network as NetworkName,
 	SynthetixJS,
 	synthetix,
-} from '@synthetixio/contracts-interface';
+} from 'demaa-contracts-interface';
 import { ethers } from 'ethers';
 
 import { appReadyState } from 'store/app';
@@ -75,7 +75,6 @@ const useConnector = () => {
 
 			const newNetwork = snxjs.network;
 			newNetwork.name = chainIdToNetwork[newNetwork.id] as NetworkName;
-
 			setNetwork(newNetwork);
 			setSynthetixjs(snxjs);
 			setProvider(provider);

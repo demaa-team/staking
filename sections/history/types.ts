@@ -1,4 +1,4 @@
-import { HistoricalStakingTransaction, StakingTransactionType } from '@synthetixio/queries';
+import { HistoricalStakingTransaction, StakingTransactionType } from 'demaa-queries';
 
 export type TransactionsContainerProps = {
 	history: HistoricalStakingTransaction[];

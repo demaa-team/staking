@@ -14,7 +14,7 @@ import useUserStakingData from 'hooks/useUserStakingData';
 import { formatFiatCurrency, formatPercent } from 'utils/formatters/number';
 
 import useSelectedPriceCurrency from 'hooks/useSelectedPriceCurrency';
-import useSynthetixQueries, { StakingTransactionType } from '@synthetixio/queries';
+import useSynthetixQueries, { StakingTransactionType } from 'demaa-queries';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState, delegateWalletState } from 'store/wallet';
 import { wei } from '@synthetixio/wei';
@@ -37,7 +37,7 @@ const Earn: FC = () => {
 		hasClaimed,
 	} = useUserStakingData(delegateWallet?.address ?? walletAddress);
 
-	const SNXRate = exchangeRatesQuery.data?.SNX ?? wei(0);
+	const SNXRate = exchangeRatesQuery.data?.DEM ?? wei(0);
 
 	const totalRewards = tradingRewards.add(stakingRewards.mul(SNXRate));
 
@@ -107,21 +107,21 @@ const Earn: FC = () => {
 
 const UpcomingRewards = styled(StatBox)`
 	.title {
-		color: ${(props) => props.theme.colors.green};
+		color: ${(props) => props.theme.colors.white};
 	}
 `;
 const APR = styled(StatBox)`
 	.title {
-		color: ${(props) => props.theme.colors.green};
+		color: ${(props) => props.theme.colors.white};
 	}
 	.value {
-		text-shadow: ${(props) => props.theme.colors.greenTextShadow};
-		color: #073124;
+		// text-shadow: ${(props) => props.theme.colors.greenTextShadow};
+		color: ${(props) => props.theme.colors.white};
 	}
 `;
 const LifetimeRewards = styled(StatBox)`
 	.title {
-		color: ${(props) => props.theme.colors.green};
+		color: ${(props) => props.theme.colors.white};
 	}
 `;
 

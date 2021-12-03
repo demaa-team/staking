@@ -13,15 +13,16 @@ const DebtHedgingInfoPanel: React.FC<DebtHedgingInfoPanelProps> = ({ hidden }) =
 	if (hidden) return null;
 	return (
 		<InfoPanelContainer>
-			<InfoPanelTitle>{t('debt.actions.manage.info-panel.title')}</InfoPanelTitle>
-			<InfoPanelBody>{t('debt.actions.manage.info-panel.body')}</InfoPanelBody>
+			{/* <InfoPanelTitle>{t('debt.actions.manage.info-panel.title')}</InfoPanelTitle>
+			<InfoPanelBody>{t('debt.actions.manage.info-panel.body')}</InfoPanelBody> */}
 			<DebtHedgingChart />
 		</InfoPanelContainer>
 	);
 };
 
 const InfoPanelContainer = styled(FlexDivCol)`
-	background: ${(props) => props.theme.colors.navy};
+	// background: ${(props) => props.theme.colors.navy};
+	border-left:1px solid #000D56;
 `;
 
 const InfoPanelTitle = styled.p`

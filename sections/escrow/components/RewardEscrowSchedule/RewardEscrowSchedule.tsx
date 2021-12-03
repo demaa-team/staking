@@ -25,7 +25,7 @@ import {
 } from 'sections/escrow/components/common';
 import Button from 'components/Button';
 import { FlexDivCentered, FlexDivColCentered, ExternalLink } from 'styles/common';
-import useSynthetixQueries, { EscrowData } from '@synthetixio/queries';
+import useSynthetixQueries, { EscrowData } from 'demaa-queries';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState } from 'store/wallet';
 
@@ -79,7 +79,7 @@ const RewardEscrowSchedule: React.FC = () => {
 								accessor: 'quantity',
 								Cell: (cellProps: CellProps<EscrowData['schedule'], number>) => (
 									<Data style={{ textAlign: 'right' }}>
-										{formatCurrency(CryptoCurrency.SNX, cellProps.value)}
+										{formatCurrency(CryptoCurrency.DEM, cellProps.value)}
 									</Data>
 								),
 								sortable: false,

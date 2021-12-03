@@ -10,6 +10,7 @@ import InfoIcon from 'assets/svg/app/info.svg';
 export type Size = 'md' | 'lg';
 
 type StatBoxProps = {
+	isBorder?: boolean;
 	title: ReactNode;
 	value: ReactNode;
 	size?: Size;
@@ -19,6 +20,7 @@ type StatBoxProps = {
 };
 
 const StatBox: FC<StatBoxProps> = ({
+	isBorder = false,
 	title,
 	value,
 	tooltipContent,
@@ -27,7 +29,7 @@ const StatBox: FC<StatBoxProps> = ({
 	...rest
 }) => {
 	return (
-		<Box {...rest} size={size}>
+		<Box {...rest} isBorder={isBorder} size={size}>
 			<FlexDivRowCentered>
 				<Title className="title">{title}</Title>
 				{tooltipContent && (
@@ -54,20 +56,20 @@ const IconContainer = styled.div`
 	margin-bottom: 4px;
 `;
 
-const Box = styled(FlexDivColCentered)<{ size: Size }>`
+const Box = styled(FlexDivColCentered)<{ size: Size ,isBorder:boolean}>`
 	background-position: center;
 	background-repeat: no-repeat;
 	justify-content: center;
-	${media.greaterThan('sm')`
-		margin: 0px 20px;
-	`}
-	background-image: url(${SNXStatBackground.src});
+	 ${media.greaterThan('sm')`
+		// margin: 0px 20px;
+	 `}
+	// background-image: url(${SNXStatBackground.src});
 	${(props) =>
 		props.size === 'lg' &&
 		css`
 			background-size: 176px 114px;
 			.value {
-				font-size: 32px;
+				font-size: 2rem;
 			}
 		`}
 
@@ -87,6 +89,7 @@ const Box = styled(FlexDivColCentered)<{ size: Size }>`
 	}
 
 	&:first-child {
+		${(props) => (props.isBorder?"":"width: 30%;")}
 		${media.lessThan('mdUp')`
 			align-items: flex-start;
 			grid-area: 2 / 1 / 3 / 2;
@@ -94,9 +97,13 @@ const Box = styled(FlexDivColCentered)<{ size: Size }>`
 	}
 
 	&:nth-child(2) {
-		height: 200px;
+		${(props) => (props.isBorder?"":"width: 40%;")}
+		height: 8.5rem;
+		${(props) => (props.isBorder?'border-top:1px solid #040E5F;border-bottom:1px solid #040E5F;'
+		:'border-left:1px solid #040E5F;border-right:1px solid #040E5F;')};
+		
 		${media.greaterThan('mdUp')`
-			width: 400px;
+			// width: 400px;
 		`}
 		${media.lessThan('mdUp')`
 			grid-area: 1 / 1 / 2 / 3;
@@ -104,6 +111,7 @@ const Box = styled(FlexDivColCentered)<{ size: Size }>`
 	}
 
 	&:last-child {
+		${(props) => (props.isBorder?"":"width: 30%;")}
 		${media.lessThan('mdUp')`
 			align-items: flex-end;
 			text-align: right;
@@ -113,15 +121,15 @@ const Box = styled(FlexDivColCentered)<{ size: Size }>`
 `;
 
 const Title = styled.span`
-	font-family: ${(props) => props.theme.fonts.interBold};
-	font-size: 12px;
-	padding-bottom: 5px;
+	font-family: Microsoft YaHei;
+	font-size: 0.9rem;
+	padding-bottom: 0.25rem;
 	text-transform: uppercase;
 `;
 
 const Value = styled.span`
-	font-family: ${(props) => props.theme.fonts.extended};
-	font-size: 24px;
+	font-family:  FZDaHei-B02;
+	font-size: 2rem;
 `;
 
 const StyledTooltip = styled(Tooltip)`

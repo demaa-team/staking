@@ -15,7 +15,7 @@ import { ethers } from 'ethers';
 import Connector from 'containers/Connector';
 import councilDilution from 'contracts/councilDilution';
 import { appReadyState } from 'store/app';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { walletAddressState } from 'store/wallet';
 
 const Gov: React.FC = () => {

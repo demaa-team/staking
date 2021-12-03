@@ -1,4 +1,4 @@
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { useMemo } from 'react';
 
 function useFeePeriodTimeAndProgress() {

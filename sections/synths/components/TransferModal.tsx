@@ -17,7 +17,7 @@ import { ModalContent, ModalItem, ModalItemTitle, ModalItemText } from 'styles/c
 import { truncateAddress } from 'utils/formatters/string';
 import Wei, { wei } from '@synthetixio/wei';
 import Connector from 'containers/Connector';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { ethers } from 'ethers';
 import { parseSafeWei } from 'utils/parse';
 
@@ -180,7 +180,7 @@ const Inner = styled.div`
 
 const FormContainer = styled(FlexDivColCentered)`
 	justify-content: space-between;
-	background: ${(props) => props.theme.colors.black};
+	// background: ${(props) => props.theme.colors.black};
 	position: relative;
 	width: 100%;
 	padding: 26px;
@@ -195,11 +195,11 @@ const InputsContainer = styled.div`
 
 const StyledModal = styled(BaseModal)`
 	.card-header {
-		border-top: 2px solid ${(props) => props.theme.colors.blue};
+		// border-top: 2px solid ${(props) => props.theme.colors.blue};
 		font-size: 12px;
 		font-family: ${(props) => props.theme.fonts.interBold};
-		background-color: ${(props) => props.theme.colors.navy};
-		border-bottom: 1px solid ${(props) => props.theme.colors.grayBlue};
+		// background-color: ${(props) => props.theme.colors.navy};
+		// border-bottom: 1px solid ${(props) => props.theme.colors.grayBlue};
 		text-transform: uppercase;
 	}
 `;

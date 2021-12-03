@@ -8,7 +8,7 @@ import { Synths } from 'constants/currency';
 import { getAppKey } from '../utils';
 
 import { languageStateKey, priceCurrencyStateKey } from './constants';
-import { Synth } from '@synthetixio/contracts-interface';
+import { Synth } from 'demaa-contracts-interface';
 
 export const PRICE_CURRENCIES = [
 	Synths.sUSD,

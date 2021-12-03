@@ -8,7 +8,7 @@ import { customGasPriceState, gasSpeedState, isL2State } from 'store/wallet';
 import { ESTIMATE_VALUE } from 'constants/placeholder';
 import { GasLimitEstimate } from 'constants/network';
 
-import useSynthetixQueries, { GasPrices, GAS_SPEEDS } from '@synthetixio/queries';
+import useSynthetixQueries, { GasPrices, GAS_SPEEDS } from 'demaa-queries';
 import useSelectedPriceCurrency from 'hooks/useSelectedPriceCurrency';
 import { getTransactionPrice } from 'utils/network';
 import { getExchangeRatesForCurrencies } from 'utils/currencies';
@@ -186,7 +186,7 @@ const GasPriceContainer = styled(FlexDivRowCentered)`
 const GasPriceHeader = styled.p`
 	font-family: ${(props) => props.theme.fonts.interBold};
 	font-size: 12px;
-	color: ${(props) => props.theme.colors.gray};
+	color: ${(props) => props.theme.colors.white};
 	text-transform: uppercase;
 `;
 
@@ -197,8 +197,8 @@ const GasPriceText = styled.span`
 `;
 
 const GasPriceTooltip = styled(Tippy)`
-	background: ${(props) => props.theme.colors.navy};
-	border: 0.5px solid ${(props) => props.theme.colors.navy};
+	background: #203298;
+	border: 0.5px solid #203298;
 	border-radius: 4px;
 	width: 120px;
 `;

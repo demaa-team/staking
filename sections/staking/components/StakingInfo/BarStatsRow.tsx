@@ -3,27 +3,30 @@ import styled from 'styled-components';
 
 import { FlexDivCentered, FlexDivCol, FlexDivRowCentered } from 'styles/common';
 import ProgressBar from 'components/ProgressBar';
+import { ProgressBarType } from 'components/ProgressBar/ProgressBar';
 
 type BarStatsRowProps = {
 	title: string;
+	type: ProgressBarType;
 	value: string;
 	percentage: number;
 };
 
-const BarStatsRow: FC<BarStatsRowProps> = ({ title, value, percentage }) => (
+const BarStatsRow: FC<BarStatsRowProps> = ({ title, type, value, percentage }) => (
 	<BarStatBox>
 		<FlexDivRowCentered>
 			<BarTitle>{title}</BarTitle>
 			<BarValue>{value}</BarValue>
 		</FlexDivRowCentered>
-		<StyledProgressBar percentage={percentage} variant="blue" />
+		<StyledProgressBar percentage={percentage} variant={type} />
 	</BarStatBox>
 );
 
 export const BarStatBox = styled(FlexDivCol)`
-	width: 100%;
-	padding: 0 24px;
-	margin-top: 18px;
+	margin:0 1.2rem;
+	padding: 0.8rem 0;
+	// margin-top: 18px;
+	border-top:1px solid #4C5496;
 	&:last-child {
 		margin-bottom: 45px;
 		margin-top: -10px;
@@ -31,16 +34,16 @@ export const BarStatBox = styled(FlexDivCol)`
 `;
 
 export const BarTitle = styled(FlexDivCentered)`
-	font-size: 12px;
-	font-family: ${(props) => props.theme.fonts.interBold};
-	color: ${(props) => props.theme.colors.gray};
+	font-size: 0.9rem;
+	font-family: Microsoft YaHei;
+	color: #fff;
 	text-transform: uppercase;
 `;
 
 export const BarValue = styled.span`
-	font-size: 12px;
+	font-size: 0.7rem;
 	color: ${(props) => props.theme.colors.white};
-	font-family: ${(props) => props.theme.fonts.mono};
+	font-family: Microsoft YaHei;
 `;
 
 export const StyledProgressBar = styled(ProgressBar)`

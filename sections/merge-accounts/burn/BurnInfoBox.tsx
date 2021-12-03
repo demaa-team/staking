@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Trans, useTranslation } from 'react-i18next';
 import { Svg } from 'react-optimized-image';
 import { useRecoilValue } from 'recoil';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { wei } from '@synthetixio/wei';
 
 import ArrowRightIcon from 'assets/svg/app/arrow-right.svg';
@@ -109,7 +109,7 @@ const InfoLayout: FC<InfoLayoutProps> = () => {
 					changedPercentage: collateral.eq(0)
 						? wei(0)
 						: sanitiseValue(changedStakedValue).div(collateral),
-					currencyKey: CryptoCurrency.SNX,
+					currencyKey: CryptoCurrency.DEM,
 				},
 				{
 					title: t('staking.info.table.transferable'),
@@ -121,7 +121,7 @@ const InfoLayout: FC<InfoLayoutProps> = () => {
 					changedPercentage: collateral.eq(0)
 						? wei(0)
 						: sanitiseValue(changedTransferable).div(sanitiseValue(collateral)),
-					currencyKey: CryptoCurrency.SNX,
+					currencyKey: CryptoCurrency.DEM,
 				},
 			],
 			dataRows: [
@@ -175,8 +175,8 @@ const InfoLayout: FC<InfoLayoutProps> = () => {
 			<TotalBalanceContainer>
 				<TotalBalanceHeading>{t('staking.info.table.total-snx')}</TotalBalanceHeading>
 				<RowValue>
-					{formatCurrency(CryptoCurrency.SNX, collateral, {
-						currencyKey: CryptoCurrency.SNX,
+					{formatCurrency(CryptoCurrency.DEM, collateral, {
+						currencyKey: CryptoCurrency.DEM,
 						minDecimals: 2,
 						maxDecimals: 2,
 					})}
@@ -188,6 +188,7 @@ const InfoLayout: FC<InfoLayoutProps> = () => {
 						<BarStatsRow
 							key={`bar-stats-row-${i}`}
 							title={title}
+							type={i==0?'blue-pink':'green'}
 							value={formatCurrency(currencyKey, isInputEmpty ? value : changedValue, {
 								currencyKey: currencyKey,
 								minDecimals: 2,

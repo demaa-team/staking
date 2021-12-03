@@ -5,7 +5,7 @@ import ClaimIcon from 'assets/svg/app/claim.svg';
 import BurnIcon from 'assets/svg/app/burn.svg';
 import MintIcon from 'assets/svg/app/mint.svg';
 
-import { StakingTransactionType } from '@synthetixio/queries';
+import { StakingTransactionType } from 'demaa-queries';
 
 type TypeIconProps = {
 	size?: 'sm' | 'md';
@@ -24,7 +24,7 @@ const TypeIcon: FC<TypeIconProps> = ({ size = 'md', type }) => {
 		case StakingTransactionType.Burned:
 			if (size === 'md') {
 				props = {
-					width: '30',
+					width: '20',
 				};
 			}
 
@@ -33,13 +33,13 @@ const TypeIcon: FC<TypeIconProps> = ({ size = 'md', type }) => {
 		case StakingTransactionType.Issued:
 			if (size === 'md') {
 				props = {
-					width: '24',
+					width: '20',
 				};
 			}
 			icon = (
 				<Svg
 					src={MintIcon}
-					width="24"
+					width="20"
 					viewBox={`0 0 ${MintIcon.width} ${MintIcon.height}`}
 					{...props}
 				/>
@@ -48,7 +48,7 @@ const TypeIcon: FC<TypeIconProps> = ({ size = 'md', type }) => {
 		case StakingTransactionType.FeesClaimed:
 			if (size === 'md') {
 				props = {
-					width: '30',
+					width: '20',
 				};
 			}
 			icon = (

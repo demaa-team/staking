@@ -74,8 +74,8 @@ const ChartContainer = styled(FlexDivColCentered)`
 `;
 
 const ChartTitleContainer = styled(FlexDivRow)`
-	border-top: 1px solid ${(props) => props.theme.colors.mediumBlue};
-	border-bottom: 1px solid ${(props) => props.theme.colors.mediumBlue};
+	// border-top: 1px solid ${(props) => props.theme.colors.mediumBlue};
+	border-bottom: 1px solid #000D56;
 	font-family: ${(props) => props.theme.fonts.extended};
 	width: 100%;
 	font-size: 13px;

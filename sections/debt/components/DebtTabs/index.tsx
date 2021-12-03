@@ -3,7 +3,7 @@ import React, { FC, ReactNode, useState, useEffect, Dispatch, SetStateAction } f
 import { Svg } from 'react-optimized-image';
 import { Trans, useTranslation } from 'react-i18next';
 
-import { FlexDiv, FlexDivCol, Tooltip } from 'styles/common';
+import { FlexDiv, FlexDivCol, Tooltip ,FlexDivJustifyCenter} from 'styles/common';
 import media from 'styles/media';
 import { TabButton, TabList, TabPanelContainer } from '../../../../components/Tab';
 import DebtHedgingInfoPanel from '../DebtHedgingInfoPanel';
@@ -15,8 +15,8 @@ import useCryptoBalances from 'hooks/useCryptoBalances';
 
 import Info from 'assets/svg/app/info.svg';
 import { wei } from '@synthetixio/wei';
-import { SynthsTotalSupplyData } from '@synthetixio/queries';
-import useSynthetixQueries from '@synthetixio/queries';
+import { SynthsTotalSupplyData } from 'demaa-queries';
+import useSynthetixQueries from 'demaa-queries';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState } from 'store/wallet';
 
@@ -80,7 +80,7 @@ const DebtTabs: FC<DebtTabsProps> = ({
 		<>
 			<TopContainer {...{ isManageTab }}>
 				<DebtTabsContainer>
-					<TabList noOfTabs={tabData.length}>
+					<TabList noOfTabs={tabData.length} isFill={true}>
 						{tabData.map(({ title, icon, key, disabled = false }, index) => (
 							<TabButton
 								isSingle={false}
@@ -102,24 +102,27 @@ const DebtTabs: FC<DebtTabsProps> = ({
 							</TabButton>
 						))}
 					</TabList>
-					{tabData.map(
-						({ title, tabChildren, key, width }, index) =>
-							activeTab === key && (
-								<TabPanelContainer
-									id={`${title}-tabpanel`}
-									role="tabpanel"
-									aria-labelledby={`${title}-tab`}
-									tabIndex={-1}
-									padding={boxPadding}
-									height={boxHeight}
-									key={`${key}-${index}-panel`}
-								>
-									{tabChildren}
-								</TabPanelContainer>
-							)
-					)}
+					<ManageContainer {...{ isManageTab }}>
+						{tabData.map(
+							({ title, tabChildren, key, width }, index) =>
+								activeTab === key && (
+									<TabPanelContainer
+										id={`${title}-tabpanel`}
+										role="tabpanel"
+										aria-labelledby={`${title}-tab`}
+										tabIndex={-1}
+										padding={boxPadding}
+										height={boxHeight}
+										key={`${key}-${index}-panel`}
+									>
+										{tabChildren}
+									</TabPanelContainer>
+								)
+						)}
+						<DebtHedgingInfoPanel hidden={!isManageTab} />
+					</ManageContainer>
 				</DebtTabsContainer>
-				<DebtHedgingInfoPanel hidden={!isManageTab} />
+				{/*  */}
 			</TopContainer>
 			{activeTab === DebtPanelType.OVERVIEW && (
 				<BottomContainer>
@@ -127,7 +130,7 @@ const DebtTabs: FC<DebtTabsProps> = ({
 						<ContainerHeader>
 							{t('debt.actions.hedge.info.debt-pool-pie-chart.title')}
 						</ContainerHeader>
-						<ContainerBody style={{ padding: '24px 0' }}>
+						<ContainerBody style={{ padding: '0' }}>
 							<DebtPieChart data={totalSupply as SynthsTotalSupplyData} />
 						</ContainerBody>
 					</DebtPieChartContainer>
@@ -150,7 +153,7 @@ const DebtTabs: FC<DebtTabsProps> = ({
 								</DebtInfoTooltip>
 							</ContainerHeaderSection>
 						</ContainerHeader>
-						<ContainerBody style={{ padding: '24px 14px' }}>
+						<ContainerBody style={{ padding: '0' }}>
 							<PortfolioTable
 								synthBalances={synthAssets}
 								cryptoBalances={cryptoBalances.balances}
@@ -170,12 +173,13 @@ const DebtTabs: FC<DebtTabsProps> = ({
 export const TopContainer = styled.div<{ isManageTab: boolean }>`
 	${(props) =>
 		props.isManageTab
-			? `display: grid;
+			? `/*display: grid;
 					grid-template-columns: 2fr 1fr;
-					grid-gap: 1rem;`
+					grid-gap: 1rem;*/`
 			: ``}
-	margin-bottom: 12px;
-
+	// margin-bottom: 12px;
+	background:#203298;
+	border-radius:1.1rem;
 	${media.lessThan('mdUp')`
 		display: flex;
 		flex-direction: column;
@@ -184,13 +188,22 @@ export const TopContainer = styled.div<{ isManageTab: boolean }>`
 
 export const BottomContainer = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 3fr;
+	grid-template-columns: 1fr 1fr;
 	grid-gap: 1rem;
-
+	padding-top:1rem;
 	${media.lessThan('mdUp')`
 		display: flex;
 		flex-direction: column;
 	`}
+`;
+
+const ManageContainer  = styled.div<{ isManageTab: boolean }>`
+	${(props) =>
+		props.isManageTab
+			? `display: grid;
+					grid-template-columns: 2fr 1fr;
+					grid-gap: 1rem;`
+			: ``}
 `;
 
 const DebtTabsContainer = styled(FlexDivCol)`
@@ -205,7 +218,8 @@ const TitleContainer = styled.p`
 `;
 
 const Container = styled(FlexDivCol)`
-	background: ${(props) => props.theme.colors.navy};
+	background: #203298;
+	border-radius:1.1rem;
 `;
 
 const ContainerHeader = styled(FlexDiv)`
@@ -221,8 +235,9 @@ const ContainerHeader = styled(FlexDiv)`
 
 const ContainerHeaderSection = styled(FlexDiv)``;
 
-const ContainerBody = styled.div`
+const ContainerBody = styled(FlexDivJustifyCenter)`
 	padding: 24px;
+	height:25rem;
 `;
 
 const DebtInfoTooltip = styled(Tooltip)`

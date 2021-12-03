@@ -14,7 +14,7 @@ import makeBlockie from 'ethereum-blockies-base64';
 import { ethers } from 'ethers';
 import { UseQueryResult } from 'react-query';
 import { FixedSizeList as List } from 'react-window';
-import { ProposalResults } from '@synthetixio/queries';
+import { ProposalResults } from 'demaa-queries';
 
 type HistoryProps = {
 	proposalResults: UseQueryResult<ProposalResults>;

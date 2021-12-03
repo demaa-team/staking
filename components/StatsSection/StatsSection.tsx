@@ -18,11 +18,11 @@ import CollapseIcon from 'assets/svg/app/chevron-collapse.svg';
 import ExpandIcon from 'assets/svg/app/chevron-expand.svg';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState, delegateWalletState } from 'store/wallet';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { wei } from '@synthetixio/wei';
 import useCryptoBalances from 'hooks/useCryptoBalances';
 
-const StatsSection: FC = ({ children }) => {
+const StatsSection: FC = ({ children}) => {
 	const walletAddress = useRecoilValue(walletAddressState);
 	const delegateWallet = useRecoilValue(delegateWalletState);
 
@@ -34,7 +34,7 @@ const StatsSection: FC = ({ children }) => {
 	const [mobileStatsSectionIsOpen, setMobileStatsSectionIsOpen] = useState(false);
 
 	const snxBalance =
-		cryptoBalances?.balances?.find((balance) => balance.currencyKey === CryptoCurrency.SNX)
+		cryptoBalances?.balances?.find((balance) => balance.currencyKey === CryptoCurrency.DEM)
 			?.balance ?? wei(0);
 
 	const sUSDBalance = synthsBalancesQuery?.data?.balancesMap[Synths.sUSD]?.balance ?? wei(0);
@@ -64,8 +64,8 @@ const StatsSection: FC = ({ children }) => {
 						<PeriodBarStats />
 					</TopContainer>
 					<BottomContainer>
-						<PriceItem currencyKey={CryptoCurrency.SNX} data={snxPriceChartData} />
-						<BalanceItem amount={snxBalance} currencyKey={CryptoCurrency.SNX} />
+						<PriceItem currencyKey={CryptoCurrency.DEM} data={snxPriceChartData} />
+						<BalanceItem amount={snxBalance} currencyKey={CryptoCurrency.DEM} />
 						<BalanceItem amount={sUSDBalance} currencyKey={Synths.sUSD} />
 					</BottomContainer>
 				</MobileOrTabletViewInner>
@@ -77,7 +77,9 @@ const StatsSection: FC = ({ children }) => {
 const StatsContainer = styled(FlexDivRowCentered)`
 	width: 100%;
 	margin: 0 auto;
-
+	background:#203298;
+	border-radius: 1.1rem;
+	padding:3rem 0;
 	${media.greaterThan('mdUp')`
 		justify-content: center;
 	`}

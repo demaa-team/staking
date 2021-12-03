@@ -14,7 +14,7 @@ import ExternalLinkIcon from 'assets/svg/app/open-external.svg';
 import { formatShortDate } from 'utils/formatters/date';
 import { formatCurrency } from 'utils/formatters/number';
 
-import { HistoricalStakingTransaction, StakingTransactionType } from '@synthetixio/queries';
+import { HistoricalStakingTransaction, StakingTransactionType } from 'demaa-queries';
 
 import { ExternalLink, FlexDivCentered, FlexDivJustifyEnd } from 'styles/common';
 import { NO_VALUE } from 'constants/placeholder';
@@ -63,8 +63,8 @@ const Transactions: FC<TransactionsProps> = ({ transactions, isLoaded, noResults
 							cellProps.row.original.rewards != null && (
 								<>
 									{' / '}
-									{formatCurrency(CryptoCurrency.SNX, cellProps.row.original.rewards, {
-										currencyKey: CryptoCurrency.SNX,
+									{formatCurrency(CryptoCurrency.DEM, cellProps.row.original.rewards, {
+										currencyKey: CryptoCurrency.DEM,
 									})}
 								</>
 							)}
@@ -133,8 +133,8 @@ const Transactions: FC<TransactionsProps> = ({ transactions, isLoaded, noResults
 						{cellProps.row.original.type === StakingTransactionType.FeesClaimed &&
 							cellProps.row.original.rewards != null && (
 								<div>
-									{formatCurrency(CryptoCurrency.SNX, cellProps.row.original.rewards, {
-										currencyKey: CryptoCurrency.SNX,
+									{formatCurrency(CryptoCurrency.DEM, cellProps.row.original.rewards, {
+										currencyKey: CryptoCurrency.DEM,
 									})}
 								</div>
 							)}
@@ -202,6 +202,9 @@ const StyledTable = styled(Table)`
 		& > :last-child {
 			justify-content: flex-end;
 		}
+	}
+	.table-body{
+		height:300px;
 	}
 `;
 

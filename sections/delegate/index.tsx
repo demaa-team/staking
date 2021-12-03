@@ -17,7 +17,7 @@ const Index: FC = () => {
 			<Col>
 				<Form />
 			</Col>
-			<Col>
+			<Col style={{marginTop:'1rem'}}>
 				<Table />
 			</Col>
 		</Container>
@@ -25,9 +25,12 @@ const Index: FC = () => {
 };
 
 const Container = styled.div`
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	grid-gap: 1rem;
+	background:#203298;
+	padding:1rem;
+	border-radius:1rem;
+	// display: grid;
+	// grid-template-columns: 1fr 0fr 1fr;
+	// grid-gap: 1rem;
 
 	${media.lessThan('mdUp')`
 		display: flex;

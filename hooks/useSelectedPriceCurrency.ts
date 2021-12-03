@@ -3,7 +3,7 @@ import { useCallback } from 'react';
 
 import { useRecoilValue } from 'recoil';
 import { priceCurrencyState } from 'store/app';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 
 const useSelectedPriceCurrency = () => {
 	const selectedPriceCurrency = useRecoilValue(priceCurrencyState);

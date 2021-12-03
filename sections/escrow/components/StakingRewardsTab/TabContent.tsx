@@ -51,7 +51,7 @@ const TabContent: FC<TabContentProps> = ({
 	setTransactionState,
 }) => {
 	const { t } = useTranslation();
-	const vestingCurrencyKey = CryptoCurrency['SNX'];
+	const vestingCurrencyKey = CryptoCurrency['DEM'];
 
 	const renderButton = () => {
 		if (claimableAmount.gt(0)) {
@@ -118,7 +118,7 @@ const TabContent: FC<TabContentProps> = ({
 				</SettingsContainer>
 			</InputContainer>
 			{renderButton()}
-			<ErrorMessage>{transactionError}</ErrorMessage>
+			{/* <ErrorMessage>{transactionError}</ErrorMessage> */}
 			{txModalOpen && (
 				<TxConfirmationModal
 					onDismiss={() => setTxModalOpen(false)}

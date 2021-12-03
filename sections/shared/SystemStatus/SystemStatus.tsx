@@ -15,7 +15,7 @@ import {
 import StakingLogo from 'assets/svg/app/staking-logo.svg';
 
 import SocialLinks from '../components/SocialLinks';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 
 type SystemStatusProps = {
 	children: React.ReactNode;

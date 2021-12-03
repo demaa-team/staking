@@ -81,7 +81,7 @@ const InfoLayout: FC<InfoLayoutProps> = ({ stakingInfo, collateral, isInputEmpty
 
 	return (
 		<InfoContainer>
-			<InfoHeader>
+			{/* <InfoHeader>
 				<Title>{title}</Title>
 				<Subtitle>
 					<Trans
@@ -89,12 +89,12 @@ const InfoLayout: FC<InfoLayoutProps> = ({ stakingInfo, collateral, isInputEmpty
 						components={[<StyledLink href={EXTERNAL_LINKS.Synthetix.Litepaper} />]}
 					/>
 				</Subtitle>
-			</InfoHeader>
+			</InfoHeader> */}
 			<TotalBalanceContainer>
 				<TotalBalanceHeading>{t('staking.info.table.total-snx')}</TotalBalanceHeading>
 				<RowValue>
-					{formatCurrency(CryptoCurrency.SNX, collateral, {
-						currencyKey: CryptoCurrency.SNX,
+					{formatCurrency(CryptoCurrency.DEM, collateral, {
+						currencyKey: CryptoCurrency.DEM,
 					})}
 				</RowValue>
 			</TotalBalanceContainer>
@@ -104,6 +104,7 @@ const InfoLayout: FC<InfoLayoutProps> = ({ stakingInfo, collateral, isInputEmpty
 						<BarStatsRow
 							key={`bar-stats-row-${i}`}
 							title={title}
+							type={i==0?'blue-pink':'green'}
 							value={formatCurrency(currencyKey, isInputEmpty ? value : changedValue, {
 								currencyKey: currencyKey,
 							})}
@@ -149,9 +150,9 @@ const StyledArrowRight = styled(Svg)`
 `;
 
 const TotalBalanceContainer = styled(FlexDivCentered)`
-	padding: 0px 24px;
+	margin: 0.25rem 1.2rem;
 	justify-content: space-between;
-	border-bottom: ${(props) => `1px solid ${props.theme.colors.grayBlue}`};
+	// border-bottom: 1px solid #4C5496;
 `;
 
 export default InfoLayout;

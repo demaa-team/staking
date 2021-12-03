@@ -33,10 +33,12 @@ const CRatioBarStats: FC = () => {
 };
 
 const StyledBarStatBox = styled(BarStatBox)`
-	margin-bottom: 18px;
+	margin-bottom: 0.9rem;
 `;
 const StyledBarValue = styled(BarValue)`
-	color: ${(props) => props.theme.colors.gray};
+	font-family: Microsoft YaHei;
+	color: ${(props) => props.theme.colors.white};
+	font-weight:500;
 `;
 
 export default CRatioBarStats;

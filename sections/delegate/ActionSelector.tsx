@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import media from 'styles/media';
 
 import Button from 'components/Button';
-import { ACTIONS } from '@synthetixio/queries';
+import { ACTIONS } from 'demaa-queries';
 
 type SelectorProps = {
 	action: string;

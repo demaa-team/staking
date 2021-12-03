@@ -7,7 +7,7 @@ import { WEEKS_IN_YEAR } from 'constants/date';
 import { DualRewardsLiquidityPoolData, LiquidityPoolData } from 'queries/liquidityPools/types';
 import { LP } from 'sections/earn/types';
 
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import Wei, { wei } from '@synthetixio/wei';
 
 type LPData = {
@@ -22,7 +22,7 @@ const useLPData = (): LPData => {
 	const { useExchangeRatesQuery } = useSynthetixQueries();
 
 	const exchangeRatesQuery = useExchangeRatesQuery();
-	const SNXRate = exchangeRatesQuery.data?.SNX ?? 0;
+	const SNXRate = exchangeRatesQuery.data?.DEM ?? 0;
 	const usesUSDPool = useCurveSusdPoolQuery();
 	const usesYearnSNXVault = useYearnSNXVaultQuery();
 

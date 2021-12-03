@@ -9,7 +9,7 @@ import { walletAddressState } from 'store/wallet';
 
 import TabContent from './TabContent';
 import Wei, { wei } from '@synthetixio/wei';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { parseSafeWei } from 'utils/parse';
 
 const WithdrawTab = () => {

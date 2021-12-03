@@ -51,7 +51,7 @@ const TabContent: FC<TabContentProps> = ({
 	setTransactionState,
 }) => {
 	const { t } = useTranslation();
-	const currencyKey = CryptoCurrency['SNX'];
+	const currencyKey = CryptoCurrency['DEM'];
 
 	const renderButton = () => {
 		if (depositAmount && !depositAmount.eq(0)) {

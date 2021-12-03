@@ -2,7 +2,7 @@ import React, { useMemo, FC, useEffect } from 'react';
 import { Svg } from 'react-optimized-image';
 import { useTranslation } from 'react-i18next';
 import { useRouter } from 'next/router';
-
+import styled, { css } from 'styled-components';
 import StructuredTab from 'components/StructuredTab';
 
 import BurnTab from './BurnTab';
@@ -11,7 +11,7 @@ import Burn from 'assets/svg/app/burn.svg';
 import Mint from 'assets/svg/app/mint.svg';
 import { useSetRecoilState } from 'recoil';
 import { burnTypeState, StakingPanelType, mintTypeState } from 'store/staking';
-
+import useWindowSize from 'utils/useWindowSize'
 type ActionBoxProps = {
 	currentTab: string;
 };
@@ -29,19 +29,19 @@ const ActionBox: FC<ActionBoxProps> = ({ currentTab }) => {
 			onMintTypeChange(null);
 		}
 	}, [currentTab, onBurnTypeChange, onMintTypeChange]);
-
+	const { width, height } = useWindowSize();
 	const tabData = useMemo(
 		() => [
 			{
 				title: t('staking.actions.mint.title'),
-				icon: <Svg src={Mint} />,
+				icon: <Svg style={{transform:`scale(${width/1920},${width/1920})`}} src={Mint} />,
 				tabChildren: <MintTab />,
 				blue: true,
 				key: StakingPanelType.MINT,
 			},
 			{
 				title: t('staking.actions.burn.title'),
-				icon: <Svg src={Burn} />,
+				icon: <Svg style={{transform:`scale(${width/1920},${width/1920})`}} src={Burn} />,
 				tabChildren: <BurnTab />,
 				blue: false,
 				key: StakingPanelType.BURN,
@@ -51,13 +51,13 @@ const ActionBox: FC<ActionBoxProps> = ({ currentTab }) => {
 	);
 
 	return (
-		<StructuredTab
-			boxPadding={20}
-			boxHeight={450}
-			tabData={tabData}
-			setPanelType={(key) => router.push(`/staking/${key}`)}
-			currentPanel={currentTab}
-		/>
+			<StructuredTab
+				boxPadding={20}
+				boxHeight={400}
+				tabData={tabData}
+				setPanelType={(key) => router.push(`/staking/${key}`)}
+				currentPanel={currentTab}
+			/>
 	);
 };
 

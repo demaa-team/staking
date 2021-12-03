@@ -12,7 +12,7 @@ import { formatCurrency } from 'utils/formatters/number';
 import useSelectedPriceCurrency from 'hooks/useSelectedPriceCurrency';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState } from 'store/wallet';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { wei } from '@synthetixio/wei';
 
 const SynthsPage: FC = () => {
@@ -38,7 +38,7 @@ const SynthsPage: FC = () => {
 				<title>{t('synths.page-title')}</title>
 			</Head>
 			<StatsSection>
-				<div />
+				{/* <div /> */}
 				<TotalSynthValue
 					title={t('common.stat-box.synth-value')}
 					value={formatCurrency(
@@ -50,7 +50,7 @@ const SynthsPage: FC = () => {
 					)}
 					size="lg"
 				/>
-				<div />
+				{/* <div /> */}
 			</StatsSection>
 			<LineSpacer />
 			<Main />
@@ -60,8 +60,8 @@ const SynthsPage: FC = () => {
 
 const TotalSynthValue = styled(StatBox)`
 	.value {
-		text-shadow: ${(props) => props.theme.colors.blueTextShadow};
-		color: ${(props) => props.theme.colors.black};
+		// text-shadow: ${(props) => props.theme.colors.blueTextShadow};
+		color: ${(props) => props.theme.colors.white};
 	}
 `;
 

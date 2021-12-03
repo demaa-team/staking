@@ -20,7 +20,7 @@ import {
 	DELEGATE_APPROVE_CONTRACT_METHODS,
 	DelegationWallet,
 	DELEGATE_WITHDRAW_CONTRACT_METHODS,
-} from '@synthetixio/queries';
+} from 'demaa-queries';
 import Connector from 'containers/Connector';
 
 type ToggleDelegateApprovalProps = {

@@ -100,7 +100,7 @@ const InfoBox: React.FC = () => {
 
 	return (
 		<Root>
-			<Container>
+			{/* <Container>
 				<ContainerHeader>
 					<Title>{t('loans.info.title')}</Title>
 					<Subtitle>
@@ -110,7 +110,7 @@ const InfoBox: React.FC = () => {
 						</ExternalLink>
 					</Subtitle>
 				</ContainerHeader>
-			</Container>
+			</Container> */}
 
 			<Container>
 				<ContainerHeader>
@@ -200,7 +200,7 @@ export const Root = styled.div`
 `;
 
 export const Container = styled.div`
-	background: ${(props) => props.theme.colors.navy};
+	// background: #1A2479;
 `;
 
 export const ContainerHeader = styled.div`
@@ -230,17 +230,21 @@ export const StatsGrid = styled.div`
 export const StatsRow = styled.div``;
 
 export const StatsHeader = styled.div`
-	color: ${(props) => props.theme.colors.gray};
-	border-top: 1px solid ${(props) => props.theme.colors.grayBlue};
-	border-bottom: 1px solid ${(props) => props.theme.colors.grayBlue};
+	color: ${(props) => props.theme.colors.white};
+	border-top: 1px solid #4C5496;
+	border-bottom: 1px solid #4C5496;
 	font-family: ${(props) => props.theme.fonts.interBold};
+	&:nth-child(odd) {
+		margin-left: 16px;
+	}
 
 	&:nth-child(even) {
+		margin-right: 16px;
 		text-align: right;
 	}
 
 	& > div {
-		padding: 8px 16px;
+		padding: 16px;
 		white-space: nowrap;
 		display: flex;
 		align-items: center;
@@ -261,16 +265,17 @@ export const StatsCol = styled.div`
 	}
 
 	& > div {
-		padding: 8px 0;
+		padding: 1.6rem 0;
 		height: 100%;
 		display: flex;
 		align-items: center;
-		border-bottom: 1px solid ${(props) => props.theme.colors.grayBlue};
+		border-bottom: 1px solid #4C5496;
 	}
 `;
 
 export const TotalColHeading = styled(StatsCol)`
-	color: ${(props) => props.theme.colors.gray};
+	font-weight:bold;
+	color: ${(props) => props.theme.colors.white};
 `;
 
 export const ClaimButton = styled(Button)`

@@ -18,7 +18,7 @@ import {
 	Subtitle,
 	Title,
 } from 'sections/escrow/components/common';
-import useSynthetixQueries, { EscrowData } from '@synthetixio/queries';
+import useSynthetixQueries, { EscrowData } from 'demaa-queries';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState } from 'store/wallet';
 
@@ -49,7 +49,7 @@ const TokenSaleEscrowSchedule: React.FC = () => {
 				accessor: 'quantity',
 				Cell: (cellProps: CellProps<EscrowData['schedule'], number>) => (
 					<Data style={{ textAlign: 'right' }}>
-						{formatCurrency(CryptoCurrency.SNX, cellProps.value)}
+						{formatCurrency(CryptoCurrency.DEM, cellProps.value)}
 					</Data>
 				),
 				sortable: false,
@@ -60,10 +60,10 @@ const TokenSaleEscrowSchedule: React.FC = () => {
 
 	return (
 		<Container>
-			<ContainerHeader>
+			{/* <ContainerHeader>
 				<Title>{t('escrow.token.info.title')}</Title>
 				<Subtitle>{t('escrow.token.info.subtitle')}</Subtitle>
-			</ContainerHeader>
+			</ContainerHeader> */}
 			<ContainerBody>
 				<StyledTable
 					palette="primary"
@@ -73,7 +73,7 @@ const TokenSaleEscrowSchedule: React.FC = () => {
 					noResultsMessage={
 						!tokenSaleEscrowQuery.isLoading && schedule?.length === 0 ? (
 							<TableNoResults>
-								<Svg src={NoNotificationIcon} />
+								{/* <Svg src={NoNotificationIcon} /> */}
 								{t('escrow.table.no-results')}
 							</TableNoResults>
 						) : undefined

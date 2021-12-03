@@ -5,7 +5,7 @@ import StructuredTab from 'components/StructuredTab';
 import Results from './Results';
 import History from './History';
 import useActiveTab from 'sections/gov/hooks/useActiveTab';
-import useSynthetixQueries, { Proposal } from '@synthetixio/queries';
+import useSynthetixQueries, { Proposal } from 'demaa-queries';
 import { snapshotEndpoint } from 'constants/snapshot';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState } from 'store/wallet';

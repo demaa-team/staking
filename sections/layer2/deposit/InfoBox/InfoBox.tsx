@@ -2,7 +2,7 @@ import { useTranslation, Trans } from 'react-i18next';
 import { CellProps } from 'react-table';
 import styled, { css } from 'styled-components';
 import { Svg } from 'react-optimized-image';
-import useSynthetixQueries, { DepositHistory } from '@synthetixio/queries';
+import useSynthetixQueries, { DepositHistory } from 'demaa-queries';
 
 import { InfoContainer, Title, Subtitle } from '../../components/common';
 import ExternalLink from '../../components/ExternalLink';
@@ -55,8 +55,8 @@ const InfoBox = () => {
 								accessor: 'amount',
 								Cell: (cellProps: CellProps<DepositHistory, number>) => (
 									<Data>
-										{formatCurrency(CryptoCurrency.SNX, cellProps.value, {
-											currencyKey: CryptoCurrency.SNX,
+										{formatCurrency(CryptoCurrency.DEM, cellProps.value, {
+											currencyKey: CryptoCurrency.DEM,
 											minDecimals: 2,
 											maxDecimals: 2,
 										})}

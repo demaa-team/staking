@@ -45,29 +45,31 @@ const StructuredTab: FC<StructuredTabProps> = ({
 	}, [currentPanel]);
 
 	const desktop = () => (
-		<TabList noOfTabs={tabData.length}>
-			{tabData.map(({ title, icon, key, blue, disabled = false }, index) => (
-				<TabButton
-					isSingle={singleTab}
-					tabHeight={tabHeight}
-					inverseTabColor={inverseTabColor}
-					blue={blue}
-					key={`${key}-${index}-button`}
-					name={title}
-					active={activeTab === key}
-					isDisabled={disabled}
-					onClick={() => {
-						setActiveTab(key);
-						if (setPanelType != null) {
-							setPanelType(key);
-						}
-					}}
-				>
-					{icon != null && icon}
-					<TitleContainer>{title}</TitleContainer>
-				</TabButton>
-			))}
-		</TabList>
+		<Container>
+			<TabList noOfTabs={tabData.length} isFill={false}>
+				{tabData.map(({ title, icon, key, blue, disabled = false }, index) => (
+					<TabButton
+						isSingle={singleTab}
+						tabHeight={tabHeight}
+						inverseTabColor={inverseTabColor}
+						blue={blue}
+						key={`${key}-${index}-button`}
+						name={title}
+						active={activeTab === key}
+						isDisabled={disabled}
+						onClick={() => {
+							setActiveTab(key);
+							if (setPanelType != null) {
+								setPanelType(key);
+							}
+						}}
+					>
+						{icon != null && icon}
+						<TitleContainer>{title}</TitleContainer>
+					</TabButton>
+				))}
+			</TabList>
+		</Container>
 	);
 
 	const mobile = () => (
@@ -87,7 +89,6 @@ const StructuredTab: FC<StructuredTabProps> = ({
 			variant="outline"
 		/>
 	);
-
 	return (
 		<div>
 			<DesktopOnlyView>{desktop()}</DesktopOnlyView>
@@ -106,11 +107,15 @@ const StructuredTab: FC<StructuredTabProps> = ({
 		</div>
 	);
 };
-
+const Container = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`
 const TitleContainer = styled.p`
-	margin-left: 8px;
-	font-size: 12px;
-	font-family: ${(props) => props.theme.fonts.extended};
+	margin-left: 0.4rem;
+	font-size: 1.2rem;
+	font-family: Microsoft YaHei;
 	text-transform: uppercase;
 `;
 

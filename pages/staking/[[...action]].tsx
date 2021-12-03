@@ -69,17 +69,21 @@ const StakingPage = () => {
 
 const CRatio = styled(StatBox)`
 	.value {
-		text-shadow: ${(props) => props.theme.colors.blueTextShadow};
-		color: ${(props) => props.theme.colors.black};
+		// text-shadow: ${(props) => props.theme.colors.blueTextShadow};
+		// color: ${(props) => props.theme.colors.black};
+		font-size: 2.4rem;
+		font-family: FZDaHei-B02;
+		font-weight: 400;
+		color: #FFFFFF;
 	}
 `;
 
 export const CRatioProgressBar = styled(ProgressBar)`
-	height: 6px;
-	width: 100%;
-	transform: translateY(12px);
-	// match StatBox "lg" background size width
-	max-width: 176px;
+		height: 0.8rem;
+		width: 100%;
+		transform: translateY(0.6rem);
+		max-width: 19.1rem;
+		border-radius:0.35rem
 `;
 
 export default StakingPage;

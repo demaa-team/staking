@@ -2,7 +2,7 @@ import { atom } from 'recoil';
 
 import { getGovKey } from '../utils';
 
-import { Proposal } from '@synthetixio/queries';
+import { Proposal } from 'demaa-queries';
 
 export enum ProposalInfoType {
 	RESULTS = 'results',

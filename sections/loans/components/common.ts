@@ -4,7 +4,7 @@ import media from 'styles/media';
 
 export const FormContainer = styled(FlexDivColCentered)`
 	justify-content: space-between;
-	background: ${(props) => props.theme.colors.black};
+	// background: ${(props) => props.theme.colors.black};
 	position: relative;
 	width: 100%;
 	padding: 16px;
@@ -38,7 +38,7 @@ export const SettingsContainer = styled.div`
 `;
 
 export const SettingContainer = styled.div`
-	border-bottom: ${(props) => `1px solid ${props.theme.colors.grayBlue}`};
+	border-bottom: ${(props) => `1px solid #4C5496`};
 `;
 
 export const ErrorMessage = styled(BaseErrorMessage)`

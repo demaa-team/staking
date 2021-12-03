@@ -6,10 +6,10 @@ import media from 'styles/media';
 import { Period } from 'constants/period';
 
 import CurrencyPrice from 'components/Currency/CurrencyPrice';
-import { CurrencyKey } from '@synthetixio/contracts-interface';
+import { CurrencyKey } from 'demaa-contracts-interface';
 import useSelectedPriceCurrency from 'hooks/useSelectedPriceCurrency';
 import { NO_VALUE } from 'constants/placeholder';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 
 type SynthPriceColProps = {
 	currencyKey: CurrencyKey;

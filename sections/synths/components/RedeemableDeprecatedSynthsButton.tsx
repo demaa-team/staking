@@ -2,7 +2,7 @@ import { FC, useState, useMemo } from 'react';
 import styled from 'styled-components';
 import { Trans } from 'react-i18next';
 import Wei from '@synthetixio/wei';
-import { Balances, DeprecatedSynthBalance } from '@synthetixio/queries';
+import { Balances, DeprecatedSynthBalance } from 'demaa-queries';
 
 import Button from 'components/Button';
 import TransactionNotifier from 'containers/TransactionNotifier';

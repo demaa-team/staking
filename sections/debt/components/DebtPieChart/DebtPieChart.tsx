@@ -5,9 +5,9 @@ import Wei from '@synthetixio/wei';
 import PieChart from 'components/PieChart';
 import DebtPoolTable from '../DebtPoolTable';
 import colors from 'styles/theme/colors';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { formatCurrency } from 'utils/formatters/number';
-import { SynthsTotalSupplyData, SynthTotalSupply } from '@synthetixio/queries';
+import { SynthsTotalSupplyData, SynthTotalSupply } from 'demaa-queries';
 
 const MIN_PERCENT_FOR_PIE_CHART = 0.03;
 
@@ -86,7 +86,7 @@ const SynthsPieChart: FC<DebtPieChartProps> = () => {
 
 	return (
 		<SynthsPieChartContainer>
-			<PieChart data={pieData} dataKey={'value'} tooltipFormatter={Tooltip} />
+			{/* <PieChart data={pieData} dataKey={'value'} tooltipFormatter={Tooltip} /> */}
 			<TableWrapper>
 				<DebtPoolTable
 					synths={pieData}
@@ -111,11 +111,12 @@ const Tooltip: FC<{ name: string; value: number; payload: { skewValue: Wei } }> 
 };
 
 const TableWrapper = styled.div`
-	border-top: 1px solid ${(props) => props.theme.colors.grayBlue};
+	height:20rem
+	// border-top: 1px solid ${(props) => props.theme.colors.grayBlue};
 `;
 
 const SynthsPieChartContainer = styled.div`
-	background: ${(props) => props.theme.colors.navy};
+	// background: ${(props) => props.theme.colors.navy};
 	width: 100%;
 `;
 

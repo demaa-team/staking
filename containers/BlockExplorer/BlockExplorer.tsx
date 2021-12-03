@@ -3,7 +3,7 @@ import { createContainer } from 'unstated-next';
 import { OPTIMISM_NETWORKS } from '@synthetixio/optimism-networks';
 import { useRecoilValue } from 'recoil';
 
-import { NetworkId } from '@synthetixio/contracts-interface';
+import { NetworkId } from 'demaa-contracts-interface';
 import { Network } from 'store/wallet';
 
 import { networkState } from 'store/wallet';
@@ -25,6 +25,8 @@ const getBaseUrl = (network: Network) => {
 		);
 	} else if (network.id === NetworkId.Mainnet) {
 		return 'https://etherscan.io';
+	} else if (network.id === NetworkId.Mumbai) {
+		return 'https://mumbai.polygonscan.com';
 	}
 	return `https://${network.name}.etherscan.io`;
 };

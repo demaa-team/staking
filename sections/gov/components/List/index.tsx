@@ -6,7 +6,7 @@ import { FlexDivCol } from 'styles/common';
 import media from 'styles/media';
 import Button from 'components/Button';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
-import useSynthetixQueries, { Proposal as ProposalType } from '@synthetixio/queries';
+import useSynthetixQueries, { Proposal as ProposalType } from 'demaa-queries';
 import Table from 'components/Table';
 import { useTranslation } from 'react-i18next';
 import Countdown from 'react-countdown';

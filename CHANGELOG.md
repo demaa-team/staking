@@ -10,7 +10,7 @@
 
 - Fix staking info bug where the c-ratio was not calculated properly
 - Enable decimals to be inputted when custom mint or burn
-- Update SNX data package
+- Update DEM data package
 
 ## 30 Jan 2021
 

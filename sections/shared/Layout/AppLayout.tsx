@@ -11,7 +11,7 @@ import media from 'styles/media';
 import { isL2State, isMainnetState, delegateWalletState } from 'store/wallet';
 import Header from './Header';
 import SideNav from './SideNav';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 
 type AppLayoutProps = {
 	children: ReactNode;
@@ -55,12 +55,9 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
 };
 
 const Content = styled.div`
-	max-width: 1200px;
-	margin: 0 auto;
-
-	${media.greaterThan('mdUp')`
-		padding-left: calc(${DESKTOP_SIDE_NAV_WIDTH + DESKTOP_BODY_PADDING}px);
-	`}
+	width:calc(100% - ${DESKTOP_SIDE_NAV_WIDTH}rem);
+	padding:1.2rem;
+	margin-left:${DESKTOP_SIDE_NAV_WIDTH}rem;
 `;
 
 export default AppLayout;

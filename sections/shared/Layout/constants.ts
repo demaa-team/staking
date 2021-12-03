@@ -14,10 +14,10 @@ export type MenuLink = {
 export type MenuLinks = MenuLink[];
 
 export const MENU_LINKS: MenuLinks = [
-	{
-		i18nLabel: 'sidenav.dashboard',
-		link: ROUTES.Home,
-	},
+	// {
+	// 	i18nLabel: 'sidenav.dashboard',
+	// 	link: ROUTES.Home,
+	// },
 	{
 		i18nLabel: 'sidenav.staking',
 		link: ROUTES.Staking.Home,
@@ -40,14 +40,14 @@ export const MENU_LINKS: MenuLinks = [
 		i18nLabel: 'sidenav.loans',
 		link: ROUTES.Loans.Home,
 	},
-	{
-		i18nLabel: 'sidenav.gov',
-		link: ROUTES.Gov.Home,
-	},
-	{
-		i18nLabel: 'sidenav.l2',
-		link: ROUTES.L2.Home,
-	},
+	// {
+	// 	i18nLabel: 'sidenav.gov',
+	// 	link: ROUTES.Gov.Home,
+	// },
+	// {
+	// 	i18nLabel: 'sidenav.l2',
+	// 	link: ROUTES.L2.Home,
+	// },
 	{
 		i18nLabel: 'sidenav.wallet',
 		link: ROUTES.Escrow.Home,
@@ -68,19 +68,19 @@ export const MENU_LINKS: MenuLinks = [
 				i18nLabel: 'sidenav.delegate',
 				subLink: ROUTES.Delegate.Home,
 			},
-			{
-				i18nLabel: 'sidenav.merge-accounts',
-				subLink: ROUTES.MergeAccounts.Home,
-			},
+			// {
+			// 	i18nLabel: 'sidenav.merge-accounts',
+			// 	subLink: ROUTES.MergeAccounts.Home,
+			// },
 		],
 	},
 ];
 
 export const MENU_LINKS_L2: MenuLinks = [
-	{
-		i18nLabel: 'sidenav.dashboard',
-		link: ROUTES.Home,
-	},
+	// {
+	// 	i18nLabel: 'sidenav.dashboard',
+	// 	link: ROUTES.Home,
+	// },
 	{
 		i18nLabel: 'sidenav.staking',
 		link: ROUTES.Staking.Home,
@@ -120,10 +120,10 @@ export const MENU_LINKS_L2: MenuLinks = [
 ];
 
 export const MENU_LINKS_DELEGATE: MenuLinks = [
-	{
-		i18nLabel: 'sidenav.dashboard',
-		link: ROUTES.Home,
-	},
+	// {
+	// 	i18nLabel: 'sidenav.dashboard',
+	// 	link: ROUTES.Home,
+	// },
 	{
 		i18nLabel: 'sidenav.staking',
 		link: ROUTES.Staking.Home,

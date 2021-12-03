@@ -15,7 +15,7 @@ import CouncilBoard from './List/CouncilBoard';
 import Proposal from './Proposal';
 import List from './List';
 import Create from './Create';
-import { Proposal as ProposalType } from '@synthetixio/queries';
+import { Proposal as ProposalType } from 'demaa-queries';
 import request, { gql } from 'graphql-request';
 
 type PanelProps = {

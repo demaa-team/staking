@@ -28,7 +28,7 @@ import {
 import { normalizedGasPrice, normalizeGasLimit } from 'utils/network';
 
 import { yearnSNXVault } from 'contracts';
-import { SynthetixJS } from '@synthetixio/contracts-interface';
+import { SynthetixJS } from 'demaa-contracts-interface';
 import Wei, { wei } from '@synthetixio/wei';
 
 type ApproveModalProps = {

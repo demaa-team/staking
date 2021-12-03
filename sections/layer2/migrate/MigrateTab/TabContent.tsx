@@ -55,7 +55,7 @@ const TabContent: FC<TabContentProps> = ({
 	isVestNeeded,
 }) => {
 	const { t } = useTranslation();
-	const vestingCurrencyKey = CryptoCurrency['SNX'];
+	const vestingCurrencyKey = CryptoCurrency['DEM'];
 
 	const renderButton = () => {
 		if (isVestNeeded) {

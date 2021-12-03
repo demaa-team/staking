@@ -7,7 +7,7 @@ import { WEEKS_IN_YEAR } from 'constants/date';
 
 import { isL2State } from 'store/wallet';
 import Wei, { wei } from '@synthetixio/wei';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 
 export const useUserStakingData = (walletAddress: string | null) => {
 	const [hasClaimed, setHasClaimed] = useState<boolean>(false);
@@ -46,7 +46,7 @@ export const useUserStakingData = (walletAddress: string | null) => {
 
 	const totalsUSDDebt = wei(totalIssuedSynthsExclOtherCollateral?.data ?? 0);
 	const sUSDRate = wei(exchangeRatesQuery.data?.sUSD ?? 0);
-	const SNXRate = wei(exchangeRatesQuery.data?.SNX ?? 0);
+	const SNXRate = wei(exchangeRatesQuery.data?.DEM ?? 0);
 
 	const isBelowCRatio = currentCRatio.gt(targetCRatio.mul(wei(1).add(targetThreshold)));
 	const stakedValue =
@@ -58,7 +58,7 @@ export const useUserStakingData = (walletAddress: string | null) => {
 
 	let stakingAPR = wei(0);
 
-	// compute APR based on the user staked SNX
+	// compute APR based on the user staked DEM
 	if (stakedValue.gt(0) && debtBalance.gt(0) && totalsUSDDebt.gt(0)) {
 		stakingAPR = weeklyRewards
 			.mul(debtBalance.div(totalsUSDDebt).mul(WEEKS_IN_YEAR))

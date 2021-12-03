@@ -135,7 +135,7 @@ const SelectLabel = styled.div`
 	font-size: 12px;
 	line-height: 120%;
 	text-transform: uppercase;
-	color: #828295;
+	color: ${(props) => props.theme.colors.white};
 	margin-right: 10px;
 
 	${media.lessThan('mdUp')`

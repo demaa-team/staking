@@ -48,8 +48,23 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
 
 	return (
 		<TooltipWrapper>
-			<StyledH5>{format(new Date(label), 'MMM dd YYY, h:mma')}</StyledH5>
-			<Legend>
+			{format(new Date(label), 'MMM dd YYY, h:mma')}
+			{payload?.map(({ color, name, value }) => {
+					return (
+						<div>
+							{t(LEGEND_LABELS[name])}
+							{`${formatCurrency(Synths.sUSD, value)} sUSD`}	
+						</div>
+						// <LegendRow key={`legend-${name}`}>
+						// 	<LegendName>
+						// 		<LegendIcon style={{ backgroundColor: color }} />
+						// 		<LegendText>{t(LEGEND_LABELS[name])}</LegendText>
+						// 	</LegendName>
+						// 	<LegendText>{`${formatCurrency(Synths.sUSD, value)} sUSD`}</LegendText>
+						// </LegendRow>
+					);
+				})}
+			{/* <Legend>
 				{payload?.map(({ color, name, value }) => {
 					return (
 						<LegendRow key={`legend-${name}`}>
@@ -61,7 +76,7 @@ const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
 						</LegendRow>
 					);
 				})}
-			</Legend>
+			</Legend> */}
 		</TooltipWrapper>
 	);
 };
@@ -81,7 +96,7 @@ const DebtChart = ({ data, isLoading }: { data: Data[]; isLoading: boolean }) =>
 	if (!isWalletConnected) {
 		return (
 			<DefaultContainer>
-				<Button variant="primary" onClick={connectWallet}>
+				<Button variant="orange" onClick={connectWallet}>
 					{t('common.wallet.connect-wallet')}
 				</Button>
 			</DefaultContainer>
@@ -99,8 +114,8 @@ const DebtChart = ({ data, isLoading }: { data: Data[]; isLoading: boolean }) =>
 
 	const parsedData = data.map((p) => ({
 		timestamp: p.timestamp,
-		issuanceDebt: p.issuanceDebt.toNumber(),
-		actualDebt: p.actualDebt.toNumber(),
+		issuanceDebt: p.issuanceDebt?p.issuanceDebt.toNumber():0,
+		actualDebt: p.actualDebt?p.actualDebt.toNumber():0,
 	}));
 
 	return (
@@ -197,7 +212,7 @@ const LegendText = styled.span`
 `;
 
 const DefaultContainer = styled(FlexDivColCentered)`
-	height: 270px;
+	height: 20rem;
 	justify-content: center;
 `;
 

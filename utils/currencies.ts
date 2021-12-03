@@ -1,5 +1,5 @@
 import { CurrencyKey, Synths, CryptoCurrency, FIAT_SYNTHS } from 'constants/currency';
-import { Rates } from '@synthetixio/queries';
+import { Rates } from 'demaa-queries';
 import { wei } from '@synthetixio/wei';
 
 export const isSynth = (currencyKey?: CurrencyKey) => (currencyKey || '') in Synths;

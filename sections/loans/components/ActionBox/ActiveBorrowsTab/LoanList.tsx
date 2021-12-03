@@ -24,7 +24,6 @@ const LoanList: FC<LoanListProps> = ({ actions }) => {
 	const { t } = useTranslation();
 	const { isLoadingLoans: isLoading, loans: data } = Loans.useContainer();
 	const { setTitle } = UIContainer.useContainer();
-
 	const desktopColumns = useMemo(
 		() => [
 			{

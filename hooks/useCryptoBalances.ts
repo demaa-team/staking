@@ -4,15 +4,15 @@ import { orderBy } from 'lodash';
 import { CryptoCurrency, Synths } from 'constants/currency';
 import { assetToSynth } from 'utils/currencies';
 
-import useSynthetixQueries from '@synthetixio/queries';
-import { NetworkId } from '@synthetixio/contracts-interface';
+import useSynthetixQueries from 'demaa-queries';
+import { NetworkId } from 'demaa-contracts-interface';
 import Wei, { wei } from '@synthetixio/wei';
 import { renBTCToken, wBTCToken, wETHToken } from 'contracts';
 import { useRecoilValue } from 'recoil';
 import { networkState } from 'store/wallet';
 import { ethers } from 'ethers';
 
-const { ETH, WETH, SNX, BTC, WBTC, RENBTC } = CryptoCurrency;
+const { ETH, WETH, DEM, BTC, WBTC, RENBTC } = CryptoCurrency;
 
 export type CryptoBalance = {
 	currencyKey: string;
@@ -97,7 +97,7 @@ const useCryptoBalances = (walletAddress: string | null) => {
 	const transferrableSNX = debtQuery?.data?.transferable ?? wei(0);
 
 	const balances = useMemo<CryptoBalance[]>(() => {
-		if (isLoaded && exchangeRates != null) {
+		if (isLoaded && exchangeRates != null && exchangeRates != undefined) {
 			return orderBy(
 				[
 					{
@@ -113,23 +113,11 @@ const useCryptoBalances = (walletAddress: string | null) => {
 						synth: assetToSynth(ETH),
 					},
 					{
-						currencyKey: SNX,
+						currencyKey: DEM,
 						balance: SNXBalance,
-						usdBalance: SNXBalance.mul(exchangeRates[SNX]),
+						usdBalance: SNXBalance.mul(exchangeRates[DEM]),
 						synth: assetToSynth(ETH),
 						transferrable: transferrableSNX,
-					},
-					{
-						currencyKey: WBTC,
-						balance: wBTCBalance,
-						usdBalance: wBTCBalance.mul(exchangeRates[Synths.sBTC]),
-						synth: assetToSynth(BTC),
-					},
-					{
-						currencyKey: RENBTC,
-						balance: renBTCBalance,
-						usdBalance: renBTCBalance.mul(exchangeRates[Synths.sBTC]),
-						synth: assetToSynth(BTC),
 					},
 				].filter((cryptoBalance) => cryptoBalance.balance.gt(0)),
 				(balance) => balance.usdBalance.toNumber(),

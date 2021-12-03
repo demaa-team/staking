@@ -11,7 +11,7 @@ import CurrencyPrice from 'components/Currency/CurrencyPrice';
 import useSelectedPriceCurrency from 'hooks/useSelectedPriceCurrency';
 
 import LineChart, { LineChartData } from './LineChart';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { formatPercent } from 'utils/formatters/number';
 
 type PriceItemProps = {
@@ -68,16 +68,16 @@ const PriceItem: FC<PriceItemProps> = ({ currencyKey, data }) => {
 
 const Container = styled(FlexDivCol)`
 	width: 100%;
-	font-size: 12px;
-	margin-bottom: 18px;
+	font-size: 0.6rem;
+	margin-bottom: 0.9rem;
 	&:last-child {
 		padding-bottom: 0;
 	}
 `;
 
 const Title = styled(FlexDivRowCentered)`
-	font-family: ${(props) => props.theme.fonts.interBold};
-	color: ${(props) => props.theme.colors.gray};
+	font-family: Microsoft YaHei;
+	color: ${(props) => props.theme.colors.white};
 	text-transform: uppercase;
 	padding-bottom: 5px;
 `;
@@ -95,10 +95,10 @@ const PriceInfo = styled(FlexDivCentered)`
 `;
 
 const PercentChange = styled.div<{ trendLinePositive: boolean }>`
-	font-size: 10px;
-	font-family: ${(props) => props.theme.fonts.interBold};
+	font-size: 0.5rem;
+	font-family: Microsoft YaHei;
 	color: ${(props) =>
-		props.trendLinePositive ? props.theme.colors.green : props.theme.colors.pink};
+		props.trendLinePositive ? props.theme.colors.green : '#F86C29'};
 `;
 
 const TriangleMixin = `
@@ -109,7 +109,7 @@ const TriangleMixin = `
 
 const TriangleUp = styled.div`
 	${TriangleMixin};
-	border-bottom: ${(props) => `calc(2 * 4px * 0.866) solid ${props.theme.colors.green}`};
+	border-bottom: ${(props) => `calc(2 * 4px * 0.866) solid #F86C29`};
 	border-top: 4px solid transparent;
 	margin-bottom: 4px;
 	margin-right: 4px;
@@ -117,7 +117,7 @@ const TriangleUp = styled.div`
 
 const TriangleDown = styled.div`
 	${TriangleMixin};
-	border-top: ${(props) => `calc(2 * 4px * 0.866) solid ${props.theme.colors.pink}`};
+	border-top: ${(props) => `calc(2 * 4px * 0.866) solid #F86C29`};
 	border-bottom: 4px solid transparent;
 	margin-bottom: -5px;
 	margin-right: 4px;

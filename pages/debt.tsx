@@ -4,8 +4,7 @@ import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import last from 'lodash/last';
 
-import { FlexDivCol, LineSpacer } from 'styles/common';
-import StatsSection from 'components/StatsSection';
+import { FlexDivCol, LineSpacer ,FlexDivColCentered,FlexDivRow} from 'styles/common';
 import StatBox from 'components/StatBox';
 import useUserStakingData from 'hooks/useUserStakingData';
 import UIContainer from 'containers/UI';
@@ -16,7 +15,7 @@ import useSelectedPriceCurrency from 'hooks/useSelectedPriceCurrency';
 import useHistoricalDebtData from 'hooks/useHistoricalDebtData';
 import Main from 'sections/debt';
 import ActiveDebt from 'sections/shared/modals/DebtValueModal/DebtValueBox';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState } from 'store/wallet';
 import { wei } from '@synthetixio/wei';
@@ -51,50 +50,72 @@ const DashboardPage: FC = () => {
 			<Head>
 				<title>{t('debt.page-title')}</title>
 			</Head>
-			<Content>
+			<FlexDivRow>
+				<Content>
+					{/* <LineSpacer /> */}
+					<Main />
+				</Content>
 				<StatsSection>
 					<IssuedDebt
 						title={t('common.stat-box.issued-debt')}
+						isBorder={true}
 						value={formatFiatCurrency(getPriceAtCurrentRate(issuedDebt), {
 							sign: selectedPriceCurrency.sign,
 						})}
 					/>
-					<ActiveDebt
-						title={t('common.stat-box.active-debt')}
-						value={formatFiatCurrency(getPriceAtCurrentRate(actualDebt), {
-							sign: selectedPriceCurrency.sign,
-						})}
-						size="lg"
-						isPink
-					/>
+					<ActiveDebtP>
+						<ActiveDebt
+							title={t('common.stat-box.active-debt')}
+							value={formatFiatCurrency(getPriceAtCurrentRate(actualDebt), {
+								sign: selectedPriceCurrency.sign,
+							})}
+							isBorder={true}
+							size="lg"
+							isPink
+						/>
+					</ActiveDebtP>
 					<TotalSynthValue
 						title={t('common.stat-box.synth-value')}
+						isBorder={true}
 						value={formatFiatCurrency(getPriceAtCurrentRate(totalSynthValue), {
 							sign: selectedPriceCurrency.sign,
 						})}
 					/>
 				</StatsSection>
-				<LineSpacer />
-				<Main />
-			</Content>
+			</FlexDivRow>
 		</>
 	);
 };
-
+const ActiveDebtP = styled(FlexDivColCentered)`
+	height:33%;
+	justify-content: center;
+	border-top:1px solid #040E5F;
+	border-bottom:1px solid #040E5F;
+	// padding:3rem 0;
+`
+const StatsSection = styled(FlexDivColCentered)`
+	width: 13.5rem;
+	margin: 0 auto;
+	background:#203298;
+	border-radius: 1.1rem;
+	// padding:3rem 0;
+`
 const Content = styled(FlexDivCol)`
-	width: 100%;
-	max-width: 1200px;
+	width: calc(100% - 15rem);
+	// max-width: 1200px;
 `;
 
 const IssuedDebt = styled(StatBox)`
+	height:33%;
 	.title {
-		color: ${(props) => props.theme.colors.blue};
+		color: ${(props) => props.theme.colors.white};
 	}
 `;
 
 const TotalSynthValue = styled(StatBox)`
+	height:33%;
 	.title {
-		color: ${(props) => props.theme.colors.purple};
+		color: ${(props) => props.theme.colors.white};
 	}
 `;
 

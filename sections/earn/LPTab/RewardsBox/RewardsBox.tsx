@@ -95,10 +95,10 @@ const RewardsBox: FC<RewardsBoxProps> = ({
 				<RewardsTitle>{t('earn.actions.rewards.title')}</RewardsTitle>
 				<RewardsRow dualRewards={isDualRewards}>
 					<FlexDivColCentered>
-						<Currency.Icon currencyKey={CryptoCurrency.SNX} width="48" height="48" />
+						<Currency.Icon currencyKey={CryptoCurrency.DEM} width="48" height="48" />
 						<RewardsAmountSNX>
-							{formatCurrency(CryptoCurrency.SNX, tokenRewards, {
-								currencyKey: CryptoCurrency.SNX,
+							{formatCurrency(CryptoCurrency.DEM, tokenRewards, {
+								currencyKey: CryptoCurrency.DEM,
 							})}
 						</RewardsAmountSNX>
 						<RewardsAmountUSD>
@@ -156,7 +156,7 @@ const RewardsBox: FC<RewardsBoxProps> = ({
 								<ModalItemText>
 									{t('earn.actions.claim.amount', {
 										amount: tokenRewards.toString(DEFAULT_CRYPTO_DECIMALS),
-										asset: CryptoCurrency.SNX,
+										asset: CryptoCurrency.DEM,
 									})}
 								</ModalItemText>
 							</ModalItem>

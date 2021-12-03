@@ -88,6 +88,9 @@ const AssetsTable: FC<AssetsTableProps> = ({
 
 const Container = styled.div`
 	margin-bottom: 8px;
+	background:#203298;
+	padding:1rem;
+	border-radius:1rem;
 `;
 
 const Header = styled.div`

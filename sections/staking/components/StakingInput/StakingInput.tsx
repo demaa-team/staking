@@ -106,7 +106,7 @@ const StakingInput: React.FC<StakingInputProps> = ({
 	const burnType = useRecoilValue(burnTypeState);
 	const { t } = useTranslation();
 
-	const [stakingCurrencyKey] = useState<string>(CryptoCurrency.SNX);
+	const [stakingCurrencyKey] = useState<string>(CryptoCurrency.DEM);
 	const [synthCurrencyKey] = useState<string>(Synths.sUSD);
 
 	/**
@@ -279,7 +279,7 @@ const StakingInput: React.FC<StakingInputProps> = ({
 	return (
 		<>
 			<InputContainer>
-				<HeaderRow>
+				{/* <HeaderRow>
 					<IconButton onClick={() => onBack(null)}>
 						<Svg src={NavigationBack} />
 					</IconButton>
@@ -289,7 +289,7 @@ const StakingInput: React.FC<StakingInputProps> = ({
 							{formatNumber(maxBurnAmount ?? wei(0))}
 						</BalanceButton>
 					)}
-				</HeaderRow>
+				</HeaderRow> */}
 				{burnType === BurnActionType.CLEAR ? (
 					<BuySUSDToBurnInputBox />
 				) : (
@@ -312,21 +312,23 @@ const StakingInput: React.FC<StakingInputProps> = ({
 						)}
 					</InputBox>
 				)}
-				<DataContainer>
-					<DataRow>
+				<DataContainerCopy>
+					<DataRowCopy>
 						<RowTitle>
 							{isMint
 								? t('staking.actions.mint.info.staking')
 								: t('staking.actions.burn.info.unstaking')}
 						</RowTitle>
 						<RowValue>{equivalentSNXAmount}</RowValue>
-					</DataRow>
-					<DataRow>
+					</DataRowCopy>
+					<DataRowCopy>
 						<GasSelector gasLimitEstimate={gasLimitEstimate} setGasPrice={setGasPrice} />
-					</DataRow>
-				</DataContainer>
+					</DataRowCopy>
+				</DataContainerCopy>
+				<div style={{padding:'1rem 0'}}>
+					{returnButtonStates}	
+				</div>
 			</InputContainer>
-			{returnButtonStates}
 			{txModalOpen && (
 				<TxConfirmationModal
 					onDismiss={() => setTxModalOpen(false)}
@@ -366,6 +368,18 @@ const StakingInput: React.FC<StakingInputProps> = ({
 	);
 };
 
+const DataContainerCopy =  styled(DataContainer)`
+	border-top: 1px solid #3F4FA7;
+	border-bottom: 1px solid #3F4FA7;
+	padding:2rem;
+`;
+
+const DataRowCopy = styled(DataRow)`
+	border-top: none;
+	p{
+		font-size:0.9rem;
+	}
+`;
 const HeaderRow = styled(FlexDivRowCentered)`
 	justify-content: space-between;
 	width: 100%;

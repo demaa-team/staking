@@ -119,7 +119,7 @@ const BalanceContainer = styled.div`
 	display: flex;
 	font-size: 12px;
 	margin-top: 14px;
-	color: ${(props) => props.theme.colors.gray};
+	color: ${(props) => props.theme.colors.white};
 `;
 
 const BalanceAmount = styled.div`
@@ -132,7 +132,6 @@ const Container = styled(FlexDivColCentered)`
 	margin: 24px auto;
 	padding-right: 12px;
 	justify-content: center;
-
 	.react-select--is-disabled {
 		opacity: 1;
 	}
@@ -143,6 +142,9 @@ const Container = styled(FlexDivColCentered)`
 
 const SelectInput = styled.div`
 	width: 110px;
+	.react-select__control{
+		border:1px solid #a5a5a5
+	}
 `;
 
 const AmountContainer = styled(FlexDivCentered)`

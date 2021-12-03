@@ -47,10 +47,10 @@ import { appReadyState } from 'store/app';
 import { CurrencyIconType } from 'components/Currency/CurrencyIcon/CurrencyIcon';
 import Wei, { wei } from '@synthetixio/wei';
 import { parseSafeWei } from 'utils/parse';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 
 export const getContract = (asset: CurrencyKey, signer: ethers.Signer | null) => {
-	if (asset === CryptoCurrency.SNX) {
+	if (asset === CryptoCurrency.DEM) {
 		return new ethers.Contract(
 			yearnSNXVault.address,
 			// @ts-ignore

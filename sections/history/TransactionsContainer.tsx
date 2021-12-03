@@ -32,7 +32,7 @@ import {
 } from './types';
 
 import CustomTypeOption from './CustomTypeOption';
-import { StakingTransactionType } from '@synthetixio/queries';
+import { StakingTransactionType } from 'demaa-queries';
 
 const TransactionsContainer: FC<TransactionsContainerProps> = ({ history, isLoaded }) => {
 	const { t } = useTranslation();
@@ -161,7 +161,7 @@ const TransactionsContainer: FC<TransactionsContainerProps> = ({ history, isLoad
 	};
 
 	return (
-		<>
+		<Container>
 			<Filters>
 				<Select
 					inputId="type-filter-list"
@@ -248,10 +248,14 @@ const TransactionsContainer: FC<TransactionsContainerProps> = ({ history, isLoad
 					) : undefined
 				}
 			/>
-		</>
+		</Container>
 	);
 };
-
+const Container = styled.div`
+	background:#203298;
+	padding:1rem;
+	border-radius:1rem;
+`;
 const Filters = styled(GridDiv)`
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 18px;

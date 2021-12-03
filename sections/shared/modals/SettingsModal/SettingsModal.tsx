@@ -37,7 +37,11 @@ const StyledMenuModal = styled(MenuModal)`
 	}
 `;
 
-const Options = styled.div``;
+const Options = styled.div`
+	background:#203298;
+	padding:1rem;
+	border-radius:0.8rem;
+`;
 
 const OptionLabel = styled.div`
 	font-family: ${(props) => props.theme.fonts.interBold};

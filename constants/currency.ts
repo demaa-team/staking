@@ -60,7 +60,7 @@ export enum CryptoCurrency {
 	COMP = 'COMP',
 	REN = 'REN',
 	LEND = 'LEND',
-	SNX = 'SNX',
+	DEM = 'DEM',
 	BTC = 'BTC',
 	WBTC = 'wBTC',
 	RENBTC = 'renBTC',
@@ -81,6 +81,7 @@ export enum CryptoCurrency {
 	CRV = 'CRV',
 	DHT = 'DHT',
 	YVSNX = 'yvSNX',
+	SCN='sCN2111',
 }
 
 export const FIAT_SYNTHS = new Set([

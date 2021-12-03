@@ -124,6 +124,8 @@ const StyledMenuModal = styled(MenuModal)`
 
 const WatchWalletContainer = styled.div`
 	padding: 36px 36px;
+	background:#203298;
+	border-radius:0.8rem;
 `;
 
 const PreviousAddress = styled.div`

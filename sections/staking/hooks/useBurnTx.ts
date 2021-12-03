@@ -11,7 +11,7 @@ import useClearDebtCalculations from 'sections/staking/hooks/useClearDebtCalcula
 import { useTranslation } from 'react-i18next';
 import { toFutureDate } from 'utils/formatters/date';
 import Wei, { wei } from '@synthetixio/wei';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import { parseSafeWei } from 'utils/parse';
 
 const useBurnTx = () => {

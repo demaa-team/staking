@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 import Wei, { wei } from '@synthetixio/wei';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState, delegateWalletState } from 'store/wallet';
@@ -32,7 +32,7 @@ const useStakingCalculations = () => {
 		tokenSaleEscrowQuery.isLoading;
 
 	const results = useMemo(() => {
-		const SNXRate = wei(exchangeRates?.SNX ?? 0);
+		const SNXRate = wei(exchangeRates?.DEM ?? 0);
 		const collateral = wei(debtData?.collateral ?? 0);
 		const targetCRatio = wei(debtData?.targetCRatio ?? 0);
 		const targetThreshold = wei(debtData?.targetCRatio ?? 0);

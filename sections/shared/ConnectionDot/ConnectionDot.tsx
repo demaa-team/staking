@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { useTheme } from 'styled-components';
 import { useRecoilValue } from 'recoil';
 import { networkState, isWalletConnectedState } from 'store/wallet';
-import { NetworkId } from '@synthetixio/contracts-interface';
+import { NetworkId } from 'demaa-contracts-interface';
 
 type ConnectionDotProps = {};
 
@@ -26,6 +26,8 @@ const ConnectionDot: React.FC<ConnectionDotProps> = ({ ...rest }) => {
 				return <Dot {...rest} background={theme.colors.rinkeby} />;
 			case NetworkId.Goerli:
 				return <Dot {...rest} background={theme.colors.goerli} />;
+			case NetworkId.Mumbai:
+				return <Dot {...rest} background={theme.colors.mainnet} />;
 			default:
 				return <Dot {...rest} background={theme.colors.noNetwork} />;
 		}
@@ -39,7 +41,7 @@ const Dot = styled.span<{ background: string }>`
 	width: 8px;
 	height: 8px;
 	border-radius: 100%;
-	background-color: ${(props) => props.background};
+	background-color: #E5B199;
 `;
 
 export default ConnectionDot;

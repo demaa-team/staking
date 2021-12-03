@@ -22,6 +22,7 @@ type ColumnWithSorting<D extends object = {}> = Column<D> & {
 };
 
 type TableProps = {
+	height?: string;
 	palette?: TablePalette;
 	data: object[];
 	columns: ColumnWithSorting<object>[];
@@ -36,6 +37,7 @@ type TableProps = {
 };
 
 export const Table: FC<TableProps> = ({
+	height = '',
 	columns = [],
 	data = [],
 	options = {},
@@ -81,10 +83,10 @@ export const Table: FC<TableProps> = ({
 		usePagination,
 		useFlexLayout
 	);
-
+	
 	return (
 		<>
-			<TableContainer>
+			<TableContainer height={height}>
 				<ReactTable {...getTableProps()} palette={palette} className={className}>
 					{headerGroups.map((headerGroup) => (
 						<TableRow className="table-row" {...headerGroup.getHeaderGroupProps()}>
@@ -176,8 +178,9 @@ export const Table: FC<TableProps> = ({
 	);
 };
 
-const TableContainer = styled.div`
+const TableContainer = styled.div<{height:string}>`
 	overflow: auto;
+	${(props) => props.height && 'height:'+props.height}
 `;
 
 // @ts-ignore
@@ -195,6 +198,7 @@ const TableBody = styled.div`
 
 const TableBodyRow = styled(TableRow)`
 	cursor: ${(props) => (props.onClick ? 'pointer' : 'default')};
+	border-bottom:1px solid #515FAF;
 `;
 
 const TableCell = styled(FlexDivCentered)`
@@ -235,24 +239,24 @@ const ReactTable = styled.div<{ palette: TablePalette }>`
 				height: ${CARD_HEIGHT};
 			}
 			${TableRow} {
-				background-color: ${(props) => props.theme.colors.navy};
-				border-bottom: 1px solid ${(props) => props.theme.colors.grayBlue};
+				// background-color: ${(props) => props.theme.colors.navy};
+				// border-bottom: 1px solid ${(props) => props.theme.colors.grayBlue};
 			}
 			${TableCellHead} {
 				color: ${(props) => props.theme.colors.white};
-				background-color: ${(props) => props.theme.colors.navy};
+				// background-color: ${(props) => props.theme.colors.navy};
 				font-family: ${(props) => props.theme.fonts.condensedBold};
-				color: ${(props) => props.theme.colors.gray};
+				// color: ${(props) => props.theme.colors.gray};
 				text-transform: uppercase;
 				font-size: 12px;
 			}
 			${TableBodyRow} {
-				background-color: ${(props) => props.theme.colors.navy};
+				// background-color: ${(props) => props.theme.colors.navy};
 				&:last-child {
 					border-bottom: 0;
 				}
 				&.active-row {
-					background-color: ${props.theme.colors.mediumBlue};
+					// background-color: ${props.theme.colors.mediumBlue};
 				}
 			}
 		`}

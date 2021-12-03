@@ -21,7 +21,7 @@ import useSynthetixQueries, {
 	Action,
 	DELEGATE_APPROVE_CONTRACT_METHODS,
 	DELEGATE_GET_IS_APPROVED_CONTRACT_METHODS,
-} from '@synthetixio/queries';
+} from 'demaa-queries';
 import {
 	FormContainer,
 	InputsContainer,

@@ -10,8 +10,8 @@ import useMediaQuery from 'hooks/useMediaQuery';
 import { ExternalLink } from 'styles/common';
 import WalletIcon from 'assets/svg/app/wallet-yellow.svg';
 import ToggleDelegateApproval from './ToggleDelegateApproval';
-import useSynthetixQueries, { DELEGATE_ENTITY_ATTRS } from '@synthetixio/queries';
-import { DelegationWallet } from '@synthetixio/queries';
+import useSynthetixQueries, { DELEGATE_ENTITY_ATTRS } from 'demaa-queries';
+import { DelegationWallet } from 'demaa-queries';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState } from 'store/wallet';
 
@@ -68,7 +68,7 @@ const RightCol: FC = () => {
 
 	return (
 		<Root data-testid="table">
-			<Container>
+			{/* <Container>
 				<ContainerHeader>
 					<Title>{t('delegate.info.title')}</Title>
 					<Subtitle>
@@ -78,7 +78,7 @@ const RightCol: FC = () => {
 						</ExternalLink>
 					</Subtitle>
 				</ContainerHeader>
-			</Container>
+			</Container> */}
 
 			<Container>
 				<ContainerHeader>
@@ -115,7 +115,7 @@ export const Root = styled.div`
 `;
 
 export const Container = styled.div`
-	background: ${(props) => props.theme.colors.navy};
+	// background: ${(props) => props.theme.colors.navy};
 `;
 
 export const ContainerHeader = styled.div`

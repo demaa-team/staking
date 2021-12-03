@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+
 import { RecoilRoot } from 'recoil';
 import { useTranslation } from 'react-i18next';
 import { ThemeProvider } from 'styled-components';
@@ -14,7 +15,7 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { DEFAULT_REQUEST_REFRESH_INTERVAL } from 'constants/defaults';
 
-import { SynthetixQueryContextProvider, createQueryContext } from '@synthetixio/queries';
+import { SynthetixQueryContextProvider, createQueryContext } from 'demaa-queries';
 
 import SystemStatus from 'sections/shared/SystemStatus';
 
@@ -65,7 +66,6 @@ const InnerApp: FC<AppProps> = ({ Component, pageProps }) => {
 
 const App: FC<AppProps> = (props) => {
 	const { t } = useTranslation();
-
 	return (
 		<>
 			<Head>
@@ -121,5 +121,4 @@ const App: FC<AppProps> = (props) => {
 		</>
 	);
 };
-
 export default App;

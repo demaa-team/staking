@@ -59,7 +59,7 @@ export const TxWaiting: FC<{ unstakeAmount: Wei; burnAmount: Wei; txLink: string
 										minDecimals: DEFAULT_FIAT_DECIMALS,
 										maxDecimals: DEFAULT_FIAT_DECIMALS,
 									}),
-									asset: CryptoCurrency.SNX,
+									asset: CryptoCurrency.DEM,
 								})}
 							</WhiteSubheader>
 						</ActionsGridBox>
@@ -110,7 +110,7 @@ export const TxSuccess: FC<{
 										minDecimals: DEFAULT_FIAT_DECIMALS,
 										maxDecimals: DEFAULT_FIAT_DECIMALS,
 									}),
-									asset: CryptoCurrency.SNX,
+									asset: CryptoCurrency.DEM,
 								})}
 							</WhiteSubheader>
 						</ActionsGridBox>

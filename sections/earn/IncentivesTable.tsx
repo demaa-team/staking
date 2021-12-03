@@ -89,12 +89,12 @@ const IncentivesTable: FC<IncentivesTableProps> = ({ data, isLoaded, activeTab }
 				accessor: 'title',
 				Cell: (cellProps: CellProps<EarnItem>) => {
 					let iconProps = {
-						width: '22',
-						height: '22',
+						width: '24',
+						height: '24',
 					};
 					return (
 						<>
-							<StyledGlowingCircle variant="green" size="sm">
+							<StyledGlowingCircle variant="" size="sm">
 								<Currency.Icon
 									currencyKey={cellProps.row.original.staked.asset}
 									type={
@@ -191,10 +191,10 @@ const IncentivesTable: FC<IncentivesTableProps> = ({ data, isLoaded, activeTab }
 							<CellContainer>
 								<Title isNumeric={true}>
 									{formatCurrency(
-										CryptoCurrency.SNX,
+										CryptoCurrency.DEM,
 										(isDualRewards ? (cellProps.value as DualRewards).a : cellProps.value) as Wei,
 										{
-											currencyKey: CryptoCurrency.SNX,
+											currencyKey: CryptoCurrency.DEM,
 										}
 									)}
 								</Title>
@@ -240,7 +240,7 @@ const IncentivesTable: FC<IncentivesTableProps> = ({ data, isLoaded, activeTab }
 									(cellProps.row.original.now - cellProps.row.original.periodStarted) /
 									(cellProps.row.original.periodFinish - cellProps.row.original.periodStarted)
 								}
-								variant="rainbow"
+								variant="blue-pink"
 							/>
 							<Subtitle>
 								<Countdown
@@ -320,7 +320,7 @@ const IncentivesInnerTable: FC<IncentivesInnerTableProps> = ({
 					<TableNoResults>
 						<TableNoResultsTitle>{t('common.wallet.no-wallet-connected')}</TableNoResultsTitle>
 						<TableNoResultsButtonContainer>
-							<Button variant="primary" onClick={connectWallet}>
+							<Button variant="green" onClick={connectWallet}>
 								{t('common.wallet.connect-wallet')}
 							</Button>
 						</TableNoResultsButtonContainer>
@@ -332,7 +332,7 @@ const IncentivesInnerTable: FC<IncentivesInnerTableProps> = ({
 };
 
 const Container = styled.div<{ activeTab: Tab | null }>`
-	background: ${(props) => props.theme.colors.navy};
+	// background: #3444A1;
 	width: 100%;
 	${(props) =>
 		props.activeTab &&
@@ -360,12 +360,12 @@ const StyledTable = styled(Table)`
 	.table-body-row {
 		height: 70px;
 		align-items: center;
-		border-right: 1px solid ${(props) => props.theme.colors.grayBlue};
+		// border-right: 1px solid ${(props) => props.theme.colors.grayBlue};
 		&:hover {
-			background-color: ${(props) => props.theme.colors.mediumBlue};
+			background-color:#203298;
 		}
 		&.active-row {
-			border-right: 1px solid ${(props) => props.theme.colors.blue};
+			// border-right: 1px solid ${(props) => props.theme.colors.blue};
 		}
 	}
 	.table-body-cell {

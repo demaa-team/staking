@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { CellProps } from 'react-table';
 import styled from 'styled-components';
-import useSynthetixQueries, { EscrowData } from '@synthetixio/queries';
+import useSynthetixQueries, { EscrowData } from 'demaa-queries';
 import { useRecoilValue } from 'recoil';
 
 import { EXTERNAL_LINKS } from 'constants/links';
@@ -72,7 +72,7 @@ const NominateInfoBox: FC = () => {
 							accessor: 'quantity',
 							Cell: (cellProps: CellProps<EscrowData['schedule'], number>) => (
 								<Data style={{ textAlign: 'right' }}>
-									{formatCurrency(CryptoCurrency.SNX, cellProps.value)}
+									{formatCurrency(CryptoCurrency.DEM, cellProps.value)}
 								</Data>
 							),
 							sortable: false,

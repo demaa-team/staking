@@ -49,7 +49,7 @@ const MigrateTabContent: FC<MigrateTabContentProps> = ({
 	setTransactionState,
 }) => {
 	const { t } = useTranslation();
-	const vestingCurrencyKey = CryptoCurrency['SNX'];
+	const vestingCurrencyKey = CryptoCurrency['DEM'];
 	const escrowCalculations = useEscrowCalculations();
 
 	const totalEscrowed = escrowCalculations?.totalEscrowBalance;
@@ -96,7 +96,7 @@ const MigrateTabContent: FC<MigrateTabContentProps> = ({
 				</SettingsContainer>
 			</InputContainer>
 			{renderButton()}
-			<ErrorMessage>{transactionError}</ErrorMessage>
+			{/* <ErrorMessage>{transactionError}</ErrorMessage> */}
 			{txModalOpen && (
 				<TxConfirmationModal
 					onDismiss={() => setTxModalOpen(false)}

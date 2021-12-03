@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import Wei, { wei } from '@synthetixio/wei';
 import { useRecoilValue } from 'recoil';
 import { walletAddressState } from 'store/wallet';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 
 type EscrowCalculations = {
 	totalEscrowBalance: Wei;

@@ -59,7 +59,7 @@ const Container = styled(FlexDivRow)`
 const Header = styled.p`
 	font-family: ${(props) => props.theme.fonts.interBold};
 	font-size: 12px;
-	color: ${(props) => props.theme.colors.gray};
+	color: ${(props) => props.theme.colors.white};
 	text-transform: uppercase;
 `;
 

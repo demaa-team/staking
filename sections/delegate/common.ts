@@ -3,7 +3,7 @@ import { FlexDivColCentered, ErrorMessage as BaseErrorMessage } from 'styles/com
 
 export const FormContainer = styled(FlexDivColCentered)`
 	justify-content: space-between;
-	background: ${(props) => props.theme.colors.black};
+	// background: ${(props) => props.theme.colors.black};
 	position: relative;
 	width: 100%;
 	padding: 16px;

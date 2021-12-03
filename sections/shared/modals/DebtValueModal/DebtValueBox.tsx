@@ -8,12 +8,13 @@ import DebtValueModal from 'sections/shared/modals/DebtValueModal';
 import { Size } from 'components/StatBox/StatBox';
 
 export const DebtValueBox: FC<{
+	isBorder?:boolean;
 	title: any;
 	value: any;
 	isGreen?: boolean;
 	isPink?: boolean;
 	size?: Size;
-}> = ({ title, value, isGreen, isPink, size }) => {
+}> = ({ isBorder,title, value, isGreen, isPink, size }) => {
 	const [isOpened, setIsOpened] = useState<boolean>(false);
 	const isWalletConnected = useRecoilValue(isWalletConnectedState);
 
@@ -23,6 +24,7 @@ export const DebtValueBox: FC<{
 	return (
 		<>
 			<DebtValue
+				isBorder={isBorder}
 				onClick={onOpen}
 				isLarge={size === 'lg'}
 				{...{ title, value, isGreen, isPink, size }}
@@ -36,24 +38,11 @@ const DebtValue = styled(StatBox)<{ isGreen?: boolean; isPink?: boolean; isLarge
 	cursor: pointer;
 	
 	.title {
-		color: ${(props) =>
-			props.isGreen
-				? props.theme.colors.green
-				: props.isPink
-				? props.theme.colors.pink
-				: props.theme.colors.blue};
+		color: #fff};
 	}
 	
 	.value {
-		text-shadow: ${(props) =>
-			!props.isLarge
-				? 'unset'
-				: props.isGreen
-				? props.theme.colors.greenTextShadow
-				: props.isPink
-				? props.theme.colors.pinkTextShadow
-				: props.theme.colors.blueTextShadow}
-		color: ${(props) => (!props.isLarge ? 'unset' : props.theme.colors.navy)};
+		color: ${(props) => (!props.isLarge ? 'unset' : props.theme.colors.white)};
 	}
 `;
 

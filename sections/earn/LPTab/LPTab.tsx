@@ -57,7 +57,7 @@ import { LP, lpToSynthTranslationKey } from 'sections/earn/types';
 import styled from 'styled-components';
 import { CurrencyIconType } from 'components/Currency/CurrencyIcon/CurrencyIcon';
 import { MobileOnlyView } from 'components/Media';
-import useSynthetixQueries from '@synthetixio/queries';
+import useSynthetixQueries from 'demaa-queries';
 
 type DualRewards = {
 	a: Wei;
@@ -112,7 +112,7 @@ const LPTab: FC<LPTabProps> = ({
 	const { useExchangeRatesQuery } = useSynthetixQueries();
 
 	const exchangeRatesQuery = useExchangeRatesQuery();
-	const SNXRate = exchangeRatesQuery.data?.SNX ?? wei(0);
+	const SNXRate = exchangeRatesQuery.data?.DEM ?? wei(0);
 
 	const router = useRouter();
 	const goToEarn = useCallback(() => router.push(ROUTES.Earn.Home), [router]);
@@ -216,7 +216,7 @@ const LPTab: FC<LPTabProps> = ({
 					<WhiteSubheader>
 						{t('earn.actions.claim.amount', {
 							amount: (tokenRewards as DualRewards).a.toString(DEFAULT_CRYPTO_DECIMALS),
-							asset: CryptoCurrency.SNX,
+							asset: CryptoCurrency.DEM,
 						})}
 					</WhiteSubheader>
 				</StyledFlexDivColCentered>
@@ -256,7 +256,7 @@ const LPTab: FC<LPTabProps> = ({
 								<WhiteSubheader>
 									{t('earn.actions.claim.amount', {
 										amount: tokenRewards.toString(DEFAULT_CRYPTO_DECIMALS),
-										asset: CryptoCurrency.SNX,
+										asset: CryptoCurrency.DEM,
 									})}
 								</WhiteSubheader>
 							</>

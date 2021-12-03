@@ -5,14 +5,25 @@ import Button from 'components/Button';
 import Input from 'components/Input/Input';
 import Select from 'components/Select';
 
+export const TabRowContainer = styled(FlexDivRowCentered)`
+	// min-height: 400px;
+	width: 100%;
+	margin-top:1rem;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-gap: 1rem;
+`;
+
 export const TabContainer = styled(FlexDivColCentered)`
 	min-height: 400px;
 	width: 100%;
 `;
 
 export const InfoContainer = styled(FlexDivCol)`
-	background: ${(props) => props.theme.colors.navy};
-	padding: 16px 0px;
+	background: #1A2479;
+	padding: 0.8rem 0px;
+	height: 100%;
+	margin:0.4rem 0;
 `;
 
 export const InfoHeader = styled.div`
@@ -21,11 +32,12 @@ export const InfoHeader = styled.div`
 `;
 
 export const InputContainer = styled(FlexDivColCentered)`
-	background: ${(props) => props.theme.colors.black};
+	// background: ${(props) => props.theme.colors.black};
 	position: relative;
 	width: 100%;
-	padding: 16px;
+	// padding: 16px;
 	margin-bottom: 24px;
+	border-radius:1.8rem;
 `;
 
 export const StyledSelect = styled(Select)`
@@ -53,7 +65,7 @@ export const StyledSelect = styled(Select)`
 	}
 `;
 export const InputBox = styled(FlexDivColCentered)`
-	margin: 24px auto;
+	margin: 2rem auto;
 	justify-content: center;
 `;
 
@@ -70,7 +82,7 @@ export const StyledInput = styled(Input)`
 `;
 
 export const InputLocked = styled.p`
-	font-size: 24px;
+	font-size: 1.8rem;
 	font-family: ${(props) => props.theme.fonts.extended};
 	text-align: center;
 	margin-top: 16px;
@@ -78,18 +90,19 @@ export const InputLocked = styled.p`
 
 export const DataRow = styled(FlexDivRowCentered)`
 	justify-content: space-between;
-	margin: 8px 24px;
-	border-bottom: ${(props) => `1px solid ${props.theme.colors.grayBlue}`};
+	padding:0.2rem 0;
+	margin: 0px 1.2rem;
+	border-top: 1px solid #4C5496;
 `;
 export const RowTitle = styled.p`
-	font-family: ${(props) => props.theme.fonts.interBold};
-	font-size: 12px;
-	color: ${(props) => props.theme.colors.gray};
+	font-family: Microsoft YaHei;
+	font-size: 0.9rem;
+	color: #fff;
 	text-transform: uppercase;
 `;
 export const RowValue = styled.p`
-	font-family: ${(props) => props.theme.fonts.interBold};
-	font-size: 12px;
+	font-family: Microsoft YaHei;
+	font-size: 0.7rem;
 	color: ${(props) => props.theme.colors.white};
 	text-transform: uppercase;
 `;
@@ -97,10 +110,10 @@ export const StyledCTA = styled(Button)`
 	font-size: 14px;
 	font-family: ${(props) => props.theme.fonts.condensedMedium};
 	box-shadow: 0px 0px 10px rgba(0, 209, 255, 0.9);
-	border-radius: 4px;
+	border-radius: 100px;
 	width: 100%;
 	text-transform: uppercase;
-
+	margin-top:1.5rem;
 	&:disabled {
 		box-shadow: none;
 	}

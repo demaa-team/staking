@@ -1,0 +1,1492 @@
+{
+	"languages": {
+	"zh": "中文",
+    "en": "English"
+	},
+	"meta": {
+		"description": "DEM持有者通过质押获得奖励的dApp",
+		"og": {
+			"title": "DEMAA 质押",
+			"description": "DEM持有者通过质押获得奖励的",
+			"image-alt": "合成资产质押",
+			"site-name": "合成资产质押"
+		}
+	},
+	"modals": {
+		"settings": {
+			"title": "设置",
+			"options": {
+				"currency": "货币",
+				"language": "语言"
+			}
+		},
+		"approve": {
+			"description": "您必须先批准您的 {{stakedAsset}} 代币,然后才能继续 <0>了解更多<0>",
+			"button": "批准 {{stakedAsset}}"
+		},
+		"settle": {
+			"description": "您需要先结算,然后才能质押您的 {{stakedAsset}}",
+			"button": "结清 {{stakedAsset}}"
+		},
+		"confirm-transaction": {
+			"title": "确认交易",
+			"approve": {
+				"approving": "批准",
+				"contract": "{{stakedAsset}}合约"
+			},
+			"settle": {
+				"settling": "结清",
+				"contract": "{{stakedAsset}}合约"
+			},
+			"claiming": {
+				"claiming": "认领"
+			},
+			"minting": {
+				"from": "质押",
+				"to": "铸造"
+			},
+			"burning": {
+				"from": "未铸造",
+				"to": "销毁",
+				"spending": "支出"
+			},
+			"vesting": {
+				"title": "释放"
+			},
+			"deposit": {
+				"title": "存款"
+			},
+			"migration": {
+				"title": "迁移",
+				"escrow-schedule": "托管计划"
+			},
+			"propose": {
+				"title": "写合约提案",
+				"hash": "{{hash}}"
+			},
+			"withdraw": {
+				"title": "稀释成员",
+				"address": "{{address}}"
+			},
+			"support": {
+				"title": "支持成员",
+				"address": "{{address}}"
+			},
+			"transfer": {
+				"transferring": "发送中",
+				"to": "到"
+			},
+			"helper": "按照Metamask提示授权交易"
+		},
+		"confirm-signature": {
+			"title": "确认签名",
+			"vote": {
+				"title": "提交投票",
+				"hash": "{{hash}}"
+			},
+			"propose": {
+				"title": "创建提案",
+				"space": "{{space}}"
+			},
+			"helper": "按照Metamask提示确认您的签名"
+		},
+		"wallet": {
+			"title": "连接钱包",
+			"copy-address": {
+				"copy-to-clipboard": "复制到剪贴板",
+				"copied": "已复制！"
+			},
+			"etherscan": "查看Polygonscan",
+			"disconnect-wallet": "断开钱包",
+			"stop-watching": "停止观察",
+			"stop-delegation": "停止委托模式",
+			"change-wallet": "换钱包",
+			"switch-account": "切换账户",
+			"available-on-hardware-wallet": "可用于硬件钱包",
+			"delegate-mode": {
+				"menu-title": "代理模式",
+				"modal-title": "切换到委托模式",
+				"subtitle": "选择一个与之交互的钱包",
+				"no-delegate": "没有找到钱包"
+			},
+			"watch-wallet": {
+				"title": "观察钱包",
+				"subtitle": "输入一个有效的 ETH 地址或 ENS 域来查看这个 dApp 作为那个钱包",
+				"placeholder": "地址或 .eth 名称",
+				"action": "观看钱包",
+				"error": "不是有效的 ETH 或 ENS 地址",
+				"previous": {
+					"title": "以前看过 ({{count}}):",
+					"remove": "删除地址"
+				}
+			},
+			"wallet-options": {
+				"title": "请选择:"
+			}
+		},
+		"notifications": {
+			"title": "通知",
+			"open-orders": {
+				"title": "未结订单",
+				"no-results": "没有未结订单"
+			},
+			"recent-notifications": {
+				"title": "最近的通知",
+				"no-results": "最近没有交易"
+			},
+			"all-notifications": {
+				"title": "所有通知",
+				"no-results": "无"
+			},
+			"view-all": "查看全部"
+		},
+		"staked-value": {
+			"title": "质押价值",
+			"total-snx": "总DEM",
+			"transferrable-snx": "可发送的DEM",
+			"locked-snx": "锁定的DEM",
+			"staked-snx": "质押的DEM"
+		},
+		"debt-value": {
+			"title": "债务跟踪",
+			"issued-debt": "已发行债务",
+			"actual-debt": "实际债务",
+			"share-of-debt-pool": "共享债务池"
+		}
+	},
+	"homepage": {
+		"page-title": "DEMAA | 用DEM赚钱",
+		"welcome": {
+			"title": "欢迎来到DEM铸造",
+			"subtitle": "DEM 持有者的 dApp。如果您以前从未质押过DEM,请先阅读此快速介绍。"
+		},
+		"what": {
+			"title": "什么是合成资产？",
+			"subtitle": "合成资产是以太坊上的衍生品流动性协议，它可以通过质押DEM来创建合成资产。"
+		},
+		"why": {
+			"title": "为什么质押DEM？",
+			"subtitle": "DEM质押者获得两种奖励。首先,他们获得DEM质押奖励,这是通过通货膨胀货币策略创造的。其次,还有合成资产交易所奖励,以dUSD计价,由所有点对点产生合约合成资产交易。"
+		},
+		"mint-burn": {
+			"title": "铸造和销毁",
+			"subtitle": "所有合成资产都需要以目标抵押比率得到抵押DEM。DEM抵押人需要管理自己的比率使得以高于这个数字,他们可以通过销毁dUSD来增加他们的比率来做到这一点或者铸造dUSD来减少它。如果他们这样做,他们可以获得每周奖励。"
+		},
+		"risks": {
+			"title": "有什么风险？",
+			"subtitle": "所有DEM质押者在质押时都会产生'债务'。他们的债务从最初铸造的dUSD数量开始,并根据其合成资产持有者的收益或损失而波动。质押者必须先偿还债务,然后才能解锁质押的DEM。"
+		}
+	},
+	"dashboard": {
+		"page-title": "DEMAA | 首页",
+		"actions": {
+			"title": "可能的动作",
+			"claim": {
+				"title": "认领 {{amount}} DEM",
+				"copy": "在本纪元结束前领取您的质押奖励",
+				"tooltip": "没有可领取的奖励"
+			},
+			"mint": {
+				"title": "铸造dUSD",
+				"copy": "通过质押 {{SNXAmount}} DEM铸造 {{sUSDAmount}} dUSD"
+			},
+			"burn": {
+				"title": "{{targetCRatio}}",
+				"copy": "销毁你的dUSD来修复你的抵押比率"
+			},
+			"earn": {
+				"title": "赚 {{percent}}",
+				"copy": "在 {{supplier}} 上提供 {{asset}} 流动性"
+			},
+			"loans": {
+				"title": "赚 {{percent}}",
+				"copy": "在 {{asset}} 上做空以获得奖励"
+			},
+			"learn": {
+				"title": "学习",
+				"copy": "查看合成资产博客以了解DEM的所有信息"
+			},
+			"welcome": {
+				"title": "欢迎来到DEMAA",
+				"copy": "质押您的DEM并获得回报"
+			},
+			"stake": {
+				"title": "铸造",
+				"copy": "质押你的DEM每周赚取DEM奖励"
+			},
+			"trade": {
+				"title": "交易",
+				"copy": "在Swap上交易合成资产"
+			},
+			"migrate-l1": {
+				"title": "迁移托管 DEM",
+				"copy": "将您的托管DEM从 L1 迁移到新的 L1 托管奖励合约。此操作是使托管DEM迁移到 L2 所必需的。",
+				"tooltip": "这一步是继续使用 合成资产 协议所必需的。"
+			},
+			"migrate": {
+				"title": "迁移到第 2 层",
+				"copy": "将你的DEM从 L1 迁移到 L2",
+				"tooltip": "即将推出"
+			}
+		}
+	},
+	"staking": {
+		"page-title": "DEMAA | 质押",
+		"actions": {
+			"mint": {
+				"title": "铸造",
+				"tiles": {
+					"max": {
+						"title": "全部铸造",
+						"subtext": "全部铸造为dUSD"
+					},
+					"custom": {
+						"title": "自定义铸造",
+						"subtext": "铸造自定义数量的dUSD"
+					}
+				},
+				"info": {
+					"staking": "质押"
+				},
+				"action": {
+					"empty": "输入金额",
+					"mint": "铸造 <0>dUSD</0>",
+					"max": "最大",
+					"error": {
+						"bad-input": "请输入一个有效数字",
+						"insufficient": "铸造的抵押品不足",
+						"exception": "合约错误",
+						"delegate-cannot-mint": "委托钱包不允许铸币",
+						"delegate-cannot-burn": "委托钱包不允许销毁",
+						"delegate-cannot-claim": "委托钱包不允许申领"
+					}
+				},
+				"in-progress": {
+					"title": "铸造中",
+					"staking": "质押",
+					"minting": "铸造",
+					"subtext": "等待区块链确认你的交易",
+					"etherscan": "查看Polygonscan"
+				},
+				"completed": {
+					"title": "成功了！现在让你的 {{synth}} 工作:",
+					"curve": "Curve Finance {{synth}} LP代币奖励",
+					"est-apr": "估计四月",
+					"subtext": "有多种流动性提供激励与不同的 DeFi 产品交互,供您选择",
+					"dismiss": "退出",
+					"see-more": "查看更多"
+				},
+				"completed-default": {
+					"title": "铸币完成！",
+					"staked": "质押",
+					"minted": "铸造",
+					"dismiss": "退出",
+					"verify": "验证 交易"
+				}
+			},
+			"burn": {
+				"title": "销毁",
+				"tiles": {
+					"max": {
+						"title": "全部销毁",
+						"subtext": "销毁钱包里所有可用的dUSD来解锁冻结的DEM"
+					},
+					"target": {
+						"title": "质押到{{targetCRatio}}",
+						"subtext": "销毁dUSD以达到目标抵押率"
+					},
+					"custom": {
+						"title": "自定义销毁",
+						"subtext": "销毁自定义数量的dUSD"
+					},
+					"clear-debt": {
+						"title": "偿还债务",
+						"subtext": "购买并销毁dUSD以清除您的总债务并解锁抵押的DEM"
+					}
+				},
+				"info": {
+					"unstaking": "未铸造",
+					"clear-debt": {
+						"tx1": "交易 1: 购买额外的dUSD",
+						"tx2": "交易 2: 销毁dUSD以清偿债务",
+						"spending": "花费 {{value}}",
+						"buffer": "包括0.05%的缓冲区",
+						"tagline": "供给",
+						"tooltip": "这个总数包括0.05%的缓冲,以防止交易期间的债务转移。"
+					}
+				},
+				"action": {
+					"empty": "输入金额",
+					"burn": "销毁 <0>dUSD</0>",
+					"max": "最大",
+					"clear-debt": "清偿债务",
+					"insufficient-dUSD-to-clear-debt": "<0>dUSD</0> 不足以清偿债务",
+					"insufficient-dUSD-to-fix-c-ratio": "<0>dUSD</0> 不足以修复目标抵押率",
+					"error": {
+						"no-debt": "没有债务可销毁",
+						"bad-input": "输入金额无效",
+						"insufficient-eth-1inch": "ETH不足,无法执行 1inch swap",
+						"waiting-period": "销毁直到 {{date}}",
+						"issuance-period": "在 {{date}} 之前销毁",
+						"insufficient": "dUSD不足以销毁债务",
+						"exception": "合约错误"
+					}
+				},
+				"in-progress": {
+					"title": "正在销毁",
+					"unstaking": "未铸造",
+					"burning": "销毁",
+					"subtext": "等待区块链确认你的交易",
+					"etherscan": "查看Polygonscan"
+				},
+				"completed": {
+					"title": "销毁完成！",
+					"dismiss": "退出",
+					"verify": "验证交易",
+					"unstaking": "未铸造",
+					"burning": "销毁"
+				}
+			}
+		},
+		"info": {
+			"mint": {
+				"title": "质押DEM铸造dUSD",
+				"subtitle": "通过质押您的DEM来铸造 sUSD。DEM质押者每周赚取质押奖励,以换取管理他们的抵押率和债务。<0>了解详情。</0>"
+			},
+			"burn": {
+				"title": "销毁dUSD来解锁抵押DEM",
+				"subtitle": "销毁您的 USD 债务以解锁您质押的 DEM。这将提高您的抵押率并减少您的债务。<0>了解更多。</0>"
+			},
+			"clear": {
+				"title": "通过1inch购买更多dUSD来清偿债务",
+				"subtitle": "销毁您的dUSD以解锁您质押的DEM并清偿债务。由于您没有足够的dUSD,请在左侧表格中使用ETH购买更多。<0>了解详情。</0>"
+			},
+			"table": {
+				"total-snx": "总计",
+				"not-staked": "未质押",
+				"staked": "已质押",
+				"transferable": "可转账",
+				"locked": "锁定",
+				"c-ratio": "抵押率",
+				"debt": "总债务",
+				"susd-balance": "dUSD 余额"
+			}
+		}
+	},
+	"debt": {
+		"page-title": "DEMAA | 债务",
+		"actions": {
+			"track": {
+				"title": "概览",
+				"no-data": "此钱包的债务数据不可用",
+				"info": {
+					"tooltip": "<0>已发行债务:</0>"
+				},
+				"chart": {
+					"title": "债务时间曲线",
+					"tooltip": {
+						"actualDebt": "活跃债务",
+						"issuedDebt": "已发行债务"
+					}
+				}
+			},
+			"manage": {
+				"title": "管理",
+				"info-panel": {
+					"title": "dUSD表现逊于债务池",
+					"body": "您的债务会随着债务池的变化而波动。我们建议您对冲债务以降低拥有比您持有的债务过多的风险。",
+					"chart": {
+						"title": "dUSD vs 债务池",
+						"dUSD-label": "dUSD",
+						"debtPool-label": "债务池"
+					}
+				}
+			},
+			"hedge": {
+				"info": {
+					"debt-pool-pie-chart": {
+						"title": "全局债务池"
+					},
+					"portfolio-table": {
+						"title": "你的资产集",
+						"sETH-tooltip": "ETH总量包括<0>sETH</0>和<0>wETH</0>等其他相关资产",
+						"sBTC-tooltip": "BTC总数包括<0>sBTC</0>、<0>wBTC</0>和<0>renBTC</0>等其他相关资产"
+					},
+					"tooltip": "此表用作<0>对冲指标</0>,显示您的合成资产余额与全局债务池之间的关系"
+				}
+			}
+		}
+	},
+	"earn": {
+		"page-title": "DEMAA | 赚钱",
+		"tab": {
+			"active": "活跃",
+			"inactive": "已过期"
+		},
+		"incentives": {
+			"est-apr": "估计年化",
+			"options": {
+				"select-a-pool": {
+					"title": "选择一个流动池:"
+				},
+				"staked-balance": {
+					"title": "质押余额",
+					"subtitle": "质押余额"
+				},
+				"tvl": {
+					"title": "总锁仓价值",
+					"subtitle": "总锁仓价值"
+				},
+				"rewards": {
+					"title": "奖励",
+					"claimed": "认领",
+					"claimable": "可认领"
+				},
+				"time-left": {
+					"title": "剩余时间",
+					"does-not-expire": "不过期"
+				},
+				"snx": {
+					"title": "合成资产",
+					"subtitle": "质押奖励",
+					"description": "质押DEM代币获得每周通胀提供的DEM 和dUSD交易费用奖励。<0>了解更多。<0>",
+					"staking-rewards": "质押奖励",
+					"trading-rewards": "交易奖励",
+					"total-value": "总价值"
+				},
+				"curve": {
+					"title": "curve",
+					"description": "从dUSD池中质押Curve LP代币可以让您获得CRV奖励、Curve交换费和DEM奖励。<0>了解更多。<0>",
+					"subtitle": "dUSD CPT 奖励",
+					"helper": "访问curve.fi"
+				},
+				"seur": {
+					"title": "curve",
+					"description": "将 sEUR 存入 Curve.fi 以获得 eursCRV 和质押以赚取 CRV 奖励、Curve 交换费和DEM奖励。",
+					"subtitle": "sEUR CPT 奖励"
+				},
+				"ieth": {
+					"title": "合成资产",
+					"description": "质押 iETH 代币可以让您获得DEM奖励。<0>了解更多。<0>",
+					"subtitle": "iETH 奖励"
+				},
+				"sbtc": {
+					"title": "合成资产",
+					"description": "做空可以让你获得DEM奖励。<0>了解更多。<0>",
+					"subtitle": "sBTC短期奖励"
+				},
+				"seth": {
+					"title": "合成资产",
+					"description": "做空可以让你获得DEM奖励。<0>了解更多。<0>",
+					"subtitle": "sETH短期奖励"
+				},
+				"stsla": {
+					"title": "Balancer",
+					"description": "质押sTLSA Balancer Pool LP以获得DEM奖励。<0>在此处为 Balancer 添加流动性<0>。",
+					"subtitle": "sTSLA BPT奖励"
+				},
+				"sfb": {
+					"title": "Balancer",
+					"description": "质押sFB Balancer Pool LP以获得DEM奖励。<0>在此为 Balancer 添加流动性<0>。",
+					"subtitle": "sFB BPT奖励"
+				},
+				"saaple": {
+					"title": "Balancer",
+					"description": "质押 AAPL Balancer Pool LP以获得DEM奖励。<0>在此处为 Balancer 添加流动性<0>。",
+					"subtitle": "sAAPL BPT奖励"
+				},
+				"samzn": {
+					"title": "Balancer",
+					"description": "质押sAMZN Balancer Pool LP 以获得DEM奖励。<0>在此处为 Balancer 添加流动性<0>。",
+					"subtitle": "sAMZN BPT奖励"
+				},
+				"snflx": {
+					"title": "Balancer",
+					"description": "质押sNFLX Balancer Pool LP 以获得DEM奖励。<0>在此处为 Balancer 添加流动性<0>。",
+					"subtitle": "sNFLX BPT奖励"
+				},
+				"sgoog": {
+					"title": "Balancer",
+					"description": "质押 sGOOG Balancer Pool LP 以获得DEM奖励。<0>在此处添加 Balancer 的流动性<0>。",
+					"subtitle": "sGOOG BPT 奖励"
+				},
+				"smsft": {
+					"title": "Balancer",
+					"description": "质押sMSFT Balancer Pool LP以获得DEM奖励。<0>在 Balancer 上添加流动性<0>。",
+					"subtitle": "sMSFT BPT奖励"
+				},
+				"scoin": {
+					"title": "alancer",
+					"description": "质押sCOIN Balancer Pool LP以获得DEM奖励。<0>在此处添加Balancer的流动性<0>。",
+					"subtitle": "sCOIN BPT奖励"
+				},
+				"dht": {
+					"title": "Uniswap",
+					"description": "质押dUSD-DHT Uniswap池代币以获得DEM和DHT奖励。<0>在此处添加Uniswap的流动性<0>。",
+					"subtitle": "DHT Uniswap LP奖励"
+				},
+				"ibtc": {
+					"title": "合成资产",
+					"description": "质押iBTC代币可以让您获得DEM奖励。<0>了解更多。<0>",
+					"subtitle": "iBTC奖励"
+				},
+				"yvsnx": {
+					"title": "DEM Vault",
+					"description": "将DEM存入Yearn Finance 的DEMVault 以获得DEM奖励。<0>了解更多<0>。",
+					"subtitle": "",
+					"approve-message": "在存入您的DEM之前,请批准 YearnDEMVault 合约。"
+				}
+			},
+			"weekly-rewards": "每周奖励 {{weeklyRewards}} {{asset}}"
+		},
+		"actions": {
+			"available": "可用",
+			"max": "最大",
+			"tx": {
+				"notice": "等待区块链确认您的交易。",
+				"link": "在Polygonscan上查看",
+				"verify": "验证交易",
+				"dismiss": "退出"
+			},
+			"settle": {
+				"waiting": "结算中",
+				"success": "结算完成！",
+				"settling": "结清",
+				"contract": "{{stakedAsset}}合约"
+			},
+			"approve": {
+				"waiting": "审批中",
+				"success": "审批完成！",
+				"approving": "批准",
+				"contract": "{{stakedAsset}}合约"
+			},
+			"claim": {
+				"title": "认领",
+				"exchange-rewards": "合成资产兑换奖励",
+				"staking-rewards": "DEM质押奖励",
+				"claim-button": "认领奖励",
+				"claim-snx-button": "认领DEM",
+				"close-fee-period": "已关闭的费用周期",
+				"claimed-button": "已经认领",
+				"low-ratio": "销毁dUSD来认领",
+				"not-voted": "还未投票",
+				"nothing-to-claim": "没有认领",
+				"claiming": "正在认领",
+				"claimed": "已认领",
+				"amount": "{{amount}} {{asset}}",
+				"in-progress": "认领进行中",
+				"success": "认领完成！",
+				"ratio-notice": "要领取奖励,抵押率必须在目标抵押率的 1% 以内。您必须销毁 dUSD 或获取更多DEM来达到您的目标抵押率。"
+			},
+			"lp": {
+				"title-curve": "CURVE奖励",
+				"title-ieth": "iETH 奖励",
+				"title-ibtc": "iBTC 奖励"
+			},
+			"stake": {
+				"title": "质押",
+				"stake-button": "质押 {{stakedAsset}}",
+				"staking": "质押中",
+				"amount": "{{amount}} {{amount}}",
+				"in-progress": "质押进行中",
+				"success": "质押完成！",
+				"staked": "已质押"
+			},
+			"unstake": {
+				"title": "取消质押",
+				"unstaking": "提现中",
+				"unstake-button": "取消质押{{stakedAsset}}",
+				"amount": "{{amount}} {{asset}}",
+				"in-progress": "提现中",
+				"success": "提现完成！",
+				"withdrew": "提现"
+			},
+			"deposit": {
+				"title": "存款",
+				"depositing": "存入中",
+				"deposit-button": "存入{{asset}}",
+				"amount": "{{amount}} {{asset}}",
+				"in-progress": "存入进行中",
+				"success": "提现完成！",
+				"deposited": "已存入"
+			},
+			"withdraw": {
+				"title": "提现",
+				"withdrawing": "提现",
+				"withdraw-button": "提取 {{asset}}",
+				"amount": "{{amount}} {{asset}}",
+				"in-progress": "提取中",
+				"success": "提现完成！",
+				"withdrew": "提现"
+			},
+			"rewards": {
+				"title": "奖励",
+				"waiting": "申领中"
+			}
+		}
+	},
+	"escrow": {
+		"page-title": "DEMAA | 托管",
+		"staking": {
+			"info": {
+				"title": "将您的DEM质押奖励存入托管",
+				"title-migrate-l1": "迁移到新的 L1 托管合约",
+				"subtitle": "如果您已质押您的DEM并铸造了dUSD,您就有资格获得DEM质押奖励,奖励将在此处托管,您可以在申领日起12个月内认领。",
+				"subtitle-migrate-l1": "所有DEM持有者都必须在之前迁移他们的托管 DEM他们可以授予任何托管的 DEM。"
+			}
+		},
+		"token": {
+			"info": {
+				"title": "从代币销售中认领你托管的 DEM。",
+				"subtitle": "如果你已经从代币销售中托管了 DEM,你可以在这里认领。"
+			}
+		},
+		"table": {
+			"no-results": "没有托管的DEM",
+			"vesting-date": "释放日期",
+			"DEM-amount": "DEM"
+		},
+		"actions": {
+			"staking": {
+				"title": "质押奖励"
+			},
+			"stake": {
+				"no-escrowed-snx": "你没有托管的DEM",
+				"stake-now": "立即质押"
+			},
+			"ico": {
+				"title": "代币销售"
+			},
+			"vest-button": "释放{{canVestAmount}}",
+			"migrate-button": "迁移DEM",
+			"disabled": "没有DEM可释放",
+			"in-progress": {
+				"title": "释放进行中",
+				"vesting": "释放",
+				"subtext": "等待区块链确认你的交易",
+				"etherscan": "查看Polygonscan"
+			},
+			"migration": {
+				"completed": {
+					"title": "交易完成",
+					"migrating": "迁移",
+					"escrow-schedule": "托管计划"
+				},
+				"in-progress": {
+					"title": "交易进行中",
+					"migrating": "迁移",
+					"escrow-schedule": "托管计划"
+				}
+			},
+			"completed": {
+				"title": "释放完成",
+				"vested": "已释放",
+				"verify": "验证交易",
+				"dismiss": "退出"
+			}
+		}
+	},
+	"loans": {
+		"page-title": "DEMAA | 借贷",
+		"interest-rate": "利率",
+		"issuance-fee": "发行费",
+		"cratio": "抵押比率",
+		"interest-accrued": "应计利息",
+		"no-active-loans": "你没有活跃的借款。",
+		"tabs": {
+			"new": {
+				"title": "借用合成资产",
+				"button": {
+					"low-collateral-label": "最低抵押品为 <0>{{minCollat​​eralAmountString}}</0> <0>{{collat​​eralAsset}}</0>",
+					"low-cratio-label": "C-RATIO TOO LOW",
+					"approve-label": "批准 <0>{{collat​​eralAsset}}</0>",
+					"borrow-label": "借用 <0>{{debtAsset}}</0>",
+					"approving-label": "APPROVING...",
+					"borrowing-label": "借用...",
+					"insufficient-label": "抵押品不足"
+				},
+				"debt": {
+					"label": "借"
+				},
+				"collateral": {
+					"label": "使用"
+				},
+				"low-cratio-tip": "您只能以 {{safeMinCRatio}}% 或更高的价格借款。如果低于 {{minCRatio}}%,您的头寸将有资格被清算。",
+				"healthy-cratio-tip": "确保您的仓​​位保持在 {{minCRatio}}% 以上以防止清算。",
+				"confirm-transaction": {
+					"left-panel-label": "借用",
+					"right-panel-label": "发布"
+				}
+			},
+			"list": {
+				"title": "活动借贷",
+				"types": {
+					"debt": "贷款",
+					"collateral": "抵押品",
+					"cratio": "抵押比率",
+					"modify": "修改"
+				},
+				"actions-menu-label": "动作"
+			}
+		},
+		"info": {
+			"title": "借用其他资产的合成资产",
+			"subtitle": "以 ETH 和 renBTC 抵押品借入合成资产。",
+			"learn-more": "了解更多。"
+		},
+		"pending-withdrawals": {
+			"title": "待提取",
+			"title-tip": "在您的贷款关闭、提取或清算后,您需要单独索取您的以太币抵押品。",
+			"empty": "您没有待处理的提款。",
+			"claiming": "认领......",
+			"claim": "认领"
+		},
+		"stats": {
+			"title": "统计数据",
+			"asset": "资产",
+			"open-interest": "未平仓合约",
+			"total": "总计"
+		},
+		"modify-loan": {
+			"loan-interation-delay": "请等待 <0>{{waitETA}}</0>,然后再操作借贷模块",
+			"close": {
+				"left-col-label": "还款",
+				"right-col-label": "接收",
+				"button-labels": {
+					"default": "关闭贷款",
+					"closing": "关闭贷款......"
+				}
+			},
+			"deposit": {
+				"left-col-label": "存款",
+				"right-col-label": "新总数",
+				"button-labels": {
+					"default": "存款",
+					"approve": "批准",
+					"approving": "批准...",
+					"depositing": "存款..."
+				}
+			},
+			"withdraw": {
+				"left-col-label": "提现",
+				"right-col-label": "剩余",
+				"button-labels": {
+					"default": "提现",
+					"withdrawing": "提现中..."
+				}
+			},
+			"repay": {
+				"left-col-label": "还款",
+				"right-col-label": "剩余",
+				"button-labels": {
+					"default": "偿还债务",
+					"repaying-fully-error": "考虑关闭贷款而不是全额还款",
+					"repaying": "正在偿还债务..."
+				}
+			},
+			"draw": {
+				"left-col-label": "增加",
+				"right-col-label": "新总数",
+				"button-labels": {
+					"default": "增加债务",
+					"drawing": "增加债务..."
+				}
+			}
+		}
+	},
+	"layer2": {
+		"page-title": "DEMAA | 第 2 层",
+		"error": {
+			"non-eoa-wallet": "智能合约钱包不兼容 Layer 2"
+		},
+		"deposit": {
+			"info": {
+				"title": "存款 DEM",
+				"subtitle": "存入您的DEM以完成将您的DEM从 L1 迁移到 L2 的过程。在您的DEM在 L2 上可用之前,您可能会在迁移过程中遇到延迟。您的DEM存入 L2 可能需要几分钟时间才能显示即使在Polygonscan显示交易成功之后,也可以启动。",
+				"no-deposit": "没有存款记录",
+				"warning": "警告",
+				"layer2-migrate-intro": "你即将将资金迁移到 Optimistic Ethereum \"L2\"。",
+				"metamask-only": "L2 仅完全支持 Metamask,因此请确保您从 Metamask 钱包或允许您将私钥导出到 Metamask 的钱包中存款。",
+				"layer2-withdraw-delay": "一旦在L2,如果你想将资金提回到L1,平均需要7-10天。",
+				"layer2-limited-synths": "我们还没有在 L2 上提供完整的合成资产集合,并且 Swap 上的交易目前仅限于 sETH、sBTC 和 sLINK。我们将在有更多合成资产可用时宣布。",
+				"layer2-gas": "确保您迁移一些 ETH 以支付 L2 上的最低 gas 费用。请使用 Optimism Bridge <0>此处</0>。",
+				"table": {
+					"deposit": "存款",
+					"date": "日期",
+					"status": "状态",
+					"view": "视图",
+					"pending": "待定",
+					"confirmed": "确认"
+				}
+			}
+		},
+		"withdraw": {
+			"info": {
+				"title": "将DEM从第 2 层提取到第 1 层",
+				"subtitle": "警告:提款您的DEM需要 7-10 天才能在 L1 收到,在此期间您将无法使用您的资金。一旦您开始提款,您将无法取消它。",
+				"regenesis": "UTC 时间 2021 年 4 月 9 日星期五下午 06:00:00 之前的历史交易已被清除<0>参见博文</0>。",
+				"view-withdrawals": "要查看升级前的提款,<0>查看 合成资产 提款</0>。",
+				"no-withdrawals": "没有提款记录",
+				"table": {
+					"withdrawal": "提款",
+					"date": "日期",
+					"status": "状态",
+					"view": "视图",
+					"pending": "待定",
+					"confirmed": "已确认",
+					"relay": "<0>准备中继</0>"
+				}
+			}
+		},
+		"migrate": {
+			"info": {
+				"title": "将托管的DEM迁移到第 2 层",
+				"subtitle": "将托管的DEM迁移到第 2 层",
+				"warning-title": "警告",
+				"warning-description": "将托管DEM迁移到第 2 层无法逆转"
+			}
+		},
+		"actions": {
+			"burn": {
+				"title": "销毁 L1 债务",
+				"subtitle": "销毁你的债务,以便能够将你的DEM从 L1 迁移到 L2"
+			},
+			"apr": {
+				"title": "{{amountSNX}} 在 L2 中赚取 {{apr}} APY",
+				"subtitle": "L2 奖励最初会很少,然后逐渐增加。"
+			},
+			"withdraw": {
+				"title": "提现 DEM",
+				"bridge-inactive": "提现桥当前处于非活动状态",
+				"action": {
+					"withdraw-button": "提现 {{withdrawAmount}}",
+					"disabled": "没有DEM可以退出"
+				}
+			},
+			"deposit": {
+				"title": "存款 DEM",
+				"subtitle": "DEM 从 L1 到 L2 的存款和转移",
+				"bridge-inactive": "存款桥目前处于非活动状态",
+				"action": {
+					"in-progress": {
+						"title": "存款进行中",
+						"subtext": "等待区块链确认你的交易",
+						"depositing": "存款",
+						"etherscan": "查看 Polygonscan"
+					},
+					"completed": {
+						"title": "存款完成",
+						"deposited": "已存入",
+						"verify": "验证交易",
+						"dismiss": "退出"
+					},
+					"deposit-button": "存款 {{depositAmount}}",
+					"disabled": "没有DEM可存入",
+					"approve": {
+						"description": "在存入您的DEM之前,请先批准存款合约。",
+						"button-label": "批准合约"
+					}
+				}
+			},
+			"migrate": {
+				"title": "迁移托管 DEM",
+				"subtitle": "将托管计划从 L1 迁移到 L2",
+				"action": {
+					"in-progress": {
+						"title": "正在迁移",
+						"subtext": "等待区块链确认你的交易",
+						"depositing": "迁移",
+						"etherscan": "查看 Polygonscan"
+					},
+					"completed": {
+						"title": "迁移完成",
+						"deposited": "迁移",
+						"verify": "验证 交易",
+						"dismiss": "退出"
+					},
+					"migrate-button": "迁移 {{escrowedAmount}}",
+					"disabled": "没有要迁移的 DEM",
+					"vest-needed": "在迁移托管DEM之前,您需要先进行归属",
+					"go-to-escrow-page": "转到托管页面"
+				}
+			}
+		}
+	},
+	"history": {
+		"page-title": "DEMAA | 交易历史",
+		"table": {
+			"type": "类型",
+			"amount": "金额",
+			"date": "日期",
+			"view-tx": "查看交易",
+			"staking-tx-type": {
+				"issued": "已铸造的",
+				"burned": "已销毁的",
+				"feesClaimed": "已认领的"
+			},
+			"filters": {
+				"type": {
+					"no-selection": "所有类型"
+				},
+				"date": {
+					"no-selection": "所有日期"
+				},
+				"amount": {
+					"no-selection": "所有金额",
+					"less-than-num": "< {{num}}",
+					"between-num1-and-num2": "{{num1}} - {{num2}}",
+					"greater-than-num": "{{num}}+"
+				}
+			},
+			"view-all-transactions": "查看所有交易",
+			"no-results": "未找到交易,请重试。",
+			"no-transactions": "没有要显示的交易。",
+			"connect-wallet-to-view": "连接钱包查看交易。"
+		}
+	},
+	"synths": {
+		"page-title": "DEMAA | 资产",
+		"trade-on-kwenta": "想要更多？前往Swap进行合成资产之间的交易",
+		"assets": {
+			"synths": {
+				"title": "合成资产余额",
+				"table": {
+					"asset": "资产",
+					"balance": "余额",
+					"balance-mobile": "余额/价格",
+					"price": "价格",
+					"holdings": "持有%",
+					"total": "总计",
+					"percentage-of-pool": "% of pool",
+					"percentage-of-portfolio": "% of 资产集",
+					"debt-pool-proportion": "占全局债务的百分比",
+					"transfer": "发送",
+					"no-synths": {
+						"title": "你没有合成资产",
+						"desc": "通过质押你的DEM来铸造dUSD"
+					}
+				},
+				"negative-skew-warning": "负数意味着需要空头来对冲"
+			},
+			"non-synths": {
+				"title": "非合成资产余额"
+			}
+		},
+		"transfer": {
+			"modal-title": "发送到另一个钱包",
+			"input-label": "发送",
+			"balance-label": "可发送余额:",
+			"button": {
+				"no-amount": "输入要发送的金额",
+				"no-address": "输入地址",
+				"transfer": "发送<0>{{asset}}</0>"
+			},
+			"error": {
+				"invalid-address": "地址无效",
+				"insufficient-balance": "余额不足",
+				"unsupported-asset": "资产不被支持"
+			}
+		},
+		"redeemable-deprecated-synths": {
+			"title": "赎回以弃用的合成资产",
+			"redeem": "赎回全部",
+			"deprecated": "弃用",
+			"modal-title": "赎回",
+			"modal-burn-title": "赎回",
+			"modal-receive-title": "接收",
+			"button-label": "全部赎回",
+			"tx-modal-title": "赎回中",
+			"tx-modal-redeeming": "赎回 <0>{{amount}}</0> <1>dUSD</1>",
+			"tooltip": "废弃的合成资产现在可以赎回 sUSD。<0>了解详情</0>。",
+			"tx": {
+				"etherscan": "查看Polygonscan"
+			}
+		}
+	},
+	"gov": {
+		"page-title": "DEMAA | 治理",
+		"panel": {
+			"council": {
+				"title": "SC"
+			},
+			"treasury-council": {
+				"title": "国库"
+			},
+			"proposals": {
+				"title": "SIP/SCCP"
+			},
+			"grants": {
+				"title": "资助"
+			},
+			"ambassador": {
+				"title": "大使"
+			}
+		},
+		"table": {
+			"description": "描述",
+			"status": {
+				"title": "状态",
+				"open": "打开",
+				"closed": "关闭",
+				"pending": "待定"
+			},
+			"time": "剩余时间",
+			"votes": "投票",
+			"create": "创建新提案"
+		},
+		"create": {
+			"title": "创建新提案",
+			"question": "输入问题",
+			"description": "输入描述",
+			"preview": "预览",
+			"action": {
+				"loading": "正在提交...",
+				"error": "发生意外错误。",
+				"success": "提交",
+				"idle": "发布",
+				"invalid": "缺少提案输入"
+			},
+			"choices": "创建选择",
+			"add": "+ 添加选项",
+			"start": {
+				"date": "开始日期"
+			},
+			"end": {
+				"date": "结束日期"
+			},
+			"select": "选择日期",
+			"block": "块",
+			"helper": "注意:创建 SCCP/SIP 需要提议者在创建快照提议后支付 TX 费用。"
+		},
+		"proposal": {
+			"status": {
+				"open": "打开",
+				"closed": "关闭",
+				"pending": "待定"
+			},
+			"action": {
+				"vote": "投票",
+				"withdraw": "稀释",
+				"support": "恢复稀释"
+			},
+			"info": {
+				"author": "作者",
+				"time": "开始 - 结束",
+				"snapshot": "快照"
+			},
+			"votes": {
+				"title": "当前结果"
+			},
+			"history": {
+				"title": "投票历史 {{count}}",
+				"currentUser": "你",
+				"empty": "还没有选票",
+				"total": "{{totalVotes}} 票",
+				"header": {
+					"voter": "选民",
+					"choice": "选择",
+					"weight": "重量"
+				}
+			}
+		},
+		"council": {
+			"title": "现任斯巴达议会成员",
+			"empty": "斯巴达委员会正在等待其选举"
+		},
+		"actions": {
+			"vote": {
+				"waiting": "投票中",
+				"signing": "投票",
+				"signed": "已投票",
+				"hash": "{{哈希}}",
+				"success": "您的投票成功了！"
+			},
+			"withdraw": {
+				"waiting": "稀释进行中",
+				"signing": "稀释选票",
+				"signed": "稀释选票",
+				"address": "{{地址}}",
+				"success": "稀释成功"
+			},
+			"support": {
+				"waiting": "还原稀释进行中",
+				"signing": "还原稀释为",
+				"signed": "还原稀释为",
+				"address": "{{地址}}",
+				"success": "还原稀释成功"
+			},
+			"propose": {
+				"waiting": "提交提案",
+				"signing": "Proposing on",
+				"signed": "提案哈希",
+				"space": "{{空格}}",
+				"hash": "{{哈希}}",
+				"success": "你的提案在！"
+			},
+			"log-proposal": {
+				"waiting": "记录建议",
+				"logging": "保存提案",
+				"hash": "{{哈希}}",
+				"success": "交易成功",
+				"logged": "保存的提案"
+			},
+			"tx": {
+				"link": "在Polygonscan上查看",
+				"notice": "等待区块链确认您的交易。",
+				"verify": "验证 交易",
+				"dismiss": "退出"
+			}
+		}
+	},
+	"sidenav": {
+		"dashboard": "主页",
+		"loans": "借贷",
+		"earn": "赚钱",
+		"staking": "质押",
+		"debt": "债务",
+		"synths": "资产",
+		"escrow": "托管",
+		"history": "历史",
+		"governance": "治理",
+		"wallet": "钱包",
+		"mint-and-burn": "铸造&销毁",
+		"l2": "2层协议",
+		"gov": "治理",
+		"withdraw": "提现",
+		"bars": {
+			"c-ratio": "抵押率",
+			"t-ratio": "目标抵押率",
+			"period": {
+				"title": "轮"
+			}
+		},
+		"delegate": "委托",
+		"switch-to-l2": "切换到L2",
+		"settings": "设置",
+		"merge-accounts": "合并"
+	},
+	"user-menu": {
+		"layer-2": {
+			"switch-to-l2": "切换到L2",
+			"connected-to-l2": "2层协议"
+		},
+		"banner": {
+			"url-warning": "注意:请确保UR 是 <0>staking.synthetix.io</0> （将此页面添加为书签以确保安全）",
+			"liquidation-warning": "警告:如果您在 <1>{{liquidationDeadline}}</ 1>. 点击<2>这里</2>了解更多信息。",
+			"election-info": "注意:DEMAA治理组织需要您的投票！要获得DEM奖励,您需要<0>在所有选举中投票。</0>",
+			"thales-staking-info": "注意:作为DEM质押者,您有资格获得 THALES 每周奖励。如果您还没有,<0>点击此处了解详情并领取</0>。"
+		},
+		"error": {
+			"please-install-metamask": "请安装Metamask或手动将Optimism网络添加到您的浏览器钱包。"
+		}
+	},
+	"common": {
+		"delegate": {
+			"not-available": "不适用于钱包委托"
+		},
+		"form": {
+			"to-address": "到地址",
+			"address-input-placeholder": "例如 0x3b18a4..."
+		},
+		"approve": {
+			"approve-contract": "批准合约",
+			"is-approving": "正在批准合约..."
+		},
+		"wallet": {
+			"connect-wallet": "连接钱包",
+			"no-wallet-connected": "没有钱包连接",
+			"balance": "余额:{{balance}}",
+			"transferable": "<0>可转账</0> {{transferable}}",
+			"not-connected": "未连接",
+			"or": "或"
+		},
+		"stat-box": {
+			"staked-value": "质押价值",
+			"earning": "收益率",
+			"active-debt": "活动债务",
+			"c-ratio": "抵押率",
+			"synth-value": "总合成资产值",
+			"tx-count": "总交易量",
+			"upcoming-rewards": "预期奖励",
+			"lifetime-rewards": "全部奖励",
+			"available-snx": "总可用 DEM",
+			"vested-snx": "已归属的DEM总数",
+			"escrowed-snx": "托管的DEM总数",
+			"voting-power": {
+				"title": "你的投票权 (L1 + L2)",
+				"tooltip": "你的投票权是根据区块 {{blocknumber}} 计算的"
+			},
+			"delegated-voting-power": {
+				"title": "你委托的投票权",
+				"tooltip": "你可以在 https://snapshot.org/#/delegate 委托另一个钱包"
+			},
+			"total-voting-power": {
+				"title": "总投票权",
+				"tooltip": "总投票权是根据区块 {{blocknumber}} 计算的"
+			},
+			"active-proposals": "活跃提案",
+			"issued-debt": "已发行债务"
+		},
+		"status": {
+			"claimed": "已认领的",
+			"unclaimed": "未认领的"
+		},
+		"pagination": {
+			"page": "页面",
+			"page-of-total-pages": "{{page}} of {{totalPages}}"
+		},
+		"error": {
+			"default": "出错了"
+		},
+		"layer-2": {
+			"not-available": "2层协议不可用",
+			"gas-fee-info": "L2 上的 Gas 根据 L1 和 L2 上的拥堵情况而波动"
+		},
+		"transaction": {
+			"transaction-sent": "您的交易已经发送到网络",
+			"transaction-failed": "您的交易失败了",
+			"transaction-confirmed": "您的交易已成功！",
+			"error": "发生意外错误。",
+			"reattempt": "再试一次"
+		},
+		"currency": {
+			"currency-price": "<0>{{currencyKey}}</0> 价格",
+			"currency-balance": "<0>{{currencyKey}}</0> 余额",
+			"buy-currency": "购买 <0>{{currencyKey}}</0>",
+			"synthetic-currency-name": "合成 {{currencyName}}",
+			"deprecated": "弃用"
+		},
+		"gas-prices": {
+			"est": "估计费用:{{amount}}",
+			"average": "平均",
+			"fast": "较快",
+			"fastest": "最快"
+		},
+		"custom": "自定义",
+		"edit": "编辑",
+		"convert": "转换",
+		"gas-header": "Gas Price (GWEI)",
+		"explorers": {
+			"etherscan": "etherscan"
+		},
+		"stake-snx": "质押 DEM",
+		"tooltip": {
+			"external": "重定向到 {{link}}"
+		},
+		"time": {
+			"years": "y",
+			"months": "mo",
+			"days": "d",
+			"hours": "h",
+			"minutes": "m",
+			"seconds": "s"
+		},
+		"table": {
+			"no-data": "无数据"
+		},
+		"delegate-actions": {
+			"header": "动作",
+			"actions": {
+				"ApproveAll": "全部",
+				"BurnForAddress": "销毁",
+				"IssueForAddress": "铸造",
+				"ClaimForAddress": "认领",
+				"ExchangeForAddress": "交易"
+			}
+		}
+	},
+	"not-found": {
+		"page-title": "DEMAA | 未找到",
+		"title": "404",
+		"subtitle": "找不到页面"
+	},
+	"system-status": {
+		"page-title": "DEMAA | 维护",
+		"title-line1": "以下",
+		"title-line2": "维护。",
+		"subtitle": "给您带来的不便,我们深表歉意,很快就会回复。"
+	},
+	"mobile-unsupported": {
+		"page-title": "DEMAA | 移动版即将推出",
+		"title-line1": "移动版来了",
+		"title-line2": "soonthetix"
+	},
+	"notifications": {
+		"debt-liquidation-warning": {
+			"heading": "警告:",
+			"message": "你的钱包已被标记为清算"
+		},
+		"gov-voting-election": {
+			"heading": "治理:",
+			"message": "就谁将代表DEM社区发表你的意见,在这里对DAO选举进行无交易费投票。"
+		}
+	},
+	"delegate": {
+		"page-title": "DEMAA | 委托",
+		"form": {
+			"title": "委托给新地址",
+			"tx-confirmation-title": "委托给",
+			"button-labels": {
+				"enter-address": "输入地址",
+				"delegate": "委托",
+				"delegating": "委托...",
+				"cannot-delegate-to-self": "不能委托给自己",
+				"already-delegated": "已经委托"
+			}
+		},
+		"info": {
+			"title": "将权力委托给另一个钱包地址",
+			"subtitle": "委托使一个钱包能够代表另一个钱包执行功能:铸造、销毁、赚取和交易,但不能转移。管理地址及其下面的权力。",
+			"learn-more": "了解更多。"
+		},
+		"list": {
+			"title": "管理地址",
+			"empty": "没有地址可显示",
+			"cols": {
+				"address": "地址",
+				"canAll": "所有",
+				"canBurn": "销毁",
+				"canMint": "铸造",
+				"canClaim": "认领",
+				"canExchange": "交易"
+			}
+		},
+		"tx-confirmation-title": "更新审批"
+	},
+	"merge-accounts": {
+		"page-title": "DEMAA | 合并账户",
+		"landing": {
+			"steps": {
+				"1": {
+					"title": "销毁债务和提名账户",
+					"description": "为了合并账户,首先你需要从你想合并的地址销毁任何未偿债务,以便转移既得 DEM。"
+				},
+				"2": {
+					"title": "从目标账户合并",
+					"description": "只有当您完成第 1 步并登录目标帐户后,您才能继续执行此步骤。"
+				}
+			}
+		},
+		"burn": {
+			"title": "销毁债务和提名账户",
+			"input-placeholder": "目标地址,例如 0x3b18a4...",
+			"button-labels": {
+				"burn": "销毁 <0>dUSD</0>"
+			},
+			"info": {
+				"title": "销毁dUSD债务",
+				"description": "用你想合并的钱包连接到dApp,首先确保你已经销毁了你所有的dUSD债务。<0>了解更多。</0>"
+			},
+			"tx-waiting": {
+				"title": "进行中",
+				"unstaking": "取消抵押",
+				"unstake-amount": "{{amount}} {{asset}}",
+				"burning": "销毁",
+				"burn-amount": "{{amount}} {{asset}}"
+			},
+			"tx-success": {
+				"title": "已销毁！",
+				"unstaked": "未抵押的",
+				"unstaked-amount": "{{amount}} {{asset}}",
+				"burnt": "销毁",
+				"burnt-amount": "{{amount}} {{asset}}",
+				"verify": "验证",
+				"dismiss": "下一个"
+			}
+		},
+		"nominate": {
+			"title": "合并到目标地址",
+			"input-placeholder": "例如 0x3b18a4...",
+			"button-labels": {
+				"enter-address": "输入地址",
+				"nominate": "提名",
+				"merge": "合并已释放的DEM",
+				"dest-account-is-self": "不能提名自己",
+				"nominating": "提名"
+			},
+			"info": {
+				"title": "将托管DEM合并到指定账户",
+				"subtitle": "通过在 '目的地址' 字段中输入新的目标地址来合并您的既得DEM余额,此地址是您希望将余额发送到的地方。<0>了解更多信息。</0>"
+			},
+			"tx-waiting": {
+				"title": "进行中",
+				"from": "合并",
+				"to": "到"
+			},
+			"tx-success": {
+				"title": "提名！",
+				"from": "合并",
+				"to": "到",
+				"verify": "验证",
+				"dismiss": "切换到目标账户"
+			}
+		},
+		"merge": {
+			"title": "输入源账户",
+			"input-placeholder": "例如 0x3b18a4...",
+			"button-labels": {
+				"enter-address": "输入地址",
+				"merge": "合并既得的 DEM",
+				"source-account-is-self": "不能合并到自己",
+				"not-nominated": "地址未提名",
+				"invalid-dest-address": "地址无效"
+			},
+			"info": {
+				"title": "将你的源账户合并到这个",
+				"description": "最后,请输入您的余额的来源地址。<0>了解更多。</0>"
+			},
+			"tx": {
+				"notice": "等待区块链确认您的交易。",
+				"link": "在Polygonscan上查看",
+				"verify": "验证交易",
+				"dismiss": "退出"
+			},
+			"tx-waiting": {
+				"title": "账户合并中",
+				"merging": "合并",
+				"escrowed-schedule": "托管计划"
+			},
+			"tx-success": {
+				"title": "账户合并完成！",
+				"merged": "合并",
+				"escrowed-schedule": "托管计划",
+				"verify": "验证",
+				"dismiss": "完成"
+			}
+		}
+	},
+	"balance": {
+		"input-label": "余额:",
+		"max": "最大"
+	},
+	"header": {
+		"home": "主页",
+		"staking": "质押",
+		"staking/mint": "铸造",
+		"staking/burn": "销毁",
+		"staking/earn": "赚取",
+		"staking/debt": "债务",
+		"wallet": "钱包",
+		"wallet/escrow": "托管",
+		"wallet/history": "历史",
+		"wallet/synths": "合成资产",
+		"wallet/delegate": "代表",
+		"l2": "2层协议",
+		"l2/deposit": "存款",
+		"l2/migrate": "迁移",
+		"l2/withdraw": "提现",
+		"gov": "治理",
+		"loans": "借贷",
+		"loans/new": "新",
+		"loans/list": "活跃",
+		"loan": "贷款",
+		"loan/deposit": "存款",
+		"loan/withdraw": "提现",
+		"loan/repay": "还款",
+		"loan/draw": "抽奖",
+		"loan/close": "关闭",
+		"merge-accounts": "合并帐户",
+		"merge-accounts/nominate": "提名",
+		"merge-accounts/merge": "合并"
+	}
+}

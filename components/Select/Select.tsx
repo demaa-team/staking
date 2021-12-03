@@ -16,12 +16,12 @@ function Select<T>(props: SelectProps<T>) {
 			container: (style, state) => ({
 				...style,
 				opacity: state.isDisabled ? 0.4 : 1,
-				backgroundColor: colors.navy,
+				backgroundColor: '#1A2479',
 			}),
 			singleValue: (style) => ({
 				...style,
 				color: colors.white,
-				boxShadow: `0px 0px 20px ${colors.backgroundBoxShadow}`,
+				boxShadow: `0`,
 				fontSize: '12px',
 				border: 'none',
 			}),
@@ -32,7 +32,7 @@ function Select<T>(props: SelectProps<T>) {
 			}),
 			multiValueLabel: (style) => ({
 				...style,
-				background: colors.navy,
+				background: '#1A2479',
 				borderRadius: 0,
 				color: colors.white,
 				fontSize: '12px',
@@ -41,11 +41,11 @@ function Select<T>(props: SelectProps<T>) {
 			}),
 			multiValueRemove: (style) => ({
 				...style,
-				background: colors.navy,
+				background: '#1A2479',
 				borderRadius: 0,
 				color: colors.gray,
 				'&:hover': {
-					background: colors.navy,
+					background: '#1A2479',
 					color: colors.white,
 				},
 				padding: 0,
@@ -64,16 +64,16 @@ function Select<T>(props: SelectProps<T>) {
 					borderRadius: '4px',
 					outline: 'none',
 					fontSize: '12px',
-					backgroundColor: colors.navy,
+					backgroundColor: '#1A2479',
 				};
 				if (props.variant === 'outline') {
 					return {
 						...baseStyles,
-						border: `1px solid ${colors.grayBlue}`,
+						border: `1px solid #3f478f`,
 						boxShadow: 'none',
 						'&:hover': {
-							backgroundColor: colors.mediumBlue,
-							border: `1px solid ${colors.grayBlue}`,
+							backgroundColor: '#1A2479',
+							border: `1px solid #3f478f`,
 							outline: 'none',
 						},
 					};
@@ -81,7 +81,7 @@ function Select<T>(props: SelectProps<T>) {
 				return {
 					...baseStyles,
 					border: 'none',
-					boxShadow: `0px 0px 20px ${colors.backgroundBoxShadow}`,
+					boxShadow: `0`,
 					'&:hover': {
 						border: 'none',
 					},
@@ -89,9 +89,9 @@ function Select<T>(props: SelectProps<T>) {
 			},
 			menu: (style) => ({
 				...style,
-				backgroundColor: colors.navy,
+				backgroundColor: '#1A2479',
 				border: 'none',
-				boxShadow: `0px 0px 20px ${colors.backgroundBoxShadow}`,
+				boxShadow: `0`,
 				padding: 0,
 			}),
 			menuList: (style) => ({
@@ -107,9 +107,9 @@ function Select<T>(props: SelectProps<T>) {
 					cursor: 'pointer',
 					padding: '12px 10px',
 					fontSize: '12px',
-					backgroundColor: colors.navy,
+					backgroundColor: '#1A2479',
 					'&:hover': {
-						backgroundColor: colors.mediumBlue,
+						backgroundColor: '#1A2479',
 						color: colors.white,
 					},
 				};

@@ -48,7 +48,7 @@ const OverviewTab = () => {
 };
 
 const Container = styled(FlexDivCol)`
-	background: ${(props) => props.theme.colors.navy};
+	// background: ${(props) => props.theme.colors.navy};
 `;
 
 const ContainerHeader = styled(FlexDiv)`

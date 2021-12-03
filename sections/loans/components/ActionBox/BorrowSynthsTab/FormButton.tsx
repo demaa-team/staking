@@ -105,7 +105,7 @@ const FormButton: React.FC<FormButtonProps> = ({
 export default FormButton;
 
 const StyledCTA = styled(Button)`
-	font-size: 14px;
+	font-size: 1rem;
 	font-family: ${(props) => props.theme.fonts.condensedMedium};
 	box-shadow: 0px 0px 10px rgba(0, 209, 255, 0.9);
 	border-radius: 4px;
