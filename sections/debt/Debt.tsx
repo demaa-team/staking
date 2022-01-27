@@ -10,7 +10,6 @@ import DebtTabs from './components/DebtTabs';
 
 const DebtSection = () => {
 	const { t } = useTranslation();
-
 	const tabData = useMemo(
 		() => [
 			{

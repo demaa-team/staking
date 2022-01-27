@@ -187,9 +187,9 @@ export const TopContainer = styled.div<{ isManageTab: boolean }>`
 `;
 
 export const BottomContainer = styled.div`
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 1rem;
+	// display: grid;
+	// grid-template-columns: 1fr 1fr;
+	// grid-gap: 1rem;
 	padding-top:1rem;
 	${media.lessThan('mdUp')`
 		display: flex;
@@ -260,7 +260,7 @@ const DebtPieChartContainer = styled(Container)``;
 
 const PortfolioContainer = styled(Container)`
 	align-self: flex-start;
-
+	margin-top:1rem;
 	${media.lessThan('mdUp')`
 		width: 100%;
 	`}

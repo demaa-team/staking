@@ -160,7 +160,7 @@ const Incentives: FC<IncentivesProps> = ({
 			isLoaded={!!lpData[LP.CURVE_sUSD].data}
 		/>
 	);
-
+debugger
 	return activeTab == null ? (
 		<>	
 			<ContainerT>

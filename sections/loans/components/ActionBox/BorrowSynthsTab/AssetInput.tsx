@@ -76,7 +76,7 @@ const AssetInput: React.FC<AssetInputProps> = ({
 			<Balance {...{ asset, onSetMaxAmount }} />
 		</BalanceContainer>
 	);
-
+	
 	return (
 		<>
 			<DesktopOnlyView>

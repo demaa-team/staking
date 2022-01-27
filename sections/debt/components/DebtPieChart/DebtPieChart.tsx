@@ -50,6 +50,7 @@ const SynthsPieChart: FC<DebtPieChartProps> = () => {
 
 	const synthsTotalSupplyQuery = useSynthsTotalSupplyQuery();
 	const totalSupply = synthsTotalSupplyQuery.isSuccess ? synthsTotalSupplyQuery.data : undefined;
+	console.log(`called synth ${totalSupply}`)
 
 	const pieData = useMemo(() => {
 		const supplyData = totalSupply?.supplyData ?? [];
@@ -86,7 +87,6 @@ const SynthsPieChart: FC<DebtPieChartProps> = () => {
 
 	return (
 		<SynthsPieChartContainer>
-			{/* <PieChart data={pieData} dataKey={'value'} tooltipFormatter={Tooltip} /> */}
 			<TableWrapper>
 				<DebtPoolTable
 					synths={pieData}
@@ -94,6 +94,7 @@ const SynthsPieChart: FC<DebtPieChartProps> = () => {
 					isLoaded={synthsTotalSupplyQuery.isSuccess}
 				/>
 			</TableWrapper>
+			<PieChart data={pieData} dataKey={'value'} tooltipFormatter={Tooltip} />
 		</SynthsPieChartContainer>
 	);
 };
@@ -117,6 +118,9 @@ const TableWrapper = styled.div`
 
 const SynthsPieChartContainer = styled.div`
 	// background: ${(props) => props.theme.colors.navy};
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1rem;
 	width: 100%;
 `;
 

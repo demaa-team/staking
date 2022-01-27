@@ -6,7 +6,7 @@ import ETHIcon from 'assets/svg/currencies/crypto/ETH.svg';
 
 import DeprecatedXIcon from 'assets/svg/app/deprecated-x.svg';
 
-import { CryptoCurrency, CurrencyKey } from 'constants/currency';
+import { Synths,CryptoCurrency, CurrencyKey } from 'constants/currency';
 
 import { FlexDivCentered } from 'styles/common';
 import useSynthetixQueries from 'demaa-queries';
@@ -29,6 +29,8 @@ type CurrencyIconProps = {
 export const SNXIcon =require('../../../assets/wallet-icons/SNX.png');
 
 export const SCNIcon =require('../../../assets/svg/currencies/crypto/SCN2111.png');
+
+export const USDIcon =require('../../../assets/svg/currencies/crypto/sUSD.png');
 
 export const getSynthIcon = (currencyKey: CurrencyKey) =>
 	`https://raw.githubusercontent.com/Synthetixio/synthetix-assets/master/synths/${currencyKey}.svg`;
@@ -81,6 +83,12 @@ export const CurrencyIcon: FC<CurrencyIconProps> = ({
 	if (!firstFallbackError) {
 		switch (currencyKey) {
 			case CryptoCurrency.ETH: {
+				return <Img src={ETHIcon} {...props} />;
+			}
+			case Synths.sUSD: {
+				return <img src={USDIcon} {...props} />;
+			}
+			case Synths.sETH: {
 				return <Img src={ETHIcon} {...props} />;
 			}
 			case CryptoCurrency.DEM: {
@@ -160,8 +168,6 @@ const Placeholder = styled(FlexDivCentered)<{ isDeprecated?: boolean }>`
 
 const TokenIcon = styled.img<{ isDeprecated?: boolean }>`
 	border-radius: 100%;
-	width:24px;
-	height:24px;
 	// border: 2px solid ${(props) => (props.isDeprecated ? props.theme.colors.red : 'transparent')};
 `;
 

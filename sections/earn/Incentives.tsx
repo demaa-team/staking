@@ -19,7 +19,7 @@ type IncentivesProps = {
 const Incentives: FC<IncentivesProps> = (props) => {
 	const isMainnet = useRecoilValue(isMainnetState);
 	const delegateWallet = useRecoilValue(delegateWalletState);
-	const Incentives = isMainnet && !delegateWallet ? IncentivesMainnet : IncentivesDefault;
+	const Incentives = isMainnet && !delegateWallet ? IncentivesDefault : IncentivesDefault;
 
 	return <ContainerT>
 			<Incentives {...props} />

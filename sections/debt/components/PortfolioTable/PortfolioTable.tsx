@@ -51,9 +51,9 @@ type DebtPoolTableProps = {
 const DebtPoolTable: React.FC<DebtPoolTableProps> = (props) => {
 	return (
 		<StatsSection>
-			<DesktopOrTabletView>
+			<DesktopOrTabletViewC>
 				<ResponsiveDebtPoolTable {...props} />
-			</DesktopOrTabletView>
+			</DesktopOrTabletViewC>
 			<MobileOnlyView>
 				<ResponsiveDebtPoolTable {...props} mobile />
 			</MobileOnlyView>
@@ -329,6 +329,10 @@ const PortfolioTableTooltip: FC<PortfolioTableTooptipProps> = ({ currencyKey }) 
 	);
 };
 
+const DesktopOrTabletViewC = styled.div`
+	width:100%;
+`;
+
 const Legend = styled(FlexDiv)`
 	align-items: center;
 `;
@@ -338,10 +342,10 @@ const SynthHoldingWrapper = styled.div`
 `;
 
 const StyledTable = styled(Table)`
+	width:100%;
 	${media.greaterThan('md')`
 		padding: 0 10px;
 	`}
-
 	.table-body-cell {
 		height: 40px;
 	}

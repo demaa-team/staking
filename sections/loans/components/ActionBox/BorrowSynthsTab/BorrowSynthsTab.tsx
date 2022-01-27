@@ -47,7 +47,8 @@ type BorrowSynthsTabProps = {};
 const COLLATERAL_ASSETS: { [asset: string]: string[] } = {
 	sETH: ['ETH'],
 	sBTC: ['renBTC'],
-	sUSD: ['ETH', 'renBTC'],
+	// sUSD: ['ETH', 'renBTC'],
+	sUSD: ['ETH'],
 };
 
 const BorrowSynthsTab: FC<BorrowSynthsTabProps> = (props) => {
@@ -232,7 +233,7 @@ const BorrowSynthsTab: FC<BorrowSynthsTabProps> = (props) => {
 	useEffect(() => {
 		setTitle('loans', 'new');
 	}, [setTitle]);
-
+	
 	return (
 		<>
 			<FormContainer data-testid="loans-form">
