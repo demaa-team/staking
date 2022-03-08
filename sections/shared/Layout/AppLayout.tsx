@@ -37,7 +37,7 @@ const AppLayout: FC<AppLayoutProps> = ({ children }) => {
 			router.push(ROUTES.Home);
 		}
 		// if (!isMainnet && router.pathname.includes(ROUTES.Debt.Home)) {
-		// 	debugger
+		// 	
 		// 	router.push(ROUTES.Home);
 		// }
 		if (delegateWallet && router.pathname !== ROUTES.Home) {

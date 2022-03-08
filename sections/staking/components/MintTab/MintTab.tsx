@@ -70,6 +70,7 @@ const MintTab: React.FC = () => {
 				break;
 			case MintActionType.CUSTOM:
 				onSubmit = () => txn.mutate();
+				inputValue = amountToMint;
 				isLocked = false;
 				break;
 			default:

@@ -28,7 +28,7 @@ type CurrencyIconProps = {
 };
 export const SNXIcon =require('../../../assets/wallet-icons/SNX.png');
 
-export const SCNIcon =require('../../../assets/svg/currencies/crypto/SCN2111.png');
+export const SCNIcon =require('../../../assets/svg/currencies/crypto/SCN.png');
 
 export const USDIcon =require('../../../assets/svg/currencies/crypto/sUSD.png');
 

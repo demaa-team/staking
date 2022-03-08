@@ -188,7 +188,7 @@
 			},
 			"mint": {
 				"title": "铸造dUSD",
-				"copy": "通过质押 {{SNXAmount}} DEM铸造 {{sUSDAmount}} sUSD"
+				"copy": "通过质押 {{SNXAmount}} DEM铸造 {{sUSDAmount}} dUSD"
 			},
 			"burn": {
 				"title": "{{targetCRatio}}",
@@ -250,7 +250,7 @@
 				},
 				"action": {
 					"empty": "输入金额",
-					"mint": "铸造 <0>sUSD</0>",
+					"mint": "铸造 <0>dUSD</0>",
 					"max": "最大",
 					"error": {
 						"bad-input": "请输入一个有效数字",
@@ -317,11 +317,11 @@
 				},
 				"action": {
 					"empty": "输入金额",
-					"burn": "销毁 <0>sUSD</0>",
+					"burn": "销毁 <0>dUSD</0>",
 					"max": "最大",
 					"clear-debt": "清偿债务",
-					"insufficient-sUSD-to-clear-debt": "<0>sUSD</0> 不足以清偿债务",
-					"insufficient-sUSD-to-fix-c-ratio": "<0>sUSD</0> 不足以修复目标抵押率",
+					"insufficient-dUSD-to-clear-debt": "<0>dUSD</0> 不足以清偿债务",
+					"insufficient-dUSD-to-fix-c-ratio": "<0>dUSD</0> 不足以修复目标抵押率",
 					"error": {
 						"no-debt": "没有债务可销毁",
 						"bad-input": "输入金额无效",
@@ -369,7 +369,7 @@
 				"locked": "锁定",
 				"c-ratio": "抵押率",
 				"debt": "总债务",
-				"susd-balance": "sUSD 余额"
+				"susd-balance": "dUSD 余额"
 			}
 		}
 	},
@@ -396,8 +396,8 @@
 					"title": "dUSD表现逊于债务池",
 					"body": "您的债务会随着债务池的变化而波动。我们建议您对冲债务以降低拥有比您持有的债务过多的风险。",
 					"chart": {
-						"title": "sUSD vs 债务池",
-						"sUSD-label": "sUSD",
+						"title": "dUSD vs 债务池",
+						"dUSD-label": "dUSD",
 						"debtPool-label": "债务池"
 					}
 				}
@@ -457,7 +457,7 @@
 				"curve": {
 					"title": "curve",
 					"description": "从dUSD池中质押Curve LP代币可以让您获得CRV奖励、Curve交换费和DEM奖励。<0>了解更多。<0>",
-					"subtitle": "sUSD CPT 奖励",
+					"subtitle": "dUSD CPT 奖励",
 					"helper": "访问curve.fi"
 				},
 				"seur": {
@@ -576,7 +576,7 @@
 				"amount": "{{amount}} {{asset}}",
 				"in-progress": "认领进行中",
 				"success": "认领完成！",
-				"ratio-notice": "要领取奖励,抵押率必须在目标抵押率的 1% 以内。您必须销毁 sUSD 或获取更多DEM来达到您的目标抵押率。"
+				"ratio-notice": "要领取奖励,抵押率必须在目标抵押率的 1% 以内。您必须销毁 dUSD 或获取更多DEM来达到您的目标抵押率。"
 			},
 			"lp": {
 				"title-curve": "CURVE奖励",
@@ -906,7 +906,7 @@
 					},
 					"migrate-button": "迁移 {{escrowedAmount}}",
 					"disabled": "没有要迁移的 DEM",
-					"vest-needed": "在迁移托管DEM之前,您需要先进行释放",
+					"vest-needed": "在迁移托管DEM之前,您需要先进行归属",
 					"go-to-escrow-page": "转到托管页面"
 				}
 			}
@@ -996,7 +996,7 @@
 			"modal-receive-title": "接收",
 			"button-label": "全部赎回",
 			"tx-modal-title": "赎回中",
-			"tx-modal-redeeming": "赎回 <0>{{amount}}</0> <1>sUSD</1>",
+			"tx-modal-redeeming": "赎回 <0>{{amount}}</0> <1>dUSD</1>",
 			"tooltip": "废弃的合成资产现在可以赎回 sUSD。<0>了解详情</0>。",
 			"tx": {
 				"etherscan": "查看Polygonscan"
@@ -1210,7 +1210,7 @@
 			"upcoming-rewards": "预期奖励",
 			"lifetime-rewards": "全部奖励",
 			"available-snx": "总可用 DEM",
-			"vested-snx": "已释放的DEM总数",
+			"vested-snx": "已归属的DEM总数",
 			"escrowed-snx": "托管的DEM总数",
 			"voting-power": {
 				"title": "你的投票权 (L1 + L2)",
@@ -1371,7 +1371,7 @@
 			"title": "销毁债务和提名账户",
 			"input-placeholder": "目标地址,例如 0x3b18a4...",
 			"button-labels": {
-				"burn": "销毁 <0>sUSD</0>"
+				"burn": "销毁 <0>dUSD</0>"
 			},
 			"info": {
 				"title": "销毁dUSD债务",

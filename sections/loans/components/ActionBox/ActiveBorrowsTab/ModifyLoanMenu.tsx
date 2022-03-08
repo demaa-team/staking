@@ -39,7 +39,7 @@ const BorrowModifyModal: FC<BorrowModifyModalProps> = ({ actions, loan }) => {
 				<ul>
 					{actions.map((action) => (
 						<li key={action} onClick={() => onStartModify(action)}>
-							{action}
+							{t(`loans.modify-loan.${action}.left-col-label`)}
 						</li>
 					))}
 				</ul>

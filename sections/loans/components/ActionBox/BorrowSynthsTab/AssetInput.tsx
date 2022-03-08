@@ -189,6 +189,7 @@ const AmountInput = styled(NumericInput)`
 `;
 
 const BalanceContainer = styled.div`
+	height:30px;
 	& > div {
 		${media.greaterThan('mdUp')`
 			margin-top: 14px;

@@ -16,7 +16,7 @@ function Select<T>(props: SelectProps<T>) {
 			container: (style, state) => ({
 				...style,
 				opacity: state.isDisabled ? 0.4 : 1,
-				backgroundColor: '#1A2479',
+				// backgroundColor: '#1A2479',
 			}),
 			singleValue: (style) => ({
 				...style,
